@@ -1,0 +1,34 @@
+.form-narrow.form-horizontal.useraction-form {
+    color: #ffffff;
+    background-color: #1a1c22;
+    border: 1px solid #434857;
+    border-radius: 3px;
+}
+
+.form-legend {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.btn-default.submit-button {
+    background-color: #1ca8dd;
+    border: 1px solid #1ca8dd;
+    border-radius: 3px;
+    color: #ffffff;
+}
+
+.btn-default.submit-button:hover {
+    background-color: #1ca8dd;
+    border: 1px solid #1ca8dd;
+    border-radius: 3px;
+    color: #ffffff;
+}
+
+.register-link {
+    color: #1ca8dd;
+}
+
+.register-link:hover {
+    color: #1ca8dd;
+    text-decoration: none;
+}

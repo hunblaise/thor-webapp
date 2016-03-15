@@ -1,0 +1,18 @@
+.navbar.navbar-inverse.navbar-fixed-top {
+    background-color: #1a1c22;
+    border-color: #1a1c22;
+}
+
+.navbar-inverse .navbar-brand.header-brand {
+    color: #ffffff !important;
+}
+
+.navbar-inverse .navbar-brand.header-brand:hover {
+    color: #ffffff !important;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+    background-color: #1a1c22 !important;
+    color: #ffffff !important;
+    font-weight: 600;
+}
