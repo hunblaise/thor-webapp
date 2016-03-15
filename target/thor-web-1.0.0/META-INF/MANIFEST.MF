@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: Thor webapp
-Implementation-Version: 1.0.0
-Built-By: Hajdu Balazs
-Implementation-Vendor-Id: com.balazs.hajdu
-Created-By: IntelliJ IDEA
-Build-Jdk: 1.8.0_05
-Main-Class: ${start-class}
-
