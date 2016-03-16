@@ -27,15 +27,13 @@ public class UserAuthenticationIntegrationTest extends WebSecurityConfigurationA
 
     @Test
     public void userAuthenticates() throws Exception {
-        final String username = "user";
-        ResultMatcher matcher = new ResultMatcher() {
-            public void match(MvcResult mvcResult) throws Exception {
-                HttpSession session = mvcResult.getRequest().getSession();
-                SecurityContext securityContext = (SecurityContext) session.getAttribute(SEC_CONTEXT_ATTR);
-                Assert.assertEquals(securityContext.getAuthentication().getName(), username);
-            }
+        final String username = "test test";
+        ResultMatcher matcher = mvcResult -> {
+            HttpSession session = mvcResult.getRequest().getSession();
+            SecurityContext securityContext = (SecurityContext) session.getAttribute(SEC_CONTEXT_ATTR);
+            Assert.assertEquals(securityContext.getAuthentication().getName(), username);
         };
-        mockMvc.perform(post("/authenticate").param("username", username).param("password", "demo"))
+        mockMvc.perform(post("/authenticate").param("username", username).param("password", "test"))
                 .andExpect(redirectedUrl("/"))
                 .andExpect(matcher);
     }
@@ -45,12 +43,10 @@ public class UserAuthenticationIntegrationTest extends WebSecurityConfigurationA
         final String username = "user";
         mockMvc.perform(post("/authenticate").param("username", username).param("password", "invalid"))
                 .andExpect(redirectedUrl("/signin?error=1"))
-                .andExpect(new ResultMatcher() {
-                    public void match(MvcResult mvcResult) throws Exception {
-                        HttpSession session = mvcResult.getRequest().getSession();
-                        SecurityContext securityContext = (SecurityContext) session.getAttribute(SEC_CONTEXT_ATTR);
-                        Assert.assertNull(securityContext);
-                    }
+                .andExpect(mvcResult -> {
+                    HttpSession session = mvcResult.getRequest().getSession();
+                    SecurityContext securityContext = (SecurityContext) session.getAttribute(SEC_CONTEXT_ATTR);
+                    Assert.assertNull(securityContext);
                 });
     }
 }
