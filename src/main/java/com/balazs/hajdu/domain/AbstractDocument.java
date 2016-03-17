@@ -6,6 +6,8 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 
 /**
+ * Base object for the database entitites.
+ *
  * @author Balazs Hajdu
  */
 public class AbstractDocument {
@@ -21,6 +23,7 @@ public class AbstractDocument {
         this.id = id;
     }
 
+    // generated code begins here
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -40,5 +43,6 @@ public class AbstractDocument {
                 .add("id", id)
                 .toString();
     }
+    // generated code ends here
 
 }

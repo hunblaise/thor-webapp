@@ -5,6 +5,8 @@ import java.util.Map;
 import java.util.Optional;
 
 /**
+ * User roles.
+ *
  * @author Balazs Hajdu
  */
 public enum UserRoles {

@@ -8,6 +8,10 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 import com.balazs.hajdu.Application;
 
+/**
+ * Main configuration class.
+ * @author Balazs Hajdu
+ */
 @Configuration
 @PropertySource("classpath:persistence.properties")
 @PropertySource("classpath:application.properties")

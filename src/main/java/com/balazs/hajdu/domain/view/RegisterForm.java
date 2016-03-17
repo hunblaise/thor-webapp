@@ -3,6 +3,8 @@ package com.balazs.hajdu.domain.view;
 import org.hibernate.validator.constraints.NotBlank;
 
 /**
+ * Register form.
+ *
  * @author Balazs Hajdu
  */
 public class RegisterForm {

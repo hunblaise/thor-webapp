@@ -1,5 +1,6 @@
 package com.balazs.hajdu.controller;
 
+import com.balazs.hajdu.constants.ViewNames;
 import com.balazs.hajdu.domain.User;
 import com.balazs.hajdu.domain.view.RegisterForm;
 import com.balazs.hajdu.service.UserManagementService;
@@ -17,12 +18,13 @@ import javax.inject.Inject;
 import javax.validation.Valid;
 
 /**
+ * A controller class for the registration page.
+ *
  * @author Balazs Hajdu
  */
 @Controller
 public class RegisterController {
 
-    private static final String REGISTER_VIEW_NAME = "signup/signup";
     private static final String SUCCESS_SIGN_UP = "signup.success";
 
     @Inject
@@ -31,17 +33,31 @@ public class RegisterController {
     @Inject
     private UserService userService;
 
+    /**
+     * A controller method for the registration page.
+     *
+     * @param modelAndView model and view
+     * @return the page where the user will be redirected
+     */
     @RequestMapping(value = "register", method = RequestMethod.GET)
     public ModelAndView register(ModelAndView modelAndView) {
         modelAndView.addObject(new RegisterForm());
-        modelAndView.setViewName(REGISTER_VIEW_NAME);
+        modelAndView.setViewName(ViewNames.REGISTER.getValue());
         return modelAndView;
     }
 
+    /**
+     * A method to handle the registration request.
+     *
+     * @param registerForm registration form
+     * @param errors validation errors
+     * @param ra redirect attributes
+     * @return redirection value
+     */
     @RequestMapping(value = "register", method = RequestMethod.POST)
     public String registerNewUser(@Valid @ModelAttribute RegisterForm registerForm, Errors errors, RedirectAttributes ra) {
         if (errors.hasErrors()) {
-            return REGISTER_VIEW_NAME;
+            return ViewNames.REGISTER.getValue();
         }
 
         User user = userManagementService.saveUser(registerForm);

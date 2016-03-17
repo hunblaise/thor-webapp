@@ -2,6 +2,7 @@ package com.balazs.hajdu.config;
 
 import com.mongodb.MongoClient;
 import com.mongodb.WriteConcern;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
@@ -16,6 +17,10 @@ import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 
+/**
+ * A class to configure the database connection.
+ * @author Balazs Hajdu
+ */
 @Configuration
 @Lazy
 @EnableMongoRepositories(basePackages = "com.balazs.hajdu.repository")
@@ -24,6 +29,15 @@ public class MongoConfig extends AbstractMongoConfiguration {
     private static final String DATABASE_NAME = "home-control";
     private static final String HOST = "localhost";
     private static final int PORT = 27017;
+
+    @Value("${mongodb.host}")
+    private String host;
+
+    @Value("${mongodb.port}")
+    private int port;
+
+    @Value(("${mongodb.databasename}"))
+    private String databaseName;
 
     @Override
     protected String getDatabaseName() {
@@ -45,8 +59,7 @@ public class MongoConfig extends AbstractMongoConfiguration {
 
     @Bean
     public MongoTemplate mongoTemplate() throws Exception {
-        MongoTemplate template = new MongoTemplate(mongoDbFactory(), mongoConverter());
-        return template;
+        return new MongoTemplate(mongoDbFactory(), mongoConverter());
     }
 
     @Bean

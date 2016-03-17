@@ -10,6 +10,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.Instant;
 
 /**
+ * A representation of the user in the database.
+ *
  * @author Balazs Hajdu
  */
 @Document(collection = "home-control")
@@ -53,6 +55,7 @@ public class UserEntity extends AbstractDocument {
         this.created = created;
     }
 
+    // generated code begins here
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -79,5 +82,6 @@ public class UserEntity extends AbstractDocument {
                 .add("created", created)
                 .toString();
     }
+    // generated code ends here
 
 }

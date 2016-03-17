@@ -5,6 +5,8 @@ import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
+ * User data related repository.
+ *
  * @author Balazs Hajdu
  */
 public interface UserRepository extends MongoRepository<UserEntity, ObjectId> {

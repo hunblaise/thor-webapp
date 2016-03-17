@@ -19,6 +19,10 @@ import com.balazs.hajdu.account.AccountService;
 
 import javax.inject.Inject;
 
+/**
+ * A class to configure the authentication and authorization.
+ * @author Balazs Hajdu
+ */
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)

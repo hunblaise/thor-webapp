@@ -2,14 +2,12 @@ package com.balazs.hajdu.domain;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * An immutable POJO to store user related information.
  * @author Balazs Hajdu
  */
-@Document(collection = "home-controller")
-public class User {
+public final class User {
 
     private final String username;
     private final String password;
@@ -33,6 +31,7 @@ public class User {
         return userRole;
     }
 
+    // generated code begins here
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -83,5 +82,6 @@ public class User {
         }
 
     }
+    // generated code ends here
 
 }

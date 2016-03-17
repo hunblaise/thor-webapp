@@ -16,6 +16,8 @@ import javax.inject.Inject;
 import java.time.Instant;
 
 /**
+ * Default implementation of {@link com.balazs.hajdu.service.UserManagementService}.
+ *
  * @author Balazs Hajdu
  */
 @Service

@@ -6,6 +6,10 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 import javax.servlet.*;
 
+/**
+ * A class for web.xml config.
+ * @author Balazs Hajdu
+ */
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override

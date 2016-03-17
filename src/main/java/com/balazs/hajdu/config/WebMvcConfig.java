@@ -21,6 +21,10 @@ import org.thymeleaf.templateresolver.TemplateResolver;
 
 import com.balazs.hajdu.Application;
 
+/**
+ * A class to configure the Spring MVC framework.
+ * @author Balazs Hajdu
+ */
 @Configuration
 class WebMvcConfig extends WebMvcConfigurationSupport {
 

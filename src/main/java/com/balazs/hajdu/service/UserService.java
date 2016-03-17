@@ -19,11 +19,12 @@ import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
 /**
+ * A service for spring security's user authentication.
+ *
  * @author Balazs Hajdu
  */
 @Service
@@ -50,6 +51,11 @@ public class UserService implements UserDetailsService {
         return buildUserDetails(user);
     }
 
+    /**
+     * Add the signed in user to the context.
+     *
+     * @param user user
+     */
     public void signin(com.balazs.hajdu.domain.User user) {
         SecurityContextHolder.getContext().setAuthentication(authenticate(user));
     }
