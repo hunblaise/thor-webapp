@@ -15,6 +15,7 @@ import com.balazs.hajdu.Application;
 @Configuration
 @PropertySource("classpath:persistence.properties")
 @PropertySource("classpath:application.properties")
+@PropertySource("classpath:db.properties")
 @ComponentScan(basePackageClasses = Application.class)
 class ApplicationConfig {
 

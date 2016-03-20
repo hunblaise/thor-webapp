@@ -5,7 +5,7 @@ import java.security.Principal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+// @Controller
 public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)

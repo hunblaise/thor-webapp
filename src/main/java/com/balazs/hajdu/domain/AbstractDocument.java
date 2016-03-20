@@ -6,7 +6,7 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 
 /**
- * Base object for the database entitites.
+ * Base object for the database entities.
  *
  * @author Balazs Hajdu
  */

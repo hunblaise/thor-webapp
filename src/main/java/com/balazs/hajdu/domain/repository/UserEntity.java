@@ -8,6 +8,8 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * A representation of the user in the database.
@@ -20,8 +22,9 @@ public class UserEntity extends AbstractDocument {
     @Indexed(unique = true, direction = IndexDirection.ASCENDING, dropDups = true)
     private String username;
     private String password;
-    private Instant created;
+    private LocalDateTime created;
     private String role;
+    private List<SensorEntity> sensors;
 
     public String getUsername() {
         return username;
@@ -47,12 +50,20 @@ public class UserEntity extends AbstractDocument {
         this.role = role;
     }
 
-    public Instant getCreated() {
+    public LocalDateTime getCreated() {
         return created;
     }
 
-    public void setCreated(Instant created) {
+    public void setCreated(LocalDateTime created) {
         this.created = created;
+    }
+
+    public List<SensorEntity> getSensors() {
+        return sensors;
+    }
+
+    public void setSensors(List<SensorEntity> sensors) {
+        this.sensors = sensors;
     }
 
     // generated code begins here
@@ -64,13 +75,14 @@ public class UserEntity extends AbstractDocument {
         UserEntity that = (UserEntity) o;
         return Objects.equal(username, that.username) &&
                 Objects.equal(password, that.password) &&
+                Objects.equal(created, that.created) &&
                 Objects.equal(role, that.role) &&
-                Objects.equal(created, that.created);
+                Objects.equal(sensors, that.sensors);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(super.hashCode(), username, password, role, created);
+        return Objects.hashCode(super.hashCode(), username, password, created, role, sensors);
     }
 
     @Override
@@ -78,8 +90,9 @@ public class UserEntity extends AbstractDocument {
         return MoreObjects.toStringHelper(this)
                 .add("username", username)
                 .add("password", password)
-                .add("role", role)
                 .add("created", created)
+                .add("role", role)
+                .add("sensors", sensors)
                 .toString();
     }
     // generated code ends here

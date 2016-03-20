@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.inject.Inject;
 import java.time.Instant;
+import java.time.LocalDateTime;
 
 /**
  * Default implementation of {@link com.balazs.hajdu.service.UserManagementService}.
@@ -42,7 +43,7 @@ public class UserManagementServiceImpl implements UserManagementService {
         User user = userFactory.createFrom(registerForm);
         LOGGER.debug("Savig user to the database: {}", user);
 
-        userRepository.save(userTransformer.transformFrom(user, ROLE_USER, Instant.now()));
+        userRepository.save(userTransformer.transformFrom(user, ROLE_USER, LocalDateTime.now()));
 
         return user;
     }

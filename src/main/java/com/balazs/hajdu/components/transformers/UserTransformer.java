@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
 import java.time.Instant;
+import java.time.LocalDateTime;
 
 /**
  * @author Balazs Hajdu
@@ -18,7 +19,7 @@ public class UserTransformer {
     @Inject
     private PasswordEncoder passwordEncoder;
 
-    public UserEntity transformFrom(User user, String role, Instant instant) {
+    public UserEntity transformFrom(User user, String role, LocalDateTime instant) {
         UserEntity userEntity = new UserEntity();
 
         userEntity.setUsername(user.getUsername());
