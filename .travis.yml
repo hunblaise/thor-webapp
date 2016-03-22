@@ -7,5 +7,6 @@ services:
   - mongodb
 before_script:
   - sleep 15
+  - mongo test --eval 'printjson(db.getCollectionNames())'
 notifications:
   email: false
