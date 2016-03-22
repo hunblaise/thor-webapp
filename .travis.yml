@@ -7,6 +7,5 @@ services:
   - mongodb
 before_script:
   - sleep 15
-  - mongo use home-control
 notifications:
   email: false
