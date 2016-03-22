@@ -6,6 +6,7 @@ services:
   - mongodb
 before_script:
   - sleep 15
+  - mongo --eval 'db = db.getSiblingDB('homecontrol')';
   - mongo --eval 'db.homecontrol.insert({username:"test test", password:"test"});'
   - mongo --eval 'printjson(db.homecontrol.find( {} ));'
 notifications:

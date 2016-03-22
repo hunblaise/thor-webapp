@@ -16,7 +16,7 @@ import java.util.List;
  *
  * @author Balazs Hajdu
  */
-@Document(collection = "home-control")
+@Document(collection = "homecontrol")
 public class UserEntity extends AbstractDocument {
 
     @Indexed(unique = true, direction = IndexDirection.ASCENDING, dropDups = true)
