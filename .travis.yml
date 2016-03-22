@@ -7,6 +7,6 @@ services:
 before_script:
   - sleep 15
   - mongo test --eval 'printjson(db.getCollectionNames())'
-  - mongo --eval 'db.home-control.insert({username:"test test", password:"test"});'
+  - mongo --eval 'db.homecontrol.insert({username:"test test", password:"test"});'
 notifications:
   email: false
