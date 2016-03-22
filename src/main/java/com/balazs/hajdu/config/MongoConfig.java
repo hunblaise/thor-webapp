@@ -24,7 +24,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @EnableMongoRepositories(basePackages = "com.balazs.hajdu.repository")
 public class MongoConfig extends AbstractMongoConfiguration {
 
-    private static final String DATABASE_NAME = "home-control";
+    private static final String DATABASE_NAME = "homecontrol";
     private static final String HOST = "localhost";
     private static final int PORT = 27017;
 
