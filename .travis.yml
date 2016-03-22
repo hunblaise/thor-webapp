@@ -1,5 +1,4 @@
 language: java
-sudo: false
 script: mvn clean install
 jdk:
   - oraclejdk8
@@ -8,5 +7,6 @@ services:
 before_script:
   - sleep 15
   - mongo test --eval 'printjson(db.getCollectionNames())'
+  - mongo --eval 'db.home-control.insert({username:"test test", password:"test"});'
 notifications:
   email: false
