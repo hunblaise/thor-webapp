@@ -1,4 +1,14 @@
 language: java
-script: mvn clean install -DskipIntegrationTests
+
+script: mvn clean install
+
 jdk:
   - oraclejdk8
+
+ services:
+  - mongodb
+
+before_script:
+  - sleep 15
+  - mongo use home-control
+  - mongo db.home-control.insert( { "username": "test test", "password": "test" } );
