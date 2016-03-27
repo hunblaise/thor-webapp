@@ -16,6 +16,7 @@ import com.balazs.hajdu.Application;
 @PropertySource("classpath:persistence.properties")
 @PropertySource("classpath:application.properties")
 @PropertySource("classpath:db.properties")
+@PropertySource("classpath:openweathermap.properties")
 @ComponentScan(basePackageClasses = Application.class)
 class ApplicationConfig {
 
