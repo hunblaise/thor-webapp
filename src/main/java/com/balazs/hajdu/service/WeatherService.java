@@ -2,6 +2,8 @@ package com.balazs.hajdu.service;
 
 import com.balazs.hajdu.domain.repository.weather.Weather;
 
+import java.net.UnknownHostException;
+
 /**
  * A weather related interface.
  *
@@ -15,6 +17,6 @@ public interface WeatherService {
      * @param ipAddress ip address.
      * @return The current weather.
      */
-    Weather getCurrentWeather(String ipAddress);
+    Weather getCurrentWeather(String ipAddress) throws UnknownHostException;
 
 }

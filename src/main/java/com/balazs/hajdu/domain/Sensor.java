@@ -16,7 +16,7 @@ public final class Sensor {
 
     private final ObjectId id;
     private final String name;
-    private final Long value;
+    private final double value;
     private final GeoJsonPoint location;
     private final List<MeasurementResult> measurementResults;
 
@@ -36,7 +36,7 @@ public final class Sensor {
         return name;
     }
 
-    public Long getValue() {
+    public double getValue() {
         return value;
     }
 
@@ -81,7 +81,7 @@ public final class Sensor {
 
         private ObjectId id;
         private String sensorName;
-        private Long value;
+        private double value;
         private GeoJsonPoint location;
         private List<MeasurementResult> measurementResults;
 
@@ -95,7 +95,7 @@ public final class Sensor {
             return this;
         }
 
-        public Builder withValue(Long value) {
+        public Builder withValue(double value) {
             this.value = value;
             return this;
         }
