@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  *
  * @author Balazs Hajdu
  */
-public interface UserRepository extends MongoRepository<UserEntity, ObjectId> {
+public interface UserRepository extends MongoRepository<UserEntity, ObjectId>, UserRepositoryCustom {
 
     UserEntity findOneByUsernameAndPassword(String username, String password);
 
