@@ -1,26 +1,17 @@
-package com.balazs.hajdu.domain.repository.weather;
+package com.balazs.hajdu.domain.repository.maps.response;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 
 /**
- * A POJO to store weather information.
- * The object structure based on the openweathermap's JSON contract.
+ * A POJO to store Google Map's geo coding's result.
  *
  * @author Balazs Hajdu
  */
-public class Coordinate {
+public class Location {
 
-    Double lon;
-    Double lat;
-
-    public double getLon() {
-        return lon;
-    }
-
-    public void setLon(double lon) {
-        this.lon = lon;
-    }
+    private double lat;
+    private double lng;
 
     public double getLat() {
         return lat;
@@ -30,26 +21,36 @@ public class Coordinate {
         this.lat = lat;
     }
 
+    public double getLng() {
+        return lng;
+    }
+
+    public void setLng(double lng) {
+        this.lng = lng;
+    }
+
+    // generated code begins here
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Coordinate that = (Coordinate) o;
-        return Objects.equal(lon, that.lon) &&
-                Objects.equal(lat, that.lat);
+        Location location = (Location) o;
+        return Double.compare(location.lat, lat) == 0 &&
+                Double.compare(location.lng, lng) == 0;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(lon, lat);
+        return Objects.hashCode(lat, lng);
     }
 
     @Override
     public String toString() {
         return MoreObjects.toStringHelper(this)
-                .add("lon", lon)
                 .add("lat", lat)
+                .add("lng", lng)
                 .toString();
     }
+    // generated code ends here
 
 }

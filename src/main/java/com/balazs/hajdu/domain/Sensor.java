@@ -16,14 +16,12 @@ public final class Sensor {
 
     private final ObjectId id;
     private final String name;
-    private final double value;
     private final GeoJsonPoint location;
     private final List<MeasurementResult> measurementResults;
 
     private Sensor(Builder builder) {
         this.id = builder.id;
         this.name = builder.sensorName;
-        this.value = builder.value;
         this.location = builder.location;
         this.measurementResults = builder.measurementResults;
     }
@@ -34,10 +32,6 @@ public final class Sensor {
 
     public String getName() {
         return name;
-    }
-
-    public double getValue() {
-        return value;
     }
 
     public GeoJsonPoint getLocation() {
@@ -56,14 +50,13 @@ public final class Sensor {
         Sensor sensor = (Sensor) o;
         return Objects.equal(id, sensor.id) &&
                 Objects.equal(name, sensor.name) &&
-                Objects.equal(value, sensor.value) &&
                 Objects.equal(location, sensor.location) &&
                 Objects.equal(measurementResults, sensor.measurementResults);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(id, name, value, location, measurementResults);
+        return Objects.hashCode(id, name, location, measurementResults);
     }
 
     @Override
@@ -71,7 +64,6 @@ public final class Sensor {
         return MoreObjects.toStringHelper(this)
                 .add("id", id)
                 .add("name", name)
-                .add("value", value)
                 .add("location", location)
                 .add("measurementResults", measurementResults)
                 .toString();
@@ -81,7 +73,6 @@ public final class Sensor {
 
         private ObjectId id;
         private String sensorName;
-        private double value;
         private GeoJsonPoint location;
         private List<MeasurementResult> measurementResults;
 
@@ -95,13 +86,8 @@ public final class Sensor {
             return this;
         }
 
-        public Builder withValue(double value) {
-            this.value = value;
-            return this;
-        }
-
-        public Builder withLocation(GeoJsonPoint location) {
-            this.location = location;
+        public Builder withLocation(double latitude, double longitude) {
+            this.location = new GeoJsonPoint(latitude, longitude);
             return this;
         }
 

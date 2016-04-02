@@ -1,4 +1,4 @@
-package com.balazs.hajdu.domain.repository.weather;
+package com.balazs.hajdu.domain.repository.weather.response;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;

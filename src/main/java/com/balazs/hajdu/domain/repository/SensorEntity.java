@@ -3,7 +3,12 @@ package com.balazs.hajdu.domain.repository;
 import com.balazs.hajdu.domain.AbstractDocument;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
+import org.springframework.data.mongodb.core.index.IndexDirection;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
@@ -12,10 +17,11 @@ import java.util.List;
  *
  * @author Balazs Hajdu
  */
+@Document(collection = "home-control")
 public class SensorEntity extends AbstractDocument {
 
+    @Indexed(direction = IndexDirection.ASCENDING)
     private String name;
-    private Long value;
     private GeoJsonPoint location;
     private List<MeasurementResultEntity> measurementResults;
 
@@ -25,14 +31,6 @@ public class SensorEntity extends AbstractDocument {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Long getValue() {
-        return value;
-    }
-
-    public void setValue(Long value) {
-        this.value = value;
     }
 
     public GeoJsonPoint getLocation() {
@@ -59,21 +57,19 @@ public class SensorEntity extends AbstractDocument {
         if (!super.equals(o)) return false;
         SensorEntity that = (SensorEntity) o;
         return Objects.equal(name, that.name) &&
-                Objects.equal(value, that.value) &&
                 Objects.equal(location, that.location) &&
                 Objects.equal(measurementResults, that.measurementResults);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(name, value, location);
+        return Objects.hashCode(super.hashCode(), name, location, measurementResults);
     }
 
     @Override
     public String toString() {
         return MoreObjects.toStringHelper(this)
                 .add("name", name)
-                .add("value", value)
                 .add("location", location)
                 .add("measurementResults", measurementResults)
                 .toString();

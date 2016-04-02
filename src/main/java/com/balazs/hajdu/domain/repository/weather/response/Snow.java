@@ -1,5 +1,6 @@
-package com.balazs.hajdu.domain.repository.weather;
+package com.balazs.hajdu.domain.repository.weather.response;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 
@@ -9,35 +10,36 @@ import com.google.common.base.Objects;
  *
  * @author Balazs Hajdu
  */
-public class Rain {
+public class Snow {
 
-    Integer rainVolume;
+    @JsonProperty(value = "3h")
+    Integer snowVolume;
 
-    public Integer getRainVolume() {
-        return rainVolume;
+    public Integer getSnowVolume() {
+        return snowVolume;
     }
 
-    public void setRainVolume(Integer rainVolume) {
-        this.rainVolume = rainVolume;
+    public void setSnowVolume(Integer snowVolume) {
+        this.snowVolume = snowVolume;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Rain rain = (Rain) o;
-        return Objects.equal(rainVolume, rain.rainVolume);
+        Snow snow = (Snow) o;
+        return Objects.equal(snowVolume, snow.snowVolume);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(rainVolume);
+        return Objects.hashCode(snowVolume);
     }
 
     @Override
     public String toString() {
         return MoreObjects.toStringHelper(this)
-                .add("rainVolume", rainVolume)
+                .add("snowVolume", snowVolume)
                 .toString();
     }
 

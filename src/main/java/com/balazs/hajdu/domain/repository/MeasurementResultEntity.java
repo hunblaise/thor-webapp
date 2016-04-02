@@ -3,6 +3,9 @@ package com.balazs.hajdu.domain.repository;
 import com.balazs.hajdu.domain.AbstractDocument;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
+import org.springframework.data.mongodb.core.index.IndexDirection;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 
@@ -11,10 +14,12 @@ import java.time.LocalDateTime;
  *
  * @author Balazs Hajdu
  */
+@Document(collection = "home-control")
 public class MeasurementResultEntity extends AbstractDocument {
 
+    @Indexed(direction = IndexDirection.ASCENDING)
     private LocalDateTime date;
-    private Long value;
+    private double value;
 
     public LocalDateTime getDate() {
         return date;
@@ -24,11 +29,11 @@ public class MeasurementResultEntity extends AbstractDocument {
         this.date = date;
     }
 
-    public Long getValue() {
+    public double getValue() {
         return value;
     }
 
-    public void setValue(Long value) {
+    public void setValue(double value) {
         this.value = value;
     }
 

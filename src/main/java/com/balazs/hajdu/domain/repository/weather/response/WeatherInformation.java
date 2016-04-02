@@ -1,5 +1,6 @@
-package com.balazs.hajdu.domain.repository.weather;
+package com.balazs.hajdu.domain.repository.weather.response;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 
@@ -14,8 +15,10 @@ public class WeatherInformation {
     Double temp;
     Long pressure;
     Long humidity;
-    Double temp_min;
-    Double temp_max;
+    @JsonProperty(value = "temp_min")
+    Double tempMin;
+    @JsonProperty(value = "tempMax")
+    Double tempMax;
 
     public Double getTemp() {
         return temp;
@@ -41,20 +44,20 @@ public class WeatherInformation {
         this.humidity = humidity;
     }
 
-    public Double getTemp_min() {
-        return temp_min;
+    public Double getTempMin() {
+        return tempMin;
     }
 
-    public void setTemp_min(Double temp_min) {
-        this.temp_min = temp_min;
+    public void setTempMin(Double tempMin) {
+        this.tempMin = tempMin;
     }
 
-    public Double getTemp_max() {
-        return temp_max;
+    public Double getTempMax() {
+        return tempMax;
     }
 
-    public void setTemp_max(Double temp_max) {
-        this.temp_max = temp_max;
+    public void setTempMax(Double tempMax) {
+        this.tempMax = tempMax;
     }
 
     @Override
@@ -65,13 +68,13 @@ public class WeatherInformation {
         return Objects.equal(temp, that.temp) &&
                 Objects.equal(pressure, that.pressure) &&
                 Objects.equal(humidity, that.humidity) &&
-                Objects.equal(temp_min, that.temp_min) &&
-                Objects.equal(temp_max, that.temp_max);
+                Objects.equal(tempMin, that.tempMin) &&
+                Objects.equal(tempMax, that.tempMax);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(temp, pressure, humidity, temp_min, temp_max);
+        return Objects.hashCode(temp, pressure, humidity, tempMin, tempMax);
     }
 
     @Override
@@ -80,8 +83,8 @@ public class WeatherInformation {
                 .add("temp", temp)
                 .add("pressure", pressure)
                 .add("humidity", humidity)
-                .add("temp_min", temp_min)
-                .add("temp_max", temp_max)
+                .add("tempMin", tempMin)
+                .add("tempMax", tempMax)
                 .toString();
     }
 

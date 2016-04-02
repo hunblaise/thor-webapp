@@ -24,10 +24,6 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @EnableMongoRepositories(basePackages = "com.balazs.hajdu.repository")
 public class MongoConfig extends AbstractMongoConfiguration {
 
-    private static final String DATABASE_NAME = "homecontrol";
-    private static final String HOST = "localhost";
-    private static final int PORT = 27017;
-
     @Value("${mongodb.host}")
     private String host;
 
@@ -39,20 +35,20 @@ public class MongoConfig extends AbstractMongoConfiguration {
 
     @Override
     protected String getDatabaseName() {
-        return DATABASE_NAME;
+        return databaseName;
     }
 
     @Bean
     @Override
     public MongoClient mongo() throws Exception {
-        MongoClient mongoClient = new MongoClient(HOST, PORT);
+        MongoClient mongoClient = new MongoClient(host, port);
         mongoClient.setWriteConcern(WriteConcern.SAFE);
         return mongoClient;
     }
 
     @Bean
     public MongoDbFactory mongoDbFactory() throws Exception {
-        return new SimpleMongoDbFactory(mongo(), DATABASE_NAME);
+        return new SimpleMongoDbFactory(mongo(), getDatabaseName());
     }
 
     @Bean

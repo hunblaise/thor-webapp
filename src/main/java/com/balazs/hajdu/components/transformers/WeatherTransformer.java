@@ -1,6 +1,6 @@
 package com.balazs.hajdu.components.transformers;
 
-import com.balazs.hajdu.domain.repository.weather.CurrentWeather;
+import com.balazs.hajdu.domain.repository.weather.response.CurrentWeather;
 import com.balazs.hajdu.domain.repository.weather.Weather;
 import org.springframework.stereotype.Component;
 

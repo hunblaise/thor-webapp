@@ -1,6 +1,6 @@
 package com.balazs.hajdu.repository;
 
-import com.balazs.hajdu.domain.repository.weather.CurrentWeather;
+import com.balazs.hajdu.domain.repository.weather.response.CurrentWeather;
 
 /**
  * An interface to access weather information.

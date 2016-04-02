@@ -1,6 +1,6 @@
 package com.balazs.hajdu.repository.impl;
 
-import com.balazs.hajdu.domain.repository.weather.CurrentWeather;
+import com.balazs.hajdu.domain.repository.weather.response.CurrentWeather;
 import com.balazs.hajdu.repository.WeatherRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;

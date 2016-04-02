@@ -1,10 +1,7 @@
 package com.balazs.hajdu.controller;
 
-import com.balazs.hajdu.adapter.WeatherAdapter;
+import com.balazs.hajdu.adapter.GeoAdapter;
 import com.balazs.hajdu.constants.ViewNames;
-import com.balazs.hajdu.domain.repository.weather.CurrentWeather;
-import com.balazs.hajdu.domain.repository.weather.Weather;
-import com.balazs.hajdu.repository.WeatherRepository;
 import com.balazs.hajdu.service.WeatherService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,6 +28,9 @@ public class HomeController {
     @Inject
     private WeatherService weatherService;
 
+    @Inject
+    GeoAdapter geoAdapter;
+
     /**
      * Controller method for the home page.
      *
@@ -42,6 +42,7 @@ public class HomeController {
 
         try {
             modelAndView.addObject("weather", weatherService.getCurrentWeather(request.getRemoteAddr()));
+            modelAndView.addObject("location", geoAdapter.geocodeAddress("Hodmezovasarhely"));
         } catch (UnknownHostException e) {
             LOGGER.warn("Can not retrieve user location for IP address {}", request.getRemoteUser());
         }

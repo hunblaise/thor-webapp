@@ -1,6 +1,7 @@
 package com.balazs.hajdu.repository;
 
 import com.balazs.hajdu.domain.MeasurementResult;
+import com.balazs.hajdu.domain.Sensor;
 
 /**
  * Update sensor related data in the database.
@@ -9,6 +10,8 @@ import com.balazs.hajdu.domain.MeasurementResult;
  */
 public interface UserRepositoryCustom {
 
-    void addNewMeasurement(String username, String sensorName, MeasurementResult measurementResult);
+    void saveSensorToUser(String username, Sensor sensor);
+
+    void saveMeasurementResultToSensor(String userName, String sensorName, MeasurementResult measurementResult);
 
 }

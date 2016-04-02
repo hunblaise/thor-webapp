@@ -91,8 +91,8 @@ public final class MeasurementResult {
             return this;
         }
 
-        public Builder withLocation(double longitude, double latitude) {
-            this.location = new GeoJsonPoint(longitude, latitude);
+        public Builder withLocation(double latitude, double longitude) {
+            this.location = new GeoJsonPoint(latitude, longitude);
             return this;
         }
 
