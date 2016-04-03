@@ -10,7 +10,8 @@ public enum  ViewNames {
     HOME_SIGNED_IN("home/homeSignedIn"),
     HOME_NOT_SIGNED_IN("home/homeNotSignedIn"),
     REGISTER("signup/signup"),
-    SIGN_IN("signin/signin");
+    SIGN_IN("signin/signin"),
+    SENSORS("sensors/sensors");
 
     private final String value;
 

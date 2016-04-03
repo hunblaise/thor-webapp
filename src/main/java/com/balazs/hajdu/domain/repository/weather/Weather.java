@@ -12,6 +12,7 @@ public final class Weather {
 
     private final String description;
     private final String icon;
+    private final String iconName;
     private final double temperature;
     private final long pressure;
     private final long humidity;
@@ -19,6 +20,7 @@ public final class Weather {
     private Weather(Builder builder) {
         this.description = builder.description;
         this.icon = builder.icon;
+        this.iconName = builder.iconName;
         this.temperature = builder.temperature;
         this.pressure = builder.pressure;
         this.humidity = builder.humidity;
@@ -30,6 +32,10 @@ public final class Weather {
 
     public String getIcon() {
         return icon;
+    }
+
+    public String getIconName() {
+        return iconName;
     }
 
     public double getTemperature() {
@@ -50,16 +56,17 @@ public final class Weather {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Weather weather = (Weather) o;
-        return temperature == weather.temperature &&
+        return Double.compare(weather.temperature, temperature) == 0 &&
                 pressure == weather.pressure &&
                 humidity == weather.humidity &&
                 Objects.equal(description, weather.description) &&
-                Objects.equal(icon, weather.icon);
+                Objects.equal(icon, weather.icon) &&
+                Objects.equal(iconName, weather.iconName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(description, icon, temperature, pressure, humidity);
+        return Objects.hashCode(description, icon, iconName, temperature, pressure, humidity);
     }
 
     @Override
@@ -67,6 +74,7 @@ public final class Weather {
         return MoreObjects.toStringHelper(this)
                 .add("description", description)
                 .add("icon", icon)
+                .add("iconName", iconName)
                 .add("temperature", temperature)
                 .add("pressure", pressure)
                 .add("humidity", humidity)
@@ -77,6 +85,7 @@ public final class Weather {
 
         private String description;
         private String icon;
+        private String iconName;
         private double temperature;
         private long pressure;
         private long humidity;
@@ -88,6 +97,11 @@ public final class Weather {
 
         public Builder withIcon(String icon) {
             this.icon = icon;
+            return this;
+        }
+
+        public Builder withIconName(String iconName) {
+            this.iconName = iconName;
             return this;
         }
 

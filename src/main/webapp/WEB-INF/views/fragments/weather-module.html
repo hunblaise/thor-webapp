@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../../../resources/css/weather-module.css" rel="stylesheet" media="screen" th:href="@{/resources/css/weather-module.css}" />
+    <link href="../../../resources/css/map-module.css" rel="stylesheet" media="screen" th:href="@{/resources/css/map-module.css}" />
+    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
+    <link href="../../../resources/css/weather-icons.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/weather-icons.min.css}"/>
+    <link href="../../../resources/css/weather-icons-wind.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/weather-icons-wind.min.css}"/>
+    <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZseZXpWTYc2Z2aI4mJEtoLz8WUYQCITM"></script>
+    <script src="../../../resources/js/map/map.js" th:src="@{/resources/js/map/map.js}"></script>
+</head>
+<body>
+<div th:fragment="weather-module">
+    <div class="container-fluid weather-details-module">
+        <div class="col-md-12 col-xs-6 temperature">
+            <h4>The weather in your location</h4>
+            <h5 th:text="${location[0].formattedLocation}">location - formatted location</h5>
+            <div class="col-sm-3 col-xs-12 text-capitalize" >
+                <span class="weather-details"><strong>Description: </strong></span>
+                <div class="weather-details-value" th:text="${weather.description}">weather information - description</div>
+            </div>
+            <div class="col-sm-3 col-xs-12 weather-details">
+                <div  class="weather-details-value">
+                    <i th:attr="class=${weather.iconName}"></i>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <span class="weather-details"><strong>Temperature (Celsius): </strong></span>
+                <div class="weather-details-value" th:text="${weather.temperature}">weather information - temperature</div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <span class="weather-details"><strong>Humidity (%): </strong></span>
+                <div  class="weather-details-value" th:text="${weather.humidity}">weather information - humidity</div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid map-container">
+        <div id="map" class="row center-block"
+             th:attr="data-lat=${location[0].location.lat}" th:attrappend="data-lon=${location[0].location.lon}"></div>
+    </div>
+</div>
+</body>
+</html>

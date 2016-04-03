@@ -1,5 +1,6 @@
 package com.balazs.hajdu.service;
 
+import com.balazs.hajdu.components.transformers.SensorTransformer;
 import com.balazs.hajdu.domain.MeasurementResult;
 import com.balazs.hajdu.domain.Sensor;
 import com.balazs.hajdu.domain.view.MeasurementResultRequestForm;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 import javax.inject.Inject;
 import java.time.LocalDateTime;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * A service to handle the measurement results.
@@ -26,6 +28,26 @@ public class SensorService {
     @Inject
     private UserRepository userRepository;
 
+    @Inject
+    private SensorTransformer sensorTransformer;
+
+    /**
+     * Retrieve all of the available sensor for the given user.
+     *
+     * @param username username
+     * @return available sensors
+     */
+    public List<Sensor> getAllSensorByUsername(String username) {
+        return sensorTransformer.transform(userRepository.findOneByUsername(username).getSensors());
+    }
+
+    /**
+     * Adds a new sensor for the user.
+     *
+     * @param username username
+     * @param sensorRequestForm request form
+     * @return saved sensor
+     */
     public Sensor saveSensor(String username, SensorRequestForm sensorRequestForm) {
 
         Sensor sensor = new Sensor.Builder().withSensorName(sensorRequestForm.getSensorName())
@@ -39,7 +61,7 @@ public class SensorService {
     }
 
     /**
-     * Save a measurment result.
+     * Saves a measurement result.
      *
      * @param userName username
      * @param sensorName sensor's name

@@ -2,6 +2,7 @@ package com.balazs.hajdu.service.impl;
 
 import com.balazs.hajdu.adapter.GeoAdapter;
 import com.balazs.hajdu.domain.repository.geo.UserLocation;
+import com.balazs.hajdu.domain.repository.maps.GeocodedLocation;
 import com.balazs.hajdu.service.UserLocationService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import javax.inject.Inject;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.List;
 
 /**
  * Default implementation for {@link com.balazs.hajdu.service.UserLocationService}.
@@ -38,6 +40,11 @@ public class UserLocationServiceImpl implements UserLocationService {
         }
 
         return userLocation;
+    }
+
+    @Override
+    public List<GeocodedLocation> geocodeLocation(String address) {
+        return geoAdapter.geocodeAddress(address);
     }
 
 }

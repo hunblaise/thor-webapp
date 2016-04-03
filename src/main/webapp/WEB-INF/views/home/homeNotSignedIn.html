@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Home Controller</title>
+    <title>Intelligent Home</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link href="../../../resources/css/header.css" rel="stylesheet" media="screen" th:href="@{/resources/css/header.css}" />
+    <link href="../../../resources/css/weather-module.css" rel="stylesheet" media="screen" th:href="@{/resources/css/weather-module.css}" />
+    <link href="../../../resources/css/map-module.css" rel="stylesheet" media="screen" th:href="@{/resources/css/map-module.css}" />
     <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
+    <link href="../../../resources/css/weather-icons.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/weather-icons.min.css}"/>
+    <link href="../../../resources/css/weather-icons-wind.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/weather-icons-wind.min.css}"/>
     <link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" />
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZseZXpWTYc2Z2aI4mJEtoLz8WUYQCITM"></script>
+    <script src="../../../resources/js/map/map.js" th:src="@{/resources/js/map/map.js}"></script>
 </head>
 <body>
 <div th:replace="fragments/header :: header">Header</div>
-<div class="container">
-    <div class="text-center">
-        <h1>Test</h1>
-        <div class="temperature">
-            <div th:text="${weather}">weather information</div>
+<div class="container thor-wrapper">
+    <div class="center-block text-center col-xs-12">
+        <div class="col-xs-12">
+            <h1>Raspberry Pi Based Intelligent Home</h1>
         </div>
-        <div class="location">
-            <div th:text="${location}">location information</div>
+        <p class="col-xs-12">
+            Welcome to the Raspberry Pi Based Intelligent Home Controller!
+        </p>
+        <p class="col-xs-12">
+            To use full functionality you have to sign in.
+        </p>
+        <div class="container">
+            <p class="col-xs-6 center-block">
+                <a href="/signup" th:href="@{/register}" class="btn btn-success">Register</a>
+            </p>
+            <p class="col-xs-6 center-block">
+                <a href="/signin" th:href="@{/signin}" class="btn btn-success">Sign in</a>
+            </p>
         </div>
-        <p class="lead">
-            Welcome to the Spring MVC Quickstart application!
-            Get started quickly by signing up.
-        </p>
-        <p>
-            <a href="/signup" th:href="@{/register}" class="btn btn-success btn-lg">Create New Account</a>
-        </p>
+        <div th:text="${view}">view</div>
+        <div th:replace="fragments/weather-module :: weather-module">weather</div>
     </div>
-    <div th:replace="fragments/footer :: footer">&copy; 2013 The Static Templates</div>
+    <div class="col-xs-12" th:replace="fragments/footer :: footer">&copy; 2013 The Static Templates</div>
 </div>
 </body>
 </html>

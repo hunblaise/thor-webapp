@@ -28,7 +28,7 @@
         <p class="col-xs-12">
             Welcome to the Raspberry Pi Based Intelligent Home Controller!
         </p>
-        <div th:replace="fragments/weather-module :: weather-module">weather</div>
+        <div th:text="${sensors}">sensors</div>
     </div>
     <div class="col-xs-12" th:replace="fragments/footer :: footer">&copy; 2013 The Static Templates</div>
 </div>
