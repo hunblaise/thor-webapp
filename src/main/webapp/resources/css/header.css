@@ -1,6 +1,6 @@
 .navbar.navbar-inverse.navbar-fixed-top {
-    background-color: #1a1c22;
-    border-color: #1a1c22;
+    background-color: #313541;
+    border: none !important;
 }
 
 .navbar-inverse .navbar-brand.header-brand {
@@ -12,7 +12,8 @@
 }
 
 .navbar-inverse .navbar-nav > .active > a {
-    background-color: #1a1c22 !important;
+    background-color: #313541 !important;
+    border-bottom: 2px solid #0094e5;
     color: #ffffff !important;
     font-weight: 600;
 }
