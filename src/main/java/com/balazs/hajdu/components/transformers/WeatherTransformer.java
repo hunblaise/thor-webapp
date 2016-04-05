@@ -12,8 +12,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class WeatherTransformer {
 
-    private static final String ICON_NAME_PREFIX = "wi wi-owm-";
-
     /**
      * Transform to Thor related domain object.
      * @param currentWeather OpenWeatherMap related object
@@ -25,7 +23,7 @@ public class WeatherTransformer {
         if (!currentWeather.getWeather().isEmpty()) {
             builder.withDescription(currentWeather.getWeather().get(0).getDescription());
             builder.withIcon(currentWeather.getWeather().get(0).getIcon());
-            builder.withIconName(buildIconName(currentWeather.getWeather().get(0).getId()));
+            builder.withId(currentWeather.getWeather().get(0).getId());
         }
 
         builder.withTemperature(currentWeather.getMain().getTemp());
@@ -33,10 +31,6 @@ public class WeatherTransformer {
         builder.withHumidity(currentWeather.getMain().getHumidity());
 
         return builder.build();
-    }
-
-    private String buildIconName(Long id) {
-        return ICON_NAME_PREFIX + id;
     }
 
 }

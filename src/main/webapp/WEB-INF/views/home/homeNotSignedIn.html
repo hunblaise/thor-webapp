@@ -16,27 +16,26 @@
     <script src="../../../resources/js/map/map.js" th:src="@{/resources/js/map/map.js}"></script>
 </head>
 <body>
-<div th:replace="fragments/header :: header">Header</div>
+<div th:replace="fragments/header :: header (page='home')">Header</div>
+<div class="jumbotron center-block text-center">
+    <h2>Raspberry Pi Based Intelligent Home</h2>
+    <p class="col-xs-12">
+        Welcome to the Raspberry Pi Based Intelligent Home Controller!
+    </p>
+    <p class="col-xs-12">
+        To use full functionality you have to sign in.
+    </p>
+    <div class="container">
+        <p class="col-xs-6 center-block">
+            <a href="/register" th:href="@{/register}" class="btn btn-success btn-lg">Register</a>
+        </p>
+        <p class="col-xs-6 center-block">
+            <a href="/signin" th:href="@{/signin}" class="btn btn-success btn-lg">Sign in</a>
+        </p>
+    </div>
+</div>
 <div class="container thor-wrapper">
     <div class="center-block text-center col-xs-12">
-        <div class="col-xs-12">
-            <h1>Raspberry Pi Based Intelligent Home</h1>
-        </div>
-        <p class="col-xs-12">
-            Welcome to the Raspberry Pi Based Intelligent Home Controller!
-        </p>
-        <p class="col-xs-12">
-            To use full functionality you have to sign in.
-        </p>
-        <div class="container">
-            <p class="col-xs-6 center-block">
-                <a href="/signup" th:href="@{/register}" class="btn btn-success">Register</a>
-            </p>
-            <p class="col-xs-6 center-block">
-                <a href="/signin" th:href="@{/signin}" class="btn btn-success">Sign in</a>
-            </p>
-        </div>
-        <div th:text="${view}">view</div>
         <div th:replace="fragments/weather-module :: weather-module">weather</div>
     </div>
     <div class="col-xs-12" th:replace="fragments/footer :: footer">&copy; 2013 The Static Templates</div>

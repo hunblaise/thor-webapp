@@ -16,7 +16,10 @@
     <script src="../../../resources/js/map/map.js" th:src="@{/resources/js/map/map.js}"></script>
 </head>
 <body>
-<div th:replace="fragments/header :: header">&nbsp;</div>
+<div th:replace="fragments/header :: header (page='home')">&nbsp;</div>
+<div class="jumbotron center-block text-center">
+    <h2>Raspberry Pi Based Intelligent Home</h2>
+</div>
 <div class="container thor-wrapper">
     <div class="center-block text-center col-xs-12">
         <!-- /* Handle the flash message */-->
@@ -24,10 +27,6 @@
             <!-- /* The message code is returned from the @Controller */ -->
             <div th:replace="fragments/alert :: alert (type=${#strings.toLowerCase(message.type)}, message=#{${message.message}(${#authentication.name})})">&nbsp;</div>
         </th:block>
-        <h1>Raspberry Pi Based Intelligent Home</h1>
-        <p class="col-xs-12">
-            Welcome to the Raspberry Pi Based Intelligent Home Controller!
-        </p>
         <div th:replace="fragments/weather-module :: weather-module">weather</div>
     </div>
     <div class="col-xs-12" th:replace="fragments/footer :: footer">&copy; 2013 The Static Templates</div>

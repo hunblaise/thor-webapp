@@ -14,25 +14,31 @@
 <body>
 <div th:fragment="weather-module">
     <div class="container-fluid weather-details-module">
-        <div class="col-md-12 col-xs-6 temperature">
-            <h4>The weather in your location</h4>
-            <h5 th:text="${location[0].formattedLocation}">location - formatted location</h5>
-            <div class="col-sm-3 col-xs-12 text-capitalize" >
-                <span class="weather-details"><strong>Description: </strong></span>
-                <div class="weather-details-value" th:text="${weather.description}">weather information - description</div>
+        <div class="panel panel-default temperature">
+            <div class="panel-heading">
+                <h4>Actual weather - <small th:text="${location[0].formattedLocation}">location - formatted location</small></h4>
             </div>
-            <div class="col-sm-3 col-xs-12 weather-details">
-                <div  class="weather-details-value">
-                    <i th:attr="class=${weather.iconName}"></i>
+            <div class="panel-body container-fluid">
+                <div class="col-sm-3 col-xs-12 text-capitalize" >
+                    <span class="weather-details"><strong>Description: </strong></span>
+                    <div class="weather-details-value" th:text="${weather.description}">weather information - description</div>
                 </div>
-            </div>
-            <div class="col-sm-3 col-xs-12">
-                <span class="weather-details"><strong>Temperature (Celsius): </strong></span>
-                <div class="weather-details-value" th:text="${weather.temperature}">weather information - temperature</div>
-            </div>
-            <div class="col-sm-3 col-xs-12">
-                <span class="weather-details"><strong>Humidity (%): </strong></span>
-                <div  class="weather-details-value" th:text="${weather.humidity}">weather information - humidity</div>
+
+                <div class="col-sm-3 col-xs-12 weather-details">
+                    <div  class="weather-details-value">
+                        <i th:attr="class='wi wi-owm-' + ${weather.id}"></i>
+                    </div>
+                </div>
+
+                <div class="col-sm-3 col-xs-12">
+                    <span class="weather-details"><strong>Temperature: </strong></span>
+                    <div class="weather-details-value" th:text="${weather.temperature} + '&#8451;'">weather information - temperature</div>
+                </div>
+
+                <div class="col-sm-3 col-xs-12">
+                    <span class="weather-details"><strong>Humidity: </strong></span>
+                    <div  class="weather-details-value" th:text="${weather.humidity} + '%'">weather information - humidity</div>
+                </div>
             </div>
         </div>
     </div>

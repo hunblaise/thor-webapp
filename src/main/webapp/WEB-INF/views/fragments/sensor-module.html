@@ -13,14 +13,25 @@
 </head>
 <body>
 <div th:fragment="sensor-module">
-    <div class="col-xs-12">
-        <div class="container-fluid">
-            <div class="sensor-module" th:attr="data-lat=${sensor.location.x}, data-lon=${sensor.location.y}"
-                 th:each="sensor : ${sensors}">
-                <div class="col-xs-12">
-                    <h4 th:text="${sensor.name}">sensorName</h4>
-                </div>
-            </div>
+    <div class="container-fluid">
+        <div class="panel panel-default text-left">
+            <div class="panel-heading">Sensors</div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Sensor name</th>
+                        <th>Measurement results</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="sensor-module" th:attr="data-lat=${sensor.location.x}, data-lon=${sensor.location.y}, data-number=${status.index}" th:each="sensor,status : ${sensors}">
+                        <th scope="row" th:text="${status.index} + 1">#</th>
+                        <td th:text="${sensor.name}">sensor name</td>
+                        <td th:text="${sensor.measurementResults.size()}">measurement results</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     <div class="col-xs-12">

@@ -13,8 +13,10 @@ $(document).ready(function() {
 
         var marker = new google.maps.Marker({
             position: new google.maps.LatLng(sensor.data('lat'), sensors.data('lon')),
-            map: map
+            map: map,
+            label: 1 + sensor.data('number').toString()
         });
+
     });
 
 });

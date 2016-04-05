@@ -12,7 +12,7 @@ public final class Weather {
 
     private final String description;
     private final String icon;
-    private final String iconName;
+    private final Long id;
     private final double temperature;
     private final long pressure;
     private final long humidity;
@@ -20,7 +20,7 @@ public final class Weather {
     private Weather(Builder builder) {
         this.description = builder.description;
         this.icon = builder.icon;
-        this.iconName = builder.iconName;
+        this.id = builder.id;
         this.temperature = builder.temperature;
         this.pressure = builder.pressure;
         this.humidity = builder.humidity;
@@ -34,8 +34,8 @@ public final class Weather {
         return icon;
     }
 
-    public String getIconName() {
-        return iconName;
+    public Long getId() {
+        return id;
     }
 
     public double getTemperature() {
@@ -61,12 +61,12 @@ public final class Weather {
                 humidity == weather.humidity &&
                 Objects.equal(description, weather.description) &&
                 Objects.equal(icon, weather.icon) &&
-                Objects.equal(iconName, weather.iconName);
+                Objects.equal(id, weather.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(description, icon, iconName, temperature, pressure, humidity);
+        return Objects.hashCode(description, icon, id, temperature, pressure, humidity);
     }
 
     @Override
@@ -74,7 +74,7 @@ public final class Weather {
         return MoreObjects.toStringHelper(this)
                 .add("description", description)
                 .add("icon", icon)
-                .add("iconName", iconName)
+                .add("id", id)
                 .add("temperature", temperature)
                 .add("pressure", pressure)
                 .add("humidity", humidity)
@@ -85,7 +85,7 @@ public final class Weather {
 
         private String description;
         private String icon;
-        private String iconName;
+        private Long id;
         private double temperature;
         private long pressure;
         private long humidity;
@@ -100,8 +100,8 @@ public final class Weather {
             return this;
         }
 
-        public Builder withIconName(String iconName) {
-            this.iconName = iconName;
+        public Builder withId(Long id) {
+            this.id = id;
             return this;
         }
 
