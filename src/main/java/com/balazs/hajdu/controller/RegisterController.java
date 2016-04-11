@@ -56,6 +56,7 @@ public class RegisterController {
      */
     @RequestMapping(value = "register", method = RequestMethod.POST)
     public String registerNewUser(@Valid @ModelAttribute RegisterForm registerForm, Errors errors, RedirectAttributes ra) {
+
         if (errors.hasErrors()) {
             return ViewNames.REGISTER.getValue();
         }

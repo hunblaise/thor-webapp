@@ -11,7 +11,8 @@ public enum  ViewNames {
     HOME_NOT_SIGNED_IN("home/homeNotSignedIn"),
     REGISTER("signup/signup"),
     SIGN_IN("signin/signin"),
-    SENSORS("sensors/sensors");
+    SENSORS("sensors/sensors"),
+    MEASUREMENTS("measurements/measurements");
 
     private final String value;
 

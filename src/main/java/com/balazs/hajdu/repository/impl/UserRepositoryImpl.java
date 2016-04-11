@@ -1,7 +1,7 @@
 package com.balazs.hajdu.repository.impl;
 
 import com.balazs.hajdu.components.transformers.MeasurementResultTransformer;
-import com.balazs.hajdu.components.transformers.SensorTransformer;
+import com.balazs.hajdu.components.transformers.SensorFactory;
 import com.balazs.hajdu.domain.MeasurementResult;
 import com.balazs.hajdu.domain.Sensor;
 import com.balazs.hajdu.domain.repository.MeasurementResultEntity;
@@ -14,6 +14,8 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 
 import javax.inject.Inject;
+
+import java.util.Optional;
 
 import static org.springframework.data.mongodb.core.query.Criteria.where;
 
@@ -38,26 +40,31 @@ public class UserRepositoryImpl implements UserRepositoryCustom {
     private MeasurementResultTransformer measurementResultTransformer;
 
     @Inject
-    private SensorTransformer sensorTransformer;
+    private SensorFactory sensorFactory;
 
     @Override
-    public void saveSensorToUser(String username, Sensor sensor) {
-        SensorEntity sensorEntity = sensorTransformer.transform(sensor);
+    public void saveSensorToUser(String username, Optional<Sensor> sensor) {
 
-        mongoTemplate.updateFirst(new Query(where(USERNAME_FIELD).is(username)),
-                new Update().push(SENSORS_FIELD, sensorEntity),
-                SensorEntity.class);
+        if (sensor.isPresent()) {
+            SensorEntity sensorEntity = sensorFactory.transform(sensor.get());
 
-        LOGGER.debug("Added a new sensor to user {}: {}", username, sensor);
+            mongoTemplate.updateFirst(new Query(where(USERNAME_FIELD).is(username)),
+                    new Update().push(SENSORS_FIELD, sensorEntity),
+                    SensorEntity.class);
+
+            LOGGER.debug("Added a new sensor to user {}: {}", username, sensor);
+        } else {
+            LOGGER.error("Could not save empty sensor.");
+            throw new IllegalArgumentException("Could not save empty sensor.");
+        }
+
     }
 
     @Override
-    public void saveMeasurementResultToSensor(String userName, String sensorName, MeasurementResult measurementResult) {
+    public void saveMeasurementResultToSensor(String username, String sensorName, MeasurementResult measurementResult) {
         MeasurementResultEntity measurementResultEntity = measurementResultTransformer.transform(measurementResult);
 
-        mongoTemplate.updateFirst(new Query(where(USERNAME_FIELD).is(userName).and(SENSORNAME_FIELD).is(sensorName)),
-                new Update().addToSet(MEASUREMENT_RESULTS_FIELD, measurementResultEntity),
-                MeasurementResultEntity.class);
+        mongoTemplate.insert(measurementResultEntity);
 
         LOGGER.debug("Saved to the database a new measurement result: {}", measurementResultEntity);
     }

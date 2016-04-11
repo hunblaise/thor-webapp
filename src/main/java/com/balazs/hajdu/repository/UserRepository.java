@@ -1,5 +1,6 @@
 package com.balazs.hajdu.repository;
 
+import com.balazs.hajdu.domain.repository.MeasurementResultEntity;
 import com.balazs.hajdu.domain.repository.SensorEntity;
 import com.balazs.hajdu.domain.repository.UserEntity;
 import org.bson.types.ObjectId;

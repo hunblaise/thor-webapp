@@ -11,8 +11,7 @@ import com.google.common.base.Objects;
 public class SensorRequestForm {
 
     private String sensorName;
-    private double lat;
-    private double lon;
+    private String address;
 
     public String getSensorName() {
         return sensorName;
@@ -22,20 +21,12 @@ public class SensorRequestForm {
         this.sensorName = sensorName;
     }
 
-    public double getLat() {
-        return lat;
+    public String getAddress() {
+        return address;
     }
 
-    public void setLat(double lat) {
-        this.lat = lat;
-    }
-
-    public double getLon() {
-        return lon;
-    }
-
-    public void setLon(double lon) {
-        this.lon = lon;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     // generated code begins here
@@ -44,22 +35,20 @@ public class SensorRequestForm {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SensorRequestForm that = (SensorRequestForm) o;
-        return Double.compare(that.lat, lat) == 0 &&
-                Double.compare(that.lon, lon) == 0 &&
-                Objects.equal(sensorName, that.sensorName);
+        return Objects.equal(sensorName, that.sensorName) &&
+                Objects.equal(address, that.address);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(sensorName, lat, lon);
+        return Objects.hashCode(sensorName, address);
     }
 
     @Override
     public String toString() {
         return MoreObjects.toStringHelper(this)
                 .add("sensorName", sensorName)
-                .add("lat", lat)
-                .add("lon", lon)
+                .add("address", address)
                 .toString();
     }
     // generated code ends here

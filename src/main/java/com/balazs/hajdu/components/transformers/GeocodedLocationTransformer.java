@@ -1,5 +1,6 @@
 package com.balazs.hajdu.components.transformers;
 
+import com.balazs.hajdu.domain.repository.LocationEntity;
 import com.balazs.hajdu.domain.repository.maps.GeocodedLocation;
 import com.balazs.hajdu.domain.repository.maps.Location;
 import com.balazs.hajdu.domain.repository.maps.response.GeocodeResult;
@@ -37,5 +38,15 @@ public class GeocodedLocationTransformer {
                 .withLattitude(geocodeResult.getGeometry().getLocation().getLat())
                 .withLongitude(geocodeResult.getGeometry().getLocation().getLng())
                 .build();
+    }
+
+    public LocationEntity transform(GeocodedLocation geocodedLocation) {
+        LocationEntity locationEntity = new LocationEntity();
+
+        locationEntity.setAddress(geocodedLocation.getFormattedLocation());
+        locationEntity.setLat(geocodedLocation.getLocation().getLat());
+        locationEntity.setLon(geocodedLocation.getLocation().getLon());
+
+        return locationEntity;
     }
 }

@@ -24,6 +24,9 @@ public class MeasurementResultTransformer {
         measurementResultEntity.setId(measurementResult.getId());
         measurementResultEntity.setDate(measurementResult.getDate());
         measurementResultEntity.setValue(measurementResult.getValue());
+        measurementResultEntity.setSensorName(measurementResult.getSensorName());
+        measurementResultEntity.setUsername(measurementResult.getUsername());
+        measurementResultEntity.setLocation(measurementResult.getLocation());
 
         return measurementResultEntity;
     }

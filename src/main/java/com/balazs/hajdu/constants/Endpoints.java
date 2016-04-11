@@ -7,18 +7,25 @@ package com.balazs.hajdu.constants;
  */
 public enum Endpoints {
 
-    HOME_PAGE("/"),
-    REGISTER_PAGE("register"),
-    REGISTER_REQUEST("register"),
-    SIGN_IN_PAGE("signin");
+    HOME_PAGE("/", "/"),
+    REGISTER_PAGE("register", "/register"),
+    SIGN_IN_PAGE("signin", "/signin"),
+    SENSORS("sensors", "/sensors");
 
     private final String endpoint;
+    private final String relativeEndpoint;
 
-    Endpoints(String endpoint) {
+    Endpoints(String endpoint, String relativeEndpoint) {
         this.endpoint = endpoint;
+        this.relativeEndpoint = relativeEndpoint;
     }
 
     public String getEndpoint() {
         return endpoint;
     }
+
+    public String getRelativeEndpoint() {
+        return relativeEndpoint;
+    }
+
 }

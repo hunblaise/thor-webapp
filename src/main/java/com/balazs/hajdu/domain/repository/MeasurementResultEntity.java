@@ -3,6 +3,7 @@ package com.balazs.hajdu.domain.repository;
 import com.balazs.hajdu.domain.AbstractDocument;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
+import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.data.mongodb.core.index.IndexDirection;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -14,12 +15,15 @@ import java.time.LocalDateTime;
  *
  * @author Balazs Hajdu
  */
-@Document(collection = "home-control")
+@Document(collection = "measurement-results")
 public class MeasurementResultEntity extends AbstractDocument {
 
     @Indexed(direction = IndexDirection.ASCENDING)
     private LocalDateTime date;
     private double value;
+    private String username;
+    private String sensorName;
+    private GeoJsonPoint location;
 
     public LocalDateTime getDate() {
         return date;
@@ -37,6 +41,30 @@ public class MeasurementResultEntity extends AbstractDocument {
         this.value = value;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getSensorName() {
+        return sensorName;
+    }
+
+    public void setSensorName(String sensorName) {
+        this.sensorName = sensorName;
+    }
+
+    public GeoJsonPoint getLocation() {
+        return location;
+    }
+
+    public void setLocation(GeoJsonPoint location) {
+        this.location = location;
+    }
+
     // generated code begins here
     @Override
     public boolean equals(Object o) {
@@ -44,13 +72,16 @@ public class MeasurementResultEntity extends AbstractDocument {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         MeasurementResultEntity that = (MeasurementResultEntity) o;
-        return Objects.equal(date, that.date) &&
-                Objects.equal(value, that.value);
+        return Double.compare(that.value, value) == 0 &&
+                Objects.equal(date, that.date) &&
+                Objects.equal(username, that.username) &&
+                Objects.equal(sensorName, that.sensorName) &&
+                Objects.equal(location, that.location);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(super.hashCode(), date, value);
+        return Objects.hashCode(super.hashCode(), date, value, username, sensorName, location);
     }
 
     @Override
@@ -58,6 +89,9 @@ public class MeasurementResultEntity extends AbstractDocument {
         return MoreObjects.toStringHelper(this)
                 .add("date", date)
                 .add("value", value)
+                .add("username", username)
+                .add("sensorName", sensorName)
+                .add("location", location)
                 .toString();
     }
     // generated code ends here

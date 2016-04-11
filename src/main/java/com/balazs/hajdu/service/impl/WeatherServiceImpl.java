@@ -29,4 +29,10 @@ public class WeatherServiceImpl implements WeatherService {
 
         return weatherAdapter.getCurrentWeather(userLocation.getCity());
     }
+
+    @Override
+    public Weather getCurrentWeather(UserLocation userLocation) {
+        return weatherAdapter.getCurrentWeather(userLocation.getCity());
+    }
+
 }

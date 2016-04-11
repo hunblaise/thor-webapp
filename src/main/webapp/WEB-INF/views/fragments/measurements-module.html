@@ -12,10 +12,12 @@
     <script src="../../../resources/js/map/sensor-map.js" th:src="@{/resources/js/map/sensor-map.js}"></script>
 </head>
 <body>
-<div th:fragment="sensor-module">
+<div th:fragment="measurements-module">
     <ul class="nav nav-tabs nav-justified">
         <li role="presentation" class="active"><a data-toggle="tab" href="#sensors">Sensors</a></li>
-        <li role="presentation"><a data-toggle="tab" href="#add-sensor">New sensor</a></li>
+        <li role="presentation" th:each="sensor : ${sensors}">
+            <a data-toggle="tab" th:attr="href='#' + ${sensor.name}" th:text="${sensor.name}">sensor name</a>
+        </li>
     </ul>
 
     <div class="tab-content">
@@ -51,37 +53,32 @@
             </div>
         </div>
 
-        <div id="add-sensor" class="tab-pane fade">
+        <div class="tab-pane fade" th:id="${sensor.name}" th:each="sensor, sensorStatus : ${sensors}">
             <div class="page-header">
-                <h3>New sensor</h3>
+                <h3 th:text="${sensor.name}">sensor name</h3>
             </div>
 
-            <form id="new-sensor-form" class="form-horizontal useraction-form" action="#" method="post"
-                  th:action="'/' + ${#authentication.name} + '/sensors/save'">
-                <fieldset>
-                    <legend class="form-legend">Sensor properties</legend>
-
-                    <div class="form-group">
-                        <label for="sensorName" class="col-lg-2 control-label">Sensor name</label>
-                        <div class="col-lg-10">
-                            <input type="text" class="form-control" id="sensorName" placeholder="sensor name" name="sensorName" />
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="address" class="col-lg-2 control-label">Sensor location</label>
-                        <div class="col-lg-10">
-                            <input type="text" class="form-control" id="address" placeholder="address" name="address" />
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-lg-offset-2 col-lg-10">
-                            <button type="submit" class="btn btn-default">Save</button>
-                        </div>
-                    </div>
-                </fieldset>
-            </form>
+            <div class="container-fluid">
+                <div class="panel panel-default text-left">
+                    <div class="panel-heading" th:text="${sensor.name}">results</div>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Value</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="sensor-module" th:attr="data-number=${resultStatus.index} + 1" th:each="result, resultStatus : ${sensor.measurementResults}">
+                            <th scope="row" th:text="${resultStatus.index} + 1">#</th>
+                            <td th:text="${result.date}">sensor name</td>
+                            <td th:text="${result.value}">measurement results</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>

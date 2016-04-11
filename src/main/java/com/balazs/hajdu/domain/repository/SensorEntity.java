@@ -23,7 +23,6 @@ public class SensorEntity extends AbstractDocument {
     @Indexed(direction = IndexDirection.ASCENDING)
     private String name;
     private GeoJsonPoint location;
-    private List<MeasurementResultEntity> measurementResults;
 
     public String getName() {
         return name;
@@ -41,14 +40,6 @@ public class SensorEntity extends AbstractDocument {
         this.location = location;
     }
 
-    public List<MeasurementResultEntity> getMeasurementResults() {
-        return measurementResults;
-    }
-
-    public void setMeasurementResults(List<MeasurementResultEntity> measurementResults) {
-        this.measurementResults = measurementResults;
-    }
-
     // generated code begins here
     @Override
     public boolean equals(Object o) {
@@ -57,13 +48,12 @@ public class SensorEntity extends AbstractDocument {
         if (!super.equals(o)) return false;
         SensorEntity that = (SensorEntity) o;
         return Objects.equal(name, that.name) &&
-                Objects.equal(location, that.location) &&
-                Objects.equal(measurementResults, that.measurementResults);
+                Objects.equal(location, that.location);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(super.hashCode(), name, location, measurementResults);
+        return Objects.hashCode(super.hashCode(), name, location);
     }
 
     @Override
@@ -71,7 +61,6 @@ public class SensorEntity extends AbstractDocument {
         return MoreObjects.toStringHelper(this)
                 .add("name", name)
                 .add("location", location)
-                .add("measurementResults", measurementResults)
                 .toString();
     }
     // generated code ends here

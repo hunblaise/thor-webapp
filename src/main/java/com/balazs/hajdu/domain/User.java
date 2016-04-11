@@ -1,5 +1,6 @@
 package com.balazs.hajdu.domain;
 
+import com.balazs.hajdu.domain.repository.maps.GeocodedLocation;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 
@@ -12,11 +13,13 @@ public final class User {
     private final String username;
     private final String password;
     private final UserRoles userRole;
+    private final GeocodedLocation location;
 
     private User(Builder builder) {
         this.username = builder.username;
         this.password = builder.password;
         this.userRole = builder.userRole;
+        this.location = builder.location;
     }
 
     public String getUsername() {
@@ -31,6 +34,10 @@ public final class User {
         return userRole;
     }
 
+    public GeocodedLocation getLocation() {
+        return location;
+    }
+
     // generated code begins here
     @Override
     public boolean equals(Object o) {
@@ -39,12 +46,13 @@ public final class User {
         User user = (User) o;
         return Objects.equal(username, user.username) &&
                 Objects.equal(password, user.password) &&
-                userRole == user.userRole;
+                userRole == user.userRole &&
+                Objects.equal(location, user.location);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(username, password, userRole);
+        return Objects.hashCode(username, password, userRole, location);
     }
 
     @Override
@@ -53,6 +61,7 @@ public final class User {
                 .add("username", username)
                 .add("password", password)
                 .add("userRole", userRole)
+                .add("location", location)
                 .toString();
     }
 
@@ -61,6 +70,7 @@ public final class User {
         private String username;
         private String password;
         private UserRoles userRole;
+        private GeocodedLocation location;
 
         public Builder withUsername(String username) {
             this.username = username;
@@ -74,6 +84,11 @@ public final class User {
 
         public Builder withUserRole(UserRoles userRole) {
             this.userRole = userRole;
+            return this;
+        }
+
+        public Builder withLocation(GeocodedLocation location) {
+            this.location = location;
             return this;
         }
 

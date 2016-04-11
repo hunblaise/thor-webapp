@@ -17,6 +17,9 @@ public class RegisterForm {
     @NotBlank(message = RegisterForm.NOT_BLANK_MESSAGE)
     private String password;
 
+    @NotBlank(message = RegisterForm.NOT_BLANK_MESSAGE)
+    private String address;
+
     public String getUsername() {
         return username;
     }
@@ -31,6 +34,14 @@ public class RegisterForm {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
 }

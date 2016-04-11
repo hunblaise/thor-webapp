@@ -1,8 +1,10 @@
 package com.balazs.hajdu.service;
 
-import com.balazs.hajdu.components.transformers.SensorTransformer;
+import com.balazs.hajdu.adapter.GeoAdapter;
+import com.balazs.hajdu.components.transformers.SensorFactory;
 import com.balazs.hajdu.domain.MeasurementResult;
 import com.balazs.hajdu.domain.Sensor;
+import com.balazs.hajdu.domain.repository.maps.GeocodedLocation;
 import com.balazs.hajdu.domain.view.MeasurementResultRequestForm;
 import com.balazs.hajdu.domain.view.SensorRequestForm;
 import com.balazs.hajdu.repository.UserRepository;
@@ -14,6 +16,7 @@ import javax.inject.Inject;
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * A service to handle the measurement results.
@@ -29,7 +32,10 @@ public class SensorService {
     private UserRepository userRepository;
 
     @Inject
-    private SensorTransformer sensorTransformer;
+    private GeoAdapter geoAdapter;
+
+    @Inject
+    private SensorFactory sensorFactory;
 
     /**
      * Retrieve all of the available sensor for the given user.
@@ -38,7 +44,7 @@ public class SensorService {
      * @return available sensors
      */
     public List<Sensor> getAllSensorByUsername(String username) {
-        return sensorTransformer.transform(userRepository.findOneByUsername(username).getSensors());
+        return sensorFactory.transform(username, userRepository.findOneByUsername(username).getSensors());
     }
 
     /**
@@ -48,12 +54,18 @@ public class SensorService {
      * @param sensorRequestForm request form
      * @return saved sensor
      */
-    public Sensor saveSensor(String username, SensorRequestForm sensorRequestForm) {
+    public Optional<Sensor> saveSensor(String username, SensorRequestForm sensorRequestForm) {
 
-        Sensor sensor = new Sensor.Builder().withSensorName(sensorRequestForm.getSensorName())
-                .withLocation(sensorRequestForm.getLat(), sensorRequestForm.getLon())
-                .withMeasurementResults(Collections.emptyList())
-                .build();
+        List<GeocodedLocation> locations = geoAdapter.geocodeAddress(sensorRequestForm.getAddress());
+        Optional<Sensor> sensor = Optional.empty();
+
+        if (!locations.isEmpty()) {
+            sensor = Optional.of(new Sensor.Builder().withSensorName(sensorRequestForm.getSensorName())
+                    .withLocation(locations.get(0).getLocation().getLat(), locations.get(0).getLocation().getLon())
+                    .withMeasurementResults(Collections.emptyList())
+                    .build());
+        }
+
 
         userRepository.saveSensorToUser(username, sensor);
 
@@ -73,6 +85,8 @@ public class SensorService {
         MeasurementResult result = new MeasurementResult.Builder().withValue(requestForm.getValue())
                 .withLocation(requestForm.getLat(), requestForm.getLon())
                 .withDate(LocalDateTime.now())
+                .withUsername(userName)
+                .withSensorName(sensorName)
                 .build();
 
         userRepository.saveMeasurementResultToSensor(userName, sensorName, result);

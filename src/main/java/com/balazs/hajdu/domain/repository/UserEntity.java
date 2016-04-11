@@ -1,6 +1,7 @@
 package com.balazs.hajdu.domain.repository;
 
 import com.balazs.hajdu.domain.AbstractDocument;
+import com.balazs.hajdu.domain.repository.maps.GeocodedLocation;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import org.springframework.data.mongodb.core.index.IndexDirection;
@@ -25,6 +26,7 @@ public class UserEntity extends AbstractDocument {
     private LocalDateTime created;
     private String role;
     private List<SensorEntity> sensors;
+    private LocationEntity location;
 
     public String getUsername() {
         return username;
@@ -66,6 +68,14 @@ public class UserEntity extends AbstractDocument {
         this.sensors = sensors;
     }
 
+    public LocationEntity getLocation() {
+        return location;
+    }
+
+    public void setLocation(LocationEntity location) {
+        this.location = location;
+    }
+
     // generated code begins here
     @Override
     public boolean equals(Object o) {
@@ -77,12 +87,13 @@ public class UserEntity extends AbstractDocument {
                 Objects.equal(password, that.password) &&
                 Objects.equal(created, that.created) &&
                 Objects.equal(role, that.role) &&
-                Objects.equal(sensors, that.sensors);
+                Objects.equal(sensors, that.sensors) &&
+                Objects.equal(location, that.location);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(super.hashCode(), username, password, created, role, sensors);
+        return Objects.hashCode(super.hashCode(), username, password, created, role, sensors, location);
     }
 
     @Override
@@ -93,6 +104,7 @@ public class UserEntity extends AbstractDocument {
                 .add("created", created)
                 .add("role", role)
                 .add("sensors", sensors)
+                .add("location", location)
                 .toString();
     }
     // generated code ends here

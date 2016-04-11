@@ -6,6 +6,7 @@ import com.balazs.hajdu.domain.User;
 import com.balazs.hajdu.domain.repository.UserEntity;
 import com.balazs.hajdu.domain.view.RegisterForm;
 import com.balazs.hajdu.repository.UserRepository;
+import com.balazs.hajdu.service.UserLocationService;
 import com.balazs.hajdu.service.UserManagementService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,10 +38,13 @@ public class UserManagementServiceImpl implements UserManagementService {
     @Inject
     private UserFactory userFactory;
 
+    @Inject
+    private UserLocationService userLocationService;
+
     @Transactional
     @Override
     public User saveUser(RegisterForm registerForm) {
-        User user = userFactory.createFrom(registerForm);
+        User user = userFactory.createFrom(registerForm, userLocationService.geocodeLocation(registerForm.getAddress()));
         LOGGER.debug("Savig user to the database: {}", user);
 
         userRepository.save(userTransformer.transformFrom(user, ROLE_USER, LocalDateTime.now()));

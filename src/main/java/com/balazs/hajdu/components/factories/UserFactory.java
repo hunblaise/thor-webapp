@@ -2,8 +2,11 @@ package com.balazs.hajdu.components.factories;
 
 import com.balazs.hajdu.domain.User;
 import com.balazs.hajdu.domain.UserRoles;
+import com.balazs.hajdu.domain.repository.maps.GeocodedLocation;
 import com.balazs.hajdu.domain.view.RegisterForm;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 /**
  * @author Balazs Hajdu
@@ -11,11 +14,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserFactory {
 
-    public User createFrom(RegisterForm registerForm) {
-        return new User.Builder().withPassword(registerForm.getPassword())
+    public User createFrom(RegisterForm registerForm, List<GeocodedLocation> geocodedLocations) {
+
+        User.Builder builder = new User.Builder().withPassword(registerForm.getPassword())
                 .withUsername(registerForm.getUsername())
-                .withUserRole(UserRoles.USER)
-                .build();
+                .withUserRole(UserRoles.USER);
+
+        if (!geocodedLocations.isEmpty()) {
+            builder.withLocation(geocodedLocations.get(0));
+        }
+
+        return builder.build();
     }
 
 }
