@@ -10,46 +10,27 @@
     <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZseZXpWTYc2Z2aI4mJEtoLz8WUYQCITM"></script>
     <script src="../../../resources/js/map/sensor-map.js" th:src="@{/resources/js/map/sensor-map.js}"></script>
+    <script src="../../../resources/js/chart/chart.js" th:src="@{/resources/js/chart/chart.js}"></script>
 </head>
 <body>
 <div th:fragment="measurements-module">
     <ul class="nav nav-tabs nav-justified">
-        <li role="presentation" class="active"><a data-toggle="tab" href="#sensors">Sensors</a></li>
+        <li role="presentation" class="active"><a data-toggle="tab" href="#charts">Charts</a></li>
         <li role="presentation" th:each="sensor : ${sensors}">
             <a data-toggle="tab" th:attr="href='#' + ${sensor.name}" th:text="${sensor.name}">sensor name</a>
         </li>
     </ul>
 
     <div class="tab-content">
-        <div id="sensors" class="tab-pane fade in active">
+        <div id="charts" class="tab-pane fade in active">
             <div class="page-header">
-                <h3 th:text="${#authentication.name} + ' sensor list'">sensor list</h3>
+                <h3 th:text="${#authentication.name} + ' measurement results'">measurement results</h3>
             </div>
             <div class="container-fluid">
-                <div class="panel panel-default text-left">
-                    <div class="panel-heading">Sensors</div>
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Sensor name</th>
-                            <th>Measurement results</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr class="sensor-module" th:attr="data-lat=${sensor.location.x}, data-lon=${sensor.location.y}, data-number=${status.index} + 1" th:each="sensor,status : ${sensors}">
-                            <th scope="row" th:text="${status.index} + 1">#</th>
-                            <td th:text="${sensor.name}">sensor name</td>
-                            <td th:text="${sensor.measurementResults.size()}">measurement results</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="col-xs-12">
-                <div class="container-fluid">
-                    <div id="map" class="row center-block"></div>
-                </div>
+                <div th:id="'measurement-results-chart-' + ${sensor.name}" class="measurement-results-chart"
+                     th:width="900px" th:height="500px"
+                     th:attr="data-url='/' + ${#authentication.name} + '/sensors/' + ${sensor.name} + '/get/results'"
+                     th:each="sensor : ${sensors}"></div>
             </div>
         </div>
 

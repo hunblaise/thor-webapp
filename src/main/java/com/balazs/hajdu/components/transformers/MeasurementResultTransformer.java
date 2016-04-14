@@ -2,7 +2,12 @@ package com.balazs.hajdu.components.transformers;
 
 import com.balazs.hajdu.domain.MeasurementResult;
 import com.balazs.hajdu.domain.repository.MeasurementResultEntity;
+import com.balazs.hajdu.domain.response.MeasurementResponse;
 import org.springframework.stereotype.Component;
+
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Transforms database related domain objects to Thor related domain objects.
@@ -29,6 +34,18 @@ public class MeasurementResultTransformer {
         measurementResultEntity.setLocation(measurementResult.getLocation());
 
         return measurementResultEntity;
+    }
+
+    public List<MeasurementResponse> transform(List<MeasurementResultEntity> entities) {
+        return entities.stream()
+                .map(this::transform)
+                .collect(Collectors.toList());
+    }
+
+    private MeasurementResponse transform(MeasurementResultEntity entity) {
+        return new MeasurementResponse.Builder().withValue(entity.getValue())
+                .withDate(entity.getDate().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME))
+                .build();
     }
 
 }

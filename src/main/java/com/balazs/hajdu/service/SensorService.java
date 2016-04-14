@@ -1,12 +1,15 @@
 package com.balazs.hajdu.service;
 
 import com.balazs.hajdu.adapter.GeoAdapter;
+import com.balazs.hajdu.components.transformers.MeasurementResultTransformer;
 import com.balazs.hajdu.components.transformers.SensorFactory;
 import com.balazs.hajdu.domain.MeasurementResult;
 import com.balazs.hajdu.domain.Sensor;
 import com.balazs.hajdu.domain.repository.maps.GeocodedLocation;
+import com.balazs.hajdu.domain.response.MeasurementResponse;
 import com.balazs.hajdu.domain.view.MeasurementResultRequestForm;
 import com.balazs.hajdu.domain.view.SensorRequestForm;
+import com.balazs.hajdu.repository.MeasurementResultRepository;
 import com.balazs.hajdu.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +20,7 @@ import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * A service to handle the measurement results.
@@ -32,10 +36,16 @@ public class SensorService {
     private UserRepository userRepository;
 
     @Inject
+    private MeasurementResultRepository measurementResultRepository;
+
+    @Inject
     private GeoAdapter geoAdapter;
 
     @Inject
     private SensorFactory sensorFactory;
+
+    @Inject
+    private MeasurementResultTransformer measurementResultTransformer;
 
     /**
      * Retrieve all of the available sensor for the given user.
@@ -94,4 +104,14 @@ public class SensorService {
         return result;
     }
 
+    public List<MeasurementResponse> getAllMeasurementResultBySensorName(String username, String sensorName) {
+        return measurementResultTransformer.transform(
+                measurementResultRepository.findByUsernameAndSensorNameAllIgnoreCase(username, sensorName));
+    }
+
+    public List<String> getSensorNames(String username) {
+        return userRepository.findOneByUsername(username).getSensors().stream()
+                .map(sensorEntity -> sensorEntity.getName())
+                .collect(Collectors.toList());
+    }
 }

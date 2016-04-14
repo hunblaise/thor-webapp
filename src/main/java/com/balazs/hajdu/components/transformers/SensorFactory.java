@@ -5,7 +5,6 @@ import com.balazs.hajdu.domain.Sensor;
 import com.balazs.hajdu.domain.repository.MeasurementResultEntity;
 import com.balazs.hajdu.domain.repository.SensorEntity;
 import com.balazs.hajdu.repository.MeasurementResultRepository;
-import com.balazs.hajdu.repository.UserRepository;
 import org.bson.types.ObjectId;
 import org.springframework.stereotype.Component;
 
@@ -20,9 +19,6 @@ import java.util.stream.Collectors;
  */
 @Component
 public class SensorFactory {
-
-    @Inject
-    private MeasurementResultTransformer measurementResultTransformer;
 
     @Inject
     private MeasurementResultRepository measurementResultRepository;
@@ -60,7 +56,7 @@ public class SensorFactory {
         return sensorEntity;
     }
 
-    private List<MeasurementResult> transformMeasurementResults(List<MeasurementResultEntity> measurementResultEntities) {
+    public List<MeasurementResult> transformMeasurementResults(List<MeasurementResultEntity> measurementResultEntities) {
         return measurementResultEntities.stream()
                 .map(measurementResultEntity -> new MeasurementResult.Builder()
                         .withId(new ObjectId())
