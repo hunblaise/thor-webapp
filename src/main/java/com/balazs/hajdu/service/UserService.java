@@ -52,6 +52,16 @@ public class UserService implements UserDetailsService {
     }
 
     /**
+     * Retrieve a user by username.
+     *
+     * @param username username
+     * @return database related user object
+     */
+    public UserEntity getUserByUsername(String username) {
+        return userRepository.findOneByUsername(username);
+    }
+
+    /**
      * Add the signed in user to the context.
      *
      * @param user user

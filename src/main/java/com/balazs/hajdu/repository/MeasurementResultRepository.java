@@ -11,8 +11,11 @@ import java.util.List;
  *
  * @author Balazs Hajdu
  */
-public interface MeasurementResultRepository extends MongoRepository<MeasurementResultEntity, ObjectId> {
+public interface MeasurementResultRepository extends MongoRepository<MeasurementResultEntity, ObjectId>,
+        MeasurementResultRepositoryCustom {
 
     List<MeasurementResultEntity> findByUsernameAndSensorNameAllIgnoreCase(String username, String sensorName);
+
+    List<MeasurementResultEntity> findByUsernameIgnoreCase(String username);
 
 }

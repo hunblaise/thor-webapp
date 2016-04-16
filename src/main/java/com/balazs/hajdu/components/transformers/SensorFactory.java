@@ -2,14 +2,14 @@ package com.balazs.hajdu.components.transformers;
 
 import com.balazs.hajdu.domain.MeasurementResult;
 import com.balazs.hajdu.domain.Sensor;
-import com.balazs.hajdu.domain.repository.MeasurementResultEntity;
+import com.balazs.hajdu.domain.StatisticsInterval;
 import com.balazs.hajdu.domain.repository.SensorEntity;
-import com.balazs.hajdu.repository.MeasurementResultRepository;
+import com.balazs.hajdu.domain.response.MeasurementResultStatistics;
 import org.bson.types.ObjectId;
 import org.springframework.stereotype.Component;
 
-import javax.inject.Inject;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -20,21 +20,20 @@ import java.util.stream.Collectors;
 @Component
 public class SensorFactory {
 
-    @Inject
-    private MeasurementResultRepository measurementResultRepository;
-
     /**
      * Transforms database related database domain object to Thor related domain object.
      *
      * @param sensorEntities database related domain object
      * @return Thor related domain object
      */
-    public List<Sensor> transform(String username, List<SensorEntity> sensorEntities) {
+    public List<Sensor> transform(List<SensorEntity> sensorEntities, Map<String, List<MeasurementResult>> measurementResults,
+                                  Map<String, Map<StatisticsInterval, MeasurementResultStatistics>> statistics) {
         return sensorEntities.stream()
                 .map(sensorEntity -> new Sensor.Builder().withId(sensorEntity.getId())
                         .withSensorName(sensorEntity.getName())
                         .withLocation(sensorEntity.getLocation().getX(), sensorEntity.getLocation().getY())
-                        .withMeasurementResults(collectMeasurementResults(username, sensorEntity.getName()))
+                        .withMeasurementResults(measurementResults.get(sensorEntity.getName()))
+                        .withMeasurementResultStatistics(statistics.get(sensorEntity.getName()))
                         .build())
                 .collect(Collectors.toList());
     }
@@ -54,24 +53,6 @@ public class SensorFactory {
         sensorEntity.setId(sensor.getId());
 
         return sensorEntity;
-    }
-
-    public List<MeasurementResult> transformMeasurementResults(List<MeasurementResultEntity> measurementResultEntities) {
-        return measurementResultEntities.stream()
-                .map(measurementResultEntity -> new MeasurementResult.Builder()
-                        .withId(new ObjectId())
-                        .withValue(measurementResultEntity.getValue())
-                        .withDate(measurementResultEntity.getDate())
-                        .withUsername(measurementResultEntity.getUsername())
-                        .withSensorName(measurementResultEntity.getSensorName())
-                        .withLocation(measurementResultEntity.getLocation().getX(), measurementResultEntity.getLocation().getY())
-                        .build())
-                .collect(Collectors.toList());
-    }
-
-    private List<MeasurementResult> collectMeasurementResults(String username, String sensorName) {
-        return transformMeasurementResults(measurementResultRepository.findByUsernameAndSensorNameAllIgnoreCase(username,
-                sensorName));
     }
 
 }

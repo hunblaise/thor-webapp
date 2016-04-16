@@ -2,35 +2,32 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link href="../../../resources/css/sensor-module.css" rel="stylesheet" media="screen" th:href="@{/resources/css/sensor-module.css}" />
+    <link href="../../../resources/css/measurement-module.css" rel="stylesheet" media="screen" th:href="@{/resources/css/measurement-module.css}" />
     <link href="../../../resources/css/map-module.css" rel="stylesheet" media="screen" th:href="@{/resources/css/map-module.css}" />
     <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
+    <link href="../../../resources/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap-datetimepicker.min.css}"/>
     <link href="../../../resources/css/weather-icons.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/weather-icons.min.css}"/>
     <link href="../../../resources/css/weather-icons-wind.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/weather-icons-wind.min.css}"/>
     <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZseZXpWTYc2Z2aI4mJEtoLz8WUYQCITM"></script>
     <script src="../../../resources/js/map/sensor-map.js" th:src="@{/resources/js/map/sensor-map.js}"></script>
     <script src="../../../resources/js/chart/chart.js" th:src="@{/resources/js/chart/chart.js}"></script>
+    <script src="../../../resources/js/moment-with-locales.min.js" th:src="@{/resources/js/moment-with-locales.min.js}"></script>
+    <script src="../../../resources/js/bootstrap-datetimepicker.min.js" th:src="@{/resources/js/bootstrap-datetimepicker.min.js}"></script>
 </head>
 <body>
 <div th:fragment="measurements-module">
     <ul class="nav nav-tabs nav-justified">
-        <li role="presentation" class="active"><a data-toggle="tab" href="#charts">Charts</a></li>
+        <li role="presentation" class="active"><a data-toggle="tab" href="#measurement-results">Measurement results</a></li>
         <li role="presentation" th:each="sensor : ${sensors}">
             <a data-toggle="tab" th:attr="href='#' + ${sensor.name}" th:text="${sensor.name}">sensor name</a>
         </li>
     </ul>
 
     <div class="tab-content">
-        <div id="charts" class="tab-pane fade in active">
+        <div id="measurement-results" class="tab-pane fade in active">
             <div class="page-header">
                 <h3 th:text="${#authentication.name} + ' measurement results'">measurement results</h3>
-            </div>
-            <div class="container-fluid">
-                <div th:id="'measurement-results-chart-' + ${sensor.name}" class="measurement-results-chart"
-                     th:width="900px" th:height="500px"
-                     th:attr="data-url='/' + ${#authentication.name} + '/sensors/' + ${sensor.name} + '/get/results'"
-                     th:each="sensor : ${sensors}"></div>
             </div>
         </div>
 
@@ -40,6 +37,72 @@
             </div>
 
             <div class="container-fluid">
+                <div class="page-header">
+                    <h4>Statistics - <small th:text="${sensor.name}">sensor name</small></h4>
+                </div>
+
+                <div class="panel panel-default col-xs-4 remove-padding" th:each="stat : ${sensor.measurementResultStatistics}">
+                    <div class="panel-heading">
+                        <h6 class="panel-title text-capitalize" th:text="${stat.key.description}">title</h6>
+                    </div>
+                    <div class="panel-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-6">Average: </div>
+                                <div class="col-xs-6" th:text="${stat.value.average}">average</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">Maximum: </div>
+                                <div class="col-xs-6" th:text="${stat.value.max}">max</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">Minimum: </div>
+                                <div class="col-xs-6" th:text="${stat.value.min}">min</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="page-header">
+                    <h4>Chart - <small th:text="${sensor.name}">sensor name, based on the last 30 measurement results</small></h4>
+                </div>
+                    <form class="form-inline" action="#" method="get" th:action="'#'">
+                        <div class="form-group">
+                            <div th:id="'datetimepicker-' + ${sensor.name}" class="input-group date datetimepicker-form">
+                                <label for="startDate" class="col-xs-4 control-label">start date</label>
+                                <div class="col-xs-8">
+                                    <input type="text" class="form-control" id="startDate" name="startDate" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div th:id="'datetimepicker-' + ${sensor.name}" class="input-group date">
+                                <label for="endDate" class="col-xs-4 control-label">end date</label>
+                                <div class="col-xs-8">
+                                    <input type="text" class="form-control" id="endDate" name="endDate" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div th:id="'measurement-results-chart-' + ${sensor.name}" class="measurement-results-chart"
+                         th:width="900px" th:height="750px"
+                         th:attr="data-url='/' + ${#authentication.name} + '/sensors/' + ${sensor.name} + '/get/results'">
+                    </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="page-header">
+                    <h4>List - <small th:text="${sensor.name}">sensor name</small></h4>
+                </div>
                 <div class="panel panel-default text-left">
                     <div class="panel-heading" th:text="${sensor.name}">results</div>
                     <table class="table">

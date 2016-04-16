@@ -1,11 +1,13 @@
 package com.balazs.hajdu.domain;
 
+import com.balazs.hajdu.domain.response.MeasurementResultStatistics;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * An immutable POJO to store sensor related data.
@@ -18,12 +20,14 @@ public final class Sensor {
     private final String name;
     private final GeoJsonPoint location;
     private final List<MeasurementResult> measurementResults;
+    private final Map<StatisticsInterval, MeasurementResultStatistics> measurementResultStatistics;
 
     private Sensor(Builder builder) {
         this.id = builder.id;
         this.name = builder.sensorName;
         this.location = builder.location;
         this.measurementResults = builder.measurementResults;
+        this.measurementResultStatistics = builder.measurementResultStatistics;
     }
 
     public ObjectId getId() {
@@ -42,6 +46,10 @@ public final class Sensor {
         return measurementResults;
     }
 
+    public Map<StatisticsInterval, MeasurementResultStatistics> getMeasurementResultStatistics() {
+        return measurementResultStatistics;
+    }
+
     // generated code begins here
     @Override
     public boolean equals(Object o) {
@@ -51,12 +59,13 @@ public final class Sensor {
         return Objects.equal(id, sensor.id) &&
                 Objects.equal(name, sensor.name) &&
                 Objects.equal(location, sensor.location) &&
-                Objects.equal(measurementResults, sensor.measurementResults);
+                Objects.equal(measurementResults, sensor.measurementResults) &&
+                Objects.equal(measurementResultStatistics, sensor.measurementResultStatistics);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(id, name, location, measurementResults);
+        return Objects.hashCode(id, name, location, measurementResults, measurementResultStatistics);
     }
 
     @Override
@@ -66,6 +75,7 @@ public final class Sensor {
                 .add("name", name)
                 .add("location", location)
                 .add("measurementResults", measurementResults)
+                .add("measurementResultStatistics", measurementResultStatistics)
                 .toString();
     }
 
@@ -75,6 +85,7 @@ public final class Sensor {
         private String sensorName;
         private GeoJsonPoint location;
         private List<MeasurementResult> measurementResults;
+        private Map<StatisticsInterval, MeasurementResultStatistics> measurementResultStatistics;
 
         public Builder withId(ObjectId id) {
             this.id = id;
@@ -93,6 +104,11 @@ public final class Sensor {
 
         public Builder withMeasurementResults(List<MeasurementResult> measurementResults) {
             this.measurementResults = measurementResults;
+            return this;
+        }
+
+        public Builder withMeasurementResultStatistics(Map<StatisticsInterval, MeasurementResultStatistics> statistics) {
+            this.measurementResultStatistics = statistics;
             return this;
         }
 

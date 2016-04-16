@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class MeasurementResultTransformer {
 
     /**
-     * Tranforms Thor related domain objects to database related domain objects.
+     * Transforms Thor related domain objects to database related domain objects.
      *
      * @param measurementResult Thor related domain object
      * @return database related domain object
@@ -36,15 +36,37 @@ public class MeasurementResultTransformer {
         return measurementResultEntity;
     }
 
-    public List<MeasurementResponse> transform(List<MeasurementResultEntity> entities) {
+    /**
+     * Transforms databse related domain object into REST response related domain object.
+     *
+     * @param entities database entities
+     * @return REST related domain objects
+     */
+    public List<MeasurementResponse> transformToResponse(List<MeasurementResultEntity> entities) {
         return entities.stream()
-                .map(this::transform)
+                .map(this::transformToResponse)
                 .collect(Collectors.toList());
     }
 
-    private MeasurementResponse transform(MeasurementResultEntity entity) {
+    public List<MeasurementResult> transformToThor(List<MeasurementResultEntity> entities) {
+        return entities.stream()
+                .map(this::transformToThor)
+                .collect(Collectors.toList());
+    }
+
+    private MeasurementResponse transformToResponse(MeasurementResultEntity entity) {
         return new MeasurementResponse.Builder().withValue(entity.getValue())
                 .withDate(entity.getDate().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME))
+                .build();
+    }
+
+    public MeasurementResult transformToThor(MeasurementResultEntity entity) {
+        return new MeasurementResult.Builder().withUsername(entity.getUsername())
+                .withSensorName(entity.getSensorName())
+                .withValue(entity.getValue())
+                .withDate(entity.getDate())
+                .withLocation(entity.getLocation().getX(), entity.getLocation().getY())
+                .withId(entity.getId())
                 .build();
     }
 

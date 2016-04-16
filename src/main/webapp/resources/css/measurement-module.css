@@ -1,3 +1,8 @@
 .measurement-results-chart {
     padding: 25px;
 }
+
+.remove-padding {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}

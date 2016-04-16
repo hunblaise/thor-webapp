@@ -29,7 +29,7 @@ $(document).ready(function() {
                     }
                 },
                 width: 900,
-                height: 500
+                height: 750
             };
 
             var data = new google.visualization.DataTable();
@@ -57,5 +57,7 @@ $(document).ready(function() {
 
         });
     }
+
+    $('.datetimepicker-form').datepicker();
 
 });
