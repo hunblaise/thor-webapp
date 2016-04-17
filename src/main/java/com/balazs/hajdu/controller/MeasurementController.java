@@ -1,13 +1,15 @@
 package com.balazs.hajdu.controller;
 
 import com.balazs.hajdu.constants.ViewNames;
-import com.balazs.hajdu.domain.MeasurementResult;
 import com.balazs.hajdu.domain.response.MeasurementResponse;
+import com.balazs.hajdu.domain.view.DateIntervalRequestForm;
 import com.balazs.hajdu.facade.MeasurementResultFacade;
 import com.balazs.hajdu.facade.SensorFacade;
 import com.balazs.hajdu.service.SensorService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.inject.Inject;
 import java.security.Principal;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -58,6 +61,20 @@ public class MeasurementController {
     public List<MeasurementResponse> getMeasurementResults(@PathVariable String username,
                                                            @PathVariable String sensorName) {
         return measurementResultFacade.getAllMeasurementResultsForSensor(username, sensorName);
+    }
+
+    @RequestMapping(value = "/{username}/sensors/{sensorName}/get", method = RequestMethod.GET)
+    public List<MeasurementResponse> getMeasurementResultsInDateInterval(@PathVariable String username,
+                                                                         @PathVariable String sensorName,
+                                                                         @ModelAttribute DateIntervalRequestForm dateIntervalRequestForm,
+                                                                         BindingResult bindingResult) {
+
+        List<MeasurementResponse> responses = Collections.emptyList();
+        if (!bindingResult.hasErrors()) {
+            responses = measurementResultFacade.getMeasurementResultsFromDateInterval(username, sensorName, dateIntervalRequestForm);
+        }
+
+        return responses;
     }
 
 }

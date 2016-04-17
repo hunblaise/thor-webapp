@@ -1,8 +1,8 @@
 package com.balazs.hajdu.service;
 
 import com.balazs.hajdu.domain.MeasurementResult;
+import com.balazs.hajdu.domain.context.MeasurementResultQueryContext;
 import com.balazs.hajdu.domain.repository.MeasurementResultEntity;
-import com.balazs.hajdu.domain.response.MeasurementResponse;
 import com.balazs.hajdu.repository.MeasurementResultRepository;
 import org.springframework.stereotype.Service;
 
@@ -62,6 +62,16 @@ public class MeasurementResultService {
         measurementResultRepository.saveMeasurementResultToSensor(measurementResult);
 
         return measurementResult;
+    }
+
+    /**
+     * A method to retrieve measurement results from a given time interval.
+     *
+     * @param context query context
+     * @return measurement results from the given interval
+     */
+    public List<MeasurementResult> getLastsMeasurementResultsFromDateInterval(MeasurementResultQueryContext context) {
+        return measurementResultRepository.getMeasurementResultsBetweenDateRange(context);
     }
 
 }
