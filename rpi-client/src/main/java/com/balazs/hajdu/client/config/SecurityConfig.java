@@ -1,9 +1,8 @@
-package com.balazs.hajdu.config;
+package com.balazs.hajdu.client.config;
 
-import com.balazs.hajdu.service.UserService;
+import com.balazs.hajdu.client.account.AccountService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -14,23 +13,19 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.StandardPasswordEncoder;
 import org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices;
 
-/**
- * A class to configure the authentication and authorization.
- * @author Balazs Hajdu
- */
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
 class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
-    public UserService userService() {
-        return new UserService(passwordEncoder());
+    public AccountService accountService() {
+        return new AccountService(passwordEncoder());
     }
 
     @Bean
     public TokenBasedRememberMeServices rememberMeServices() {
-        return new TokenBasedRememberMeServices("remember-me-key", userService());
+        return new TokenBasedRememberMeServices("remember-me-key", accountService());
     }
 
     @Bean
@@ -40,7 +35,10 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.eraseCredentials(true).userDetailsService(userService()).passwordEncoder(passwordEncoder());
+        auth
+            .eraseCredentials(true)
+            .userDetailsService(accountService())
+            .passwordEncoder(passwordEncoder());
     }
 
     @Override
@@ -48,8 +46,8 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
             .csrf().disable()
             .authorizeRequests()
-                .antMatchers("/", "/favicon.ico", "/resources/**", "/signup", "/register").permitAll()
-                .antMatchers(HttpMethod.POST, "/**/sensors/**/save").permitAll()
+                .antMatchers("/", "/favicon.ico", "/resources/**", "/signup").permitAll()
+                .antMatchers("/**/sensors/**/get/actual").permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()

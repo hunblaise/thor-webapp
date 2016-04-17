@@ -15,7 +15,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
 import java.util.ArrayList;
@@ -27,16 +26,18 @@ import java.util.Optional;
  *
  * @author Balazs Hajdu
  */
-@Service
 public class UserService implements UserDetailsService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserService.class);
 
     @Inject
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
-    @Inject
-    PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
+
+    public UserService(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

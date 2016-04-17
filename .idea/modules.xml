@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/rpi-client/rpi-client.iml" filepath="$PROJECT_DIR$/rpi-client/rpi-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/thor-web.iml" filepath="$PROJECT_DIR$/thor-web.iml" />
     </modules>
   </component>

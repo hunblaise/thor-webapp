@@ -1,7 +1,5 @@
 package com.balazs.hajdu.repository;
 
-import com.balazs.hajdu.domain.repository.MeasurementResultEntity;
-import com.balazs.hajdu.domain.repository.SensorEntity;
 import com.balazs.hajdu.domain.repository.UserEntity;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
@@ -18,5 +16,7 @@ public interface UserRepository extends MongoRepository<UserEntity, ObjectId>, U
     UserEntity findOneByUsernameAndPassword(String username, String password);
 
     UserEntity findOneByUsername(String username);
+
+    List<UserEntity> findAll();
 
 }
