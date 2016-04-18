@@ -2,6 +2,7 @@ package com.balazs.hajdu.client.controller;
 
 import com.balazs.hajdu.client.account.Account;
 import com.balazs.hajdu.client.account.AccountRepository;
+import com.balazs.hajdu.client.delegator.SensorDelegator;
 import com.balazs.hajdu.client.domain.request.MeasurementRequest;
 import com.balazs.hajdu.client.domain.response.MeasurementResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +24,9 @@ public class MeasurementResultsController {
     @Inject
     private AccountRepository accountRepository;
 
+    @Inject
+    private SensorDelegator delegator;
+
     @RequestMapping(value = "/{username}/sensors/{sensorName}/get/actual", method = RequestMethod.GET)
     public MeasurementResult retrieveMeasurementResult(@PathVariable String username,
                                                        @PathVariable String sensorName,
@@ -31,7 +35,7 @@ public class MeasurementResultsController {
 
         MeasurementResult.Builder builder = new MeasurementResult.Builder();
         if (account.getPassword().equalsIgnoreCase(measurementRequest.getKey())) {
-            builder.withValue(new Random().nextDouble());
+            builder.withValue(delegator.delegate(sensorName));
         } else {
             builder.withError("invalid user key");
         }
