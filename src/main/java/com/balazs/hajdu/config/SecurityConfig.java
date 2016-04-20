@@ -23,6 +23,8 @@ import org.springframework.security.web.authentication.rememberme.TokenBasedReme
 @EnableGlobalMethodSecurity(securedEnabled = true)
 class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    private static final String ROLE_ADMIN = "ADMIN";
+
     @Bean
     public UserService userService() {
         return new UserService(passwordEncoder());
@@ -50,6 +52,7 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
             .authorizeRequests()
                 .antMatchers("/", "/favicon.ico", "/resources/**", "/signup", "/register").permitAll()
                 .antMatchers(HttpMethod.POST, "/**/sensors/**/save").permitAll()
+                .antMatchers(HttpMethod.POST, "/**/sensors/save").hasRole(ROLE_ADMIN)
                 .anyRequest().authenticated()
                 .and()
             .formLogin()

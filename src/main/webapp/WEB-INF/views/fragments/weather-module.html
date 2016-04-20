@@ -40,6 +40,36 @@
                     <div  class="weather-details-value" th:text="${weather.humidity} + '%'">weather information - humidity</div>
                 </div>
             </div>
+            <div class="panel-heading">
+                <h4>Forecast - <small th:text="${location[0].formattedLocation}">formatted location</small></h4>
+            </div>
+            <div class="panel-body container-fluid">
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2 col-xs-12 text-capitalize"
+                         th:each="detail : ${forecast.details}">
+                        <div class="weather-details-value">
+                            <i th:attr="class='wi wi-owm-' + ${detail.id}"></i>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-sm-4 col-xs-12 weather-details-value">min</div>
+                                    <div class="col-sm-4 col-xs-12 weather-details-value">avg</div>
+                                    <div class="col-sm-4 col-xs-12 weather-details-value">max</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4 col-xs-12 weather-details-value"
+                                         th:text="${detail.minTemperature}">min temperature</div>
+                                    <div class="col-sm-4 col-xs-12 weather-details-value"
+                                         th:text="${detail.temperature}">temperature</div>
+                                    <div class="col-sm-4 col-xs-12 weather-details-value"
+                                         th:text="${detail.maxTemperature}">max temperature</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="container-fluid map-container">

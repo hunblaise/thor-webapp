@@ -43,7 +43,8 @@ public class HomeController {
         try {
             UserLocation location = userLocationService.getUserLocation(request.getRemoteAddr());
 
-            modelAndView.addObject("weather", weatherService.getCurrentWeather(request.getRemoteAddr()));
+            modelAndView.addObject("weather", weatherService.getCurrentWeather(location.getCity()));
+            modelAndView.addObject("forecast",  weatherService.getWeatherForecastForCity(location.getCity()));
             modelAndView.addObject("location", userLocationService.geocodeLocation(location.getCity()));
         } catch (UnknownHostException e) {
             LOGGER.warn("Can not retrieve user location for IP address {}", request.getRemoteUser());

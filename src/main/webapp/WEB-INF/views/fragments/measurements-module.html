@@ -49,15 +49,24 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-xs-6">Average: </div>
-                                <div class="col-xs-6" th:text="${stat.value.average}">average</div>
+                                <div class="col-xs-6" th:if="${stat.value.average} != 0"
+                                     th:text="${stat.value.average}">average</div>
+                                <div class="col-xs-6" th:if="${stat.value.average} == 0 "
+                                     th:text="'N/A'">average</div>
                             </div>
                             <div class="row">
                                 <div class="col-xs-6">Maximum: </div>
-                                <div class="col-xs-6" th:text="${stat.value.max}">max</div>
+                                <div class="col-xs-6" th:if="${stat.value.max} != 0"
+                                     th:text="${stat.value.max}">max</div>
+                                <div class="col-xs-6" th:if="${stat.value.max} == 0"
+                                     th:text="'N/A'">max</div>
                             </div>
                             <div class="row">
                                 <div class="col-xs-6">Minimum: </div>
-                                <div class="col-xs-6" th:text="${stat.value.min}">min</div>
+                                <div class="col-xs-6" th:if="${stat.value.min} != 0"
+                                     th:text="${stat.value.min}">min</div>
+                                <div class="col-xs-6" th:if="${stat.value.min} == 0"
+                                     th:text="'N/A'">min</div>
                             </div>
                         </div>
                     </div>
@@ -112,7 +121,7 @@
                 </div>
                 <div class="panel panel-default text-left">
                     <div class="panel-heading" th:text="${sensor.name}">results</div>
-                    <table class="table">
+                    <table class="table table-hover">
                         <thead>
                         <tr>
                             <th>#</th>
@@ -121,11 +130,13 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr class="sensor-module" th:attr="data-number=${resultStatus.index} + 1" th:each="result, resultStatus : ${sensor.measurementResults}">
-                            <th scope="row" th:text="${resultStatus.index} + 1">#</th>
-                            <td th:text="${result.date}">sensor name</td>
-                            <td th:text="${result.value}">measurement results</td>
-                        </tr>
+                            <tr class="sensor-module" th:classappend="${(result.value &gt; sensor.maxAlert) or (sensor.minAlert &gt; result.value)} ? 'danger' : ''"
+                                    th:attr="data-number=${resultStatus.index} + 1"
+                                    th:each="result, resultStatus : ${sensor.measurementResults}">
+                                <th scope="row" th:text="${resultStatus.index} + 1">#</th>
+                                <td th:text="${result.date}">sensor name</td>
+                                <td th:text="${result.value}">measurement results</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

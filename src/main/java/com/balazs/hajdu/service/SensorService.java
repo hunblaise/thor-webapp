@@ -1,6 +1,7 @@
 package com.balazs.hajdu.service;
 
 import com.balazs.hajdu.domain.Sensor;
+import com.balazs.hajdu.domain.context.UpdateSensorAlertContext;
 import com.balazs.hajdu.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -33,9 +34,24 @@ public class SensorService {
         return sensor;
     }
 
+    /**
+     * Lists all of the sensors for the given user.
+     *
+     * @param username username
+     * @return list of sensors
+     */
     public List<String> getSensorNames(String username) {
         return userRepository.findOneByUsername(username).getSensors().stream()
                 .map(sensorEntity -> sensorEntity.getName())
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Update sensor's alert values.
+     *
+     * @param updateSensorAlertContext update context
+     */
+    public void updateAlertValueForSensor(UpdateSensorAlertContext updateSensorAlertContext) {
+        userRepository.updateSensorAlertValues(updateSensorAlertContext);
     }
 }

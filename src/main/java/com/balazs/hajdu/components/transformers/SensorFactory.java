@@ -32,6 +32,8 @@ public class SensorFactory {
                 .map(sensorEntity -> new Sensor.Builder().withId(sensorEntity.getId())
                         .withSensorName(sensorEntity.getName())
                         .withLocation(sensorEntity.getLocation().getX(), sensorEntity.getLocation().getY())
+                        .withMaxAlert(sensorEntity.getMaxAlert())
+                        .withMinAlert(sensorEntity.getMinAlert())
                         .withMeasurementResults(measurementResults.get(sensorEntity.getName()))
                         .withMeasurementResultStatistics(statistics.get(sensorEntity.getName()))
                         .build())

@@ -38,7 +38,7 @@ public class MeasurementPullerScheduledTask {
     @Scheduled(fixedRate = 30000)
     public void pullMeasurementResults() {
 
-        for (UserEntity userEntity : userRepository.findAll()) {
+        /*for (UserEntity userEntity : userRepository.findAll()) {
             for (SensorEntity sensor : userEntity.getSensors()) {
                 MeasurementResult measurementResult = clientRepository.getMeasurementResultFromClient(userEntity.getUsername(),
                         userEntity.getPassword(), sensor);
@@ -46,7 +46,7 @@ public class MeasurementPullerScheduledTask {
 
                 measurementResultRepository.saveMeasurementResultToSensor(measurementResult);
             }
-        }
+        }*/
     }
 
 }

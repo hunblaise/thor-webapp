@@ -1,6 +1,7 @@
 package com.balazs.hajdu.facade;
 
 import com.balazs.hajdu.domain.Sensor;
+import com.balazs.hajdu.domain.view.SensorAlertRequestForm;
 import com.balazs.hajdu.domain.view.SensorRequestForm;
 import com.balazs.hajdu.error.exceptions.InvalidDatabaseOperationException;
 
@@ -29,5 +30,14 @@ public interface SensorFacade {
      * @return saved sensor
      */
     Sensor saveSensor(String username, SensorRequestForm sensorRequestForm) throws InvalidDatabaseOperationException;
+
+    /**
+     * Modify sensor alert values for the given sensor
+     *
+     * @param username
+     * @param sensorAlertRequestForm
+     * @return
+     */
+    void updateSensorAlerts(String username, SensorAlertRequestForm sensorAlertRequestForm);
 
 }

@@ -13,9 +13,19 @@
 </head>
 <body>
 <div th:fragment="sensor-module">
+    <th:block th:if="${error != null}">
+        <div th:replace="fragments/alert :: alert (type='danger', message=${error})">error message</div>
+    </th:block>
+    <th:block th:if="${success != null}">
+        <div th:replace="fragments/alert :: alert (type='success', message=${success})">success message</div>
+    </th:block>
     <ul class="nav nav-tabs nav-justified">
         <li role="presentation" class="active"><a data-toggle="tab" href="#sensors">Sensors</a></li>
-        <li role="presentation"><a data-toggle="tab" href="#add-sensor">New sensor</a></li>
+        <li role="presentation"><a data-toggle="tab" href="#alerts">Alerts</a></li>
+        <li role="presentation"
+            th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
+            <a data-toggle="tab" href="#add-sensor">New sensor</a>
+        </li>
     </ul>
 
     <div class="tab-content">
@@ -38,7 +48,7 @@
                         <tr class="sensor-module" th:attr="data-lat=${sensor.location.x}, data-lon=${sensor.location.y}, data-number=${status.index} + 1" th:each="sensor,status : ${sensors}">
                             <th scope="row" th:text="${status.index} + 1">#</th>
                             <td th:text="${sensor.name}">sensor name</td>
-                            <td th:text="${sensor.measurementResults.size()}">measurement results</td>
+                            <td th:text="${sensor.measurementResults} != null ? ${sensor.measurementResults.size()} : 0">measurement results</td>
                         </tr>
                         </tbody>
                     </table>
@@ -51,7 +61,41 @@
             </div>
         </div>
 
-        <div id="add-sensor" class="tab-pane fade">
+        <div id="alerts" class="tab-pane fade">
+            <div class="page-header">
+                <h3>Modify Sensor Alerts</h3>
+            </div>
+            <form id="set-alert-form" class="form-inline text-center" action="#" method="post"
+                  th:action="'/' + ${#authentication.name} + '/sensors/save/alert'">
+                <fieldset>
+                    <div class="input-group text-center">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-plus"></i></span>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="maxAlertValue" name="maxAlertValue" placeholder="value" />
+                        </div>
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-minus"></i></span>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="minAlertValue" name="minAlertValue" placeholder="value" />
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" name="sensorAlert" id="sensorAlert">
+                                <option class="input-group-addon"
+                                        th:each="sensor : ${sensors}"
+                                        th:value="${sensor.name}" th:text="${sensor.name}">
+                                    sensor name
+                                </option>
+                            </select>
+                        </div>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">Save</button>
+                        </span>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div id="add-sensor" class="tab-pane fade"
+             th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
             <div class="page-header">
                 <h3>New sensor</h3>
             </div>

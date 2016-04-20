@@ -1,6 +1,7 @@
 package com.balazs.hajdu.repository;
 
 import com.balazs.hajdu.domain.Sensor;
+import com.balazs.hajdu.domain.context.UpdateSensorAlertContext;
 
 /**
  * Update sensor related data in the database.
@@ -16,5 +17,13 @@ public interface UserRepositoryCustom {
      * @param sensor sensor
      */
     void saveSensorToUser(String username, Sensor sensor);
+
+    /**
+     * Update sensor's alert values.
+     *
+     * @param context update context
+     * @return updated sensor
+     */
+    void updateSensorAlertValues(UpdateSensorAlertContext context);
 
 }

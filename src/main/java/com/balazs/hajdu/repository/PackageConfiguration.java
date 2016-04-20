@@ -2,6 +2,9 @@ package com.balazs.hajdu.repository;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.maxmind.geoip2.DatabaseReader;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -16,6 +19,8 @@ import org.springframework.web.client.RestTemplate;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +31,8 @@ import java.util.List;
  */
 @Configuration
 public class PackageConfiguration {
+
+    private static final String LOCAL_DATE_TIME_FORMATTER = "yyyy-MM-dd HH:mm:ss";
 
     @Value("${WEATHER_API_READ_TIMEOUT}")
     private int readTimeout;
@@ -41,11 +48,16 @@ public class PackageConfiguration {
 
         RestTemplate restTemplate = new RestTemplate(clientHttpRequestFactory());
 
+        JavaTimeModule timeModule = new JavaTimeModule();
+        timeModule.addDeserializer(LocalDateTime.class, new LocalDateTimeDeserializer(DateTimeFormatter.ofPattern(LOCAL_DATE_TIME_FORMATTER)));
+
         List<HttpMessageConverter<?>> messageConverters = new ArrayList<>();
         MappingJackson2HttpMessageConverter jsonMessageConverter = new MappingJackson2HttpMessageConverter();
 
         ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.registerModule(timeModule);
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
         jsonMessageConverter.setObjectMapper(objectMapper);
 
         messageConverters.add(jsonMessageConverter);

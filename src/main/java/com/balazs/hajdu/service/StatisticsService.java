@@ -39,7 +39,7 @@ public class StatisticsService {
                 .withEndDate(LocalDateTime.now())
                 .build());
 
-        return buildStatistics(results);
+        return !results.isEmpty() ? buildStatistics(results) : new MeasurementResultStatistics.Builder().build();
     }
 
     private MeasurementResultStatistics buildStatistics(List<MeasurementResult> results) {

@@ -19,6 +19,8 @@ public final class Sensor {
     private final ObjectId id;
     private final String name;
     private final GeoJsonPoint location;
+    private final double maxAlert;
+    private final double minAlert;
     private final List<MeasurementResult> measurementResults;
     private final Map<StatisticsInterval, MeasurementResultStatistics> measurementResultStatistics;
 
@@ -26,6 +28,8 @@ public final class Sensor {
         this.id = builder.id;
         this.name = builder.sensorName;
         this.location = builder.location;
+        this.maxAlert = builder.maxAlert;
+        this.minAlert = builder.minAlert;
         this.measurementResults = builder.measurementResults;
         this.measurementResultStatistics = builder.measurementResultStatistics;
     }
@@ -42,6 +46,14 @@ public final class Sensor {
         return location;
     }
 
+    public double getMaxAlert() {
+        return maxAlert;
+    }
+
+    public double getMinAlert() {
+        return minAlert;
+    }
+
     public List<MeasurementResult> getMeasurementResults() {
         return measurementResults;
     }
@@ -56,7 +68,9 @@ public final class Sensor {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Sensor sensor = (Sensor) o;
-        return Objects.equal(id, sensor.id) &&
+        return Double.compare(sensor.maxAlert, maxAlert) == 0 &&
+                Double.compare(sensor.minAlert, minAlert) == 0 &&
+                Objects.equal(id, sensor.id) &&
                 Objects.equal(name, sensor.name) &&
                 Objects.equal(location, sensor.location) &&
                 Objects.equal(measurementResults, sensor.measurementResults) &&
@@ -65,7 +79,7 @@ public final class Sensor {
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(id, name, location, measurementResults, measurementResultStatistics);
+        return Objects.hashCode(id, name, location, maxAlert, minAlert, measurementResults, measurementResultStatistics);
     }
 
     @Override
@@ -74,6 +88,8 @@ public final class Sensor {
                 .add("id", id)
                 .add("name", name)
                 .add("location", location)
+                .add("maxAlert", maxAlert)
+                .add("minAlert", minAlert)
                 .add("measurementResults", measurementResults)
                 .add("measurementResultStatistics", measurementResultStatistics)
                 .toString();
@@ -84,6 +100,8 @@ public final class Sensor {
         private ObjectId id;
         private String sensorName;
         private GeoJsonPoint location;
+        private double maxAlert;
+        private double minAlert;
         private List<MeasurementResult> measurementResults;
         private Map<StatisticsInterval, MeasurementResultStatistics> measurementResultStatistics;
 
@@ -99,6 +117,16 @@ public final class Sensor {
 
         public Builder withLocation(double latitude, double longitude) {
             this.location = new GeoJsonPoint(latitude, longitude);
+            return this;
+        }
+
+        public Builder withMaxAlert(Double maxAlert) {
+            this.maxAlert = maxAlert != null ? maxAlert : 0;
+            return this;
+        }
+
+        public Builder withMinAlert(Double minAlert) {
+            this.minAlert = minAlert != null ? minAlert : 0;
             return this;
         }
 

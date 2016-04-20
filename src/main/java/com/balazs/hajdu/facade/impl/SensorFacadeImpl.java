@@ -6,11 +6,13 @@ import com.balazs.hajdu.components.transformers.SensorFactory;
 import com.balazs.hajdu.domain.MeasurementResult;
 import com.balazs.hajdu.domain.Sensor;
 import com.balazs.hajdu.domain.StatisticsInterval;
+import com.balazs.hajdu.domain.context.UpdateSensorAlertContext;
 import com.balazs.hajdu.domain.repository.MeasurementResultEntity;
 import com.balazs.hajdu.domain.repository.SensorEntity;
 import com.balazs.hajdu.domain.repository.UserEntity;
 import com.balazs.hajdu.domain.repository.maps.GeocodedLocation;
 import com.balazs.hajdu.domain.response.MeasurementResultStatistics;
+import com.balazs.hajdu.domain.view.SensorAlertRequestForm;
 import com.balazs.hajdu.domain.view.SensorRequestForm;
 import com.balazs.hajdu.error.exceptions.InvalidDatabaseOperationException;
 import com.balazs.hajdu.facade.SensorFacade;
@@ -87,6 +89,17 @@ public class SensorFacadeImpl implements SensorFacade {
         }
 
         return sensor;
+    }
+
+    @Override
+    public void updateSensorAlerts(String username, SensorAlertRequestForm sensorAlertRequestForm) {
+        UpdateSensorAlertContext updateSensorAlertContext = new UpdateSensorAlertContext.Builder().withUsername(username)
+                .withSensorName(sensorAlertRequestForm.getSensorAlert())
+                .withMaxValue(sensorAlertRequestForm.getMaxAlertValue())
+                .withMinValue(sensorAlertRequestForm.getMinAlertValue())
+                .build();
+
+        sensorService.updateAlertValueForSensor(updateSensorAlertContext);
     }
 
     private Map<String, List<MeasurementResult>> mapMeasurementResults(List<MeasurementResultEntity> measurementResults) {

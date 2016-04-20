@@ -3,14 +3,10 @@ package com.balazs.hajdu.domain.repository;
 import com.balazs.hajdu.domain.AbstractDocument;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
-import org.bson.types.ObjectId;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.data.mongodb.core.index.IndexDirection;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.util.List;
 
 /**
  * Representation of the sensor in the database.
@@ -23,6 +19,8 @@ public class SensorEntity extends AbstractDocument {
     @Indexed(direction = IndexDirection.ASCENDING)
     private String name;
     private GeoJsonPoint location;
+    private Double maxAlert;
+    private Double minAlert;
 
     public String getName() {
         return name;
@@ -40,6 +38,22 @@ public class SensorEntity extends AbstractDocument {
         this.location = location;
     }
 
+    public Double getMaxAlert() {
+        return maxAlert;
+    }
+
+    public void setMaxAlert(Double maxAlert) {
+        this.maxAlert = maxAlert;
+    }
+
+    public Double getMinAlert() {
+        return minAlert;
+    }
+
+    public void setMinAlert(Double minAlert) {
+        this.minAlert = minAlert;
+    }
+
     // generated code begins here
     @Override
     public boolean equals(Object o) {
@@ -48,12 +62,14 @@ public class SensorEntity extends AbstractDocument {
         if (!super.equals(o)) return false;
         SensorEntity that = (SensorEntity) o;
         return Objects.equal(name, that.name) &&
-                Objects.equal(location, that.location);
+                Objects.equal(location, that.location) &&
+                Objects.equal(maxAlert, that.maxAlert) &&
+                Objects.equal(minAlert, that.minAlert);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(super.hashCode(), name, location);
+        return Objects.hashCode(super.hashCode(), name, location, maxAlert, minAlert);
     }
 
     @Override
@@ -61,6 +77,8 @@ public class SensorEntity extends AbstractDocument {
         return MoreObjects.toStringHelper(this)
                 .add("name", name)
                 .add("location", location)
+                .add("maxAlert", maxAlert)
+                .add("minAlert", minAlert)
                 .toString();
     }
     // generated code ends here
