@@ -1,20 +1,20 @@
 package com.balazs.hajdu.signup;
 
-import org.junit.Ignore;
+import com.balazs.hajdu.config.WebAppConfigurationAware;
 import org.junit.Test;
 
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
-import com.balazs.hajdu.config.WebAppConfigurationAware;
+public class RegisterControllerTest extends WebAppConfigurationAware {
 
-public class SignupControllerTest extends WebAppConfigurationAware {
     @Test
-    @Ignore
-    public void displaysSignupForm() throws Exception {
+    public void displaysRegisterForm() throws Exception {
+
         mockMvc.perform(get("/register"))
                 .andExpect(model().attributeExists("registerForm"))
                 .andExpect(view().name("signup/signup"))
@@ -25,4 +25,5 @@ public class SignupControllerTest extends WebAppConfigurationAware {
                         ))
                 );
     }
+
 }

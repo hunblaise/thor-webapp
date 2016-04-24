@@ -28,12 +28,24 @@ public class UserAuthenticationIntegrationTest extends WebSecurityConfigurationA
     @Test
     public void userAuthenticates() throws Exception {
         final String username = "test test";
+        final String password = "test";
+        final String address = "Szeged, Római körút 21.";
+
         ResultMatcher matcher = mvcResult -> {
             HttpSession session = mvcResult.getRequest().getSession();
             SecurityContext securityContext = (SecurityContext) session.getAttribute(SEC_CONTEXT_ATTR);
             Assert.assertEquals(securityContext.getAuthentication().getName(), username);
         };
-        mockMvc.perform(post("/authenticate").param("username", username).param("password", "test"))
+
+        mockMvc.perform(post("/register")
+                .param("username", username)
+                .param("password", password)
+                .param("address", address));
+
+        mockMvc.perform(post("/logout"))
+                .andExpect(redirectedUrl("/signin?logout"));
+
+        mockMvc.perform(post("/authenticate").param("username", username).param("password", password))
                 .andExpect(redirectedUrl("/"))
                 .andExpect(matcher);
     }
