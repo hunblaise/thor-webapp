@@ -72,6 +72,8 @@ public class RepositoryPackageConfiguration {
                     .withMc(calibrationInputStream.readShort())
                     .build();
 
+            LOGGER.debug("Configuration data: " + configuration);
+
         } catch (IOException e) {
             LOGGER.error(CAN_NOT_READ_SENSOR, e);
         } catch (TemperatureSensorException e) {

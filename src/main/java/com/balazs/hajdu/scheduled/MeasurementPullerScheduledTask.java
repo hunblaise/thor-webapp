@@ -1,6 +1,7 @@
 package com.balazs.hajdu.scheduled;
 
 import com.balazs.hajdu.domain.MeasurementResult;
+import com.balazs.hajdu.domain.User;
 import com.balazs.hajdu.domain.repository.SensorEntity;
 import com.balazs.hajdu.domain.repository.UserEntity;
 import com.balazs.hajdu.repository.ClientRepository;
@@ -38,15 +39,14 @@ public class MeasurementPullerScheduledTask {
     @Scheduled(fixedRate = 30000)
     public void pullMeasurementResults() {
 
-        /*for (UserEntity userEntity : userRepository.findAll()) {
-            for (SensorEntity sensor : userEntity.getSensors()) {
-                MeasurementResult measurementResult = clientRepository.getMeasurementResultFromClient(userEntity.getUsername(),
-                        userEntity.getPassword(), sensor);
-                LOGGER.debug(RETRIEVED_MEASUREMENT_RESULT, userEntity.getUsername(), sensor.getName(), measurementResult);
+        UserEntity userEntity = userRepository.findOneByUsername("thor");
+        for (SensorEntity sensor : userEntity.getSensors()) {
+            MeasurementResult measurementResult = clientRepository.getMeasurementResultFromClient(userEntity.getUsername(),
+                    userEntity.getPassword(), sensor);
+            LOGGER.debug(RETRIEVED_MEASUREMENT_RESULT, userEntity.getUsername(), sensor.getName(), measurementResult);
 
-                measurementResultRepository.saveMeasurementResultToSensor(measurementResult);
-            }
-        }*/
+            measurementResultRepository.saveMeasurementResultToSensor(measurementResult);
+        }
     }
 
 }

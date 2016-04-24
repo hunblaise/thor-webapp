@@ -3,6 +3,7 @@ package com.balazs.hajdu.client.repository.impl;
 import com.balazs.hajdu.client.domain.config.Bmp180Configuration;
 import com.balazs.hajdu.client.error.TemperatureSensorException;
 import com.balazs.hajdu.client.repository.TemperatureRepository;
+import com.balazs.hajdu.client.util.ThreadUtilities;
 import com.pi4j.io.i2c.I2CDevice;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,6 +34,7 @@ public class Bmp180TemperatureRepository implements TemperatureRepository {
 
     public Bmp180TemperatureRepository(Bmp180Configuration configuration) {
         this.bmp180 = configuration.getDevice();
+        LOGGER.debug("bmp180: " + bmp180);
         this.configuration = configuration;
     }
 
@@ -43,8 +45,12 @@ public class Bmp180TemperatureRepository implements TemperatureRepository {
         int uncompensatedTemperatureData = -1;
         try {
             bmp180.write(TEMPERATURE_CONTROL_REGISTER_DATA_CONTROL_REGISTER, TEMPERATURE_READ_COMMAND);
+            ThreadUtilities.waitFor(500);
 
-            if (bmp180.read(TEMPERATURE_READ_ADDRESS, bytes, READ_OFFSET, READ_OFFSET) < READ_SIZE) {
+            int rawData = bmp180.read(TEMPERATURE_READ_ADDRESS, bytes, READ_OFFSET, READ_SIZE);
+            LOGGER.debug("Raw read data: " + rawData);
+
+            if (rawData < READ_SIZE) {
                 throw new TemperatureSensorException(TEMPERATURE_READING_ERROR);
             }
 

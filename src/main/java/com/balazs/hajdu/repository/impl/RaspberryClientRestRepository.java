@@ -5,6 +5,8 @@ import com.balazs.hajdu.domain.client.ClientMeasurementResult;
 import com.balazs.hajdu.domain.repository.SensorEntity;
 import com.balazs.hajdu.repository.ClientRepository;
 import org.bson.types.ObjectId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.LinkedMultiValueMap;
@@ -24,6 +26,8 @@ import java.time.LocalDateTime;
 @Repository
 public class RaspberryClientRestRepository implements ClientRepository {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(RaspberryClientRestRepository.class);
+
     private static final String KEY = "key";
 
     @Value("${RASPBERRY_CLIENT_HOST}")
@@ -39,6 +43,8 @@ public class RaspberryClientRestRepository implements ClientRepository {
     public MeasurementResult getMeasurementResultFromClient(String username, String password, SensorEntity sensor) {
         String url = buildUrl(username, password, sensor.getName());
 
+        LOGGER.debug("Calling Raspberry Pi client with url: {}", url);
+
         ClientMeasurementResult result = restTemplate.getForObject(url, ClientMeasurementResult.class);
 
         return new MeasurementResult.Builder().withId(new ObjectId())
@@ -52,11 +58,9 @@ public class RaspberryClientRestRepository implements ClientRepository {
 
     private String buildUrl(String username, String password, String sensorName) {
         MultiValueMap<String, String> parameters = new LinkedMultiValueMap<>();
-
         parameters.add(KEY, password);
 
-        UriComponentsBuilder builder = UriComponentsBuilder.newInstance();
-        UriComponents uriComponents = builder.host(raspberryClientHost)
+        UriComponents uriComponents = UriComponentsBuilder.fromHttpUrl(raspberryClientHost)
                 .path(String.format(raspberryClientPath, username, sensorName))
                 .queryParams(parameters)
                 .build();

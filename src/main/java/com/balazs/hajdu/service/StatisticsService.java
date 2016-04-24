@@ -8,6 +8,9 @@ import com.balazs.hajdu.repository.MeasurementResultRepository;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -18,6 +21,9 @@ import java.util.List;
  */
 @Service
 public class StatisticsService {
+
+    private static final String NUMBER_FORMAT = "#.##";
+    private static final int DECIMAL_PLACES = 2;
 
     @Inject
     private MeasurementResultRepository measurementResultRepository;
@@ -44,9 +50,19 @@ public class StatisticsService {
 
     private MeasurementResultStatistics buildStatistics(List<MeasurementResult> results) {
         return new MeasurementResultStatistics.Builder()
-                .withAverage(results.stream().mapToDouble(MeasurementResult::getValue).average().getAsDouble())
-                .withMax(results.stream().mapToDouble(MeasurementResult::getValue).max().getAsDouble())
-                .withMin(results.stream().mapToDouble(MeasurementResult::getValue).min().getAsDouble())
+                .withAverage(new BigDecimal(results.stream()
+                        .mapToDouble(MeasurementResult::getValue)
+                        .average()
+                        .getAsDouble())
+                        .setScale(DECIMAL_PLACES, RoundingMode.HALF_UP).doubleValue())
+                .withMax(new BigDecimal(results.stream()
+                        .mapToDouble(MeasurementResult::getValue)
+                        .max()
+                        .getAsDouble()).setScale(DECIMAL_PLACES, RoundingMode.HALF_UP).doubleValue())
+                .withMin(new BigDecimal(results.stream()
+                        .mapToDouble(MeasurementResult::getValue)
+                        .min()
+                        .getAsDouble()).setScale(DECIMAL_PLACES, BigDecimal.ROUND_HALF_UP).doubleValue())
                 .build();
     }
 
