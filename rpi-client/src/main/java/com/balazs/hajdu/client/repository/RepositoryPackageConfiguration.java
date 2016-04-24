@@ -34,24 +34,23 @@ public class RepositoryPackageConfiguration {
     private static final int DEVICE_ADDRESS = 0x77;
 
     @Bean
-    public Bmp180TemperatureRepository bmp180TemperatureRepository() throws IOException {
+    public I2CDevice bmp180() throws IOException {
         I2CBus bus = I2CFactory.getInstance(I2CBus.BUS_1);
         LOGGER.debug(CONNECTED_TO_BUS);
 
         I2CDevice bmp180 = bus.getDevice(DEVICE_ADDRESS);
         LOGGER.debug(FOUND_SENSOR + bmp180);
 
-        Bmp180Configuration configuration = calibration(bmp180);
-
-        return new Bmp180TemperatureRepository(configuration);
+        return bmp180;
     }
 
-    private Bmp180Configuration calibration(I2CDevice device) {
+    @Bean
+    public Bmp180Configuration configuration() {
         Bmp180Configuration configuration = null;
 
         try {
             byte[] bytes = new byte[TEMPERATURE_CONTROL_REGISTER_DATA_CALIBRATION_BYTES];
-            int readTotal = device.read(EEPROM_START, bytes, OFFSET, TEMPERATURE_CONTROL_REGISTER_DATA_CALIBRATION_BYTES);
+            int readTotal = bmp180().read(EEPROM_START, bytes, OFFSET, TEMPERATURE_CONTROL_REGISTER_DATA_CALIBRATION_BYTES);
 
             if (readTotal != TEMPERATURE_CONTROL_REGISTER_DATA_CALIBRATION_BYTES) {
                 throw new TemperatureSensorException(CAN_NOT_CALIBRATE_SENSOR);
@@ -59,7 +58,7 @@ public class RepositoryPackageConfiguration {
 
             DataInputStream calibrationInputStream = new DataInputStream(new ByteArrayInputStream(bytes));
 
-            configuration = new Bmp180Configuration.Builder().withDevice(device)
+            configuration = new Bmp180Configuration.Builder().withDevice(bmp180())
                     .withAc1(calibrationInputStream.readShort())
                     .withAc2(calibrationInputStream.readShort())
                     .withAc3(calibrationInputStream.readShort())

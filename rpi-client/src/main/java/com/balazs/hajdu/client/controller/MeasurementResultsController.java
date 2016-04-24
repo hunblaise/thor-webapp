@@ -21,6 +21,8 @@ import java.util.Random;
 @RestController
 public class MeasurementResultsController {
 
+    public static final String INVALID_USER_ERROR_MESSAGE = "invalid user key";
+
     @Inject
     private AccountRepository accountRepository;
 
@@ -34,10 +36,10 @@ public class MeasurementResultsController {
         Account account = accountRepository.getAccountByUsername(username);
 
         MeasurementResult.Builder builder = new MeasurementResult.Builder();
-        if (account.getPassword().equalsIgnoreCase(measurementRequest.getKey())) {
+        if (account != null && account.getPassword().equalsIgnoreCase(measurementRequest.getKey())) {
             builder.withValue(delegator.delegate(sensorName));
         } else {
-            builder.withError("invalid user key");
+            builder.withError(INVALID_USER_ERROR_MESSAGE);
         }
 
         return builder.build();

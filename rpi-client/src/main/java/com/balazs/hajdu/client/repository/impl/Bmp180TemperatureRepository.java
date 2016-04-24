@@ -1,13 +1,14 @@
 package com.balazs.hajdu.client.repository.impl;
 
-import com.balazs.hajdu.client.domain.config.Bmp180Configuration;
 import com.balazs.hajdu.client.error.TemperatureSensorException;
 import com.balazs.hajdu.client.repository.TemperatureRepository;
 import com.balazs.hajdu.client.util.ThreadUtilities;
 import com.pi4j.io.i2c.I2CDevice;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
 
+import javax.inject.Inject;
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -16,6 +17,7 @@ import java.io.IOException;
  * Default implementation of {@link com.balazs.hajdu.client.repository.TemperatureRepository}.
  * @author Balazs Hajdu
  */
+@Repository
 public class Bmp180TemperatureRepository implements TemperatureRepository {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Bmp180TemperatureRepository.class);
@@ -29,14 +31,8 @@ public class Bmp180TemperatureRepository implements TemperatureRepository {
     private static final byte TEMPERATURE_READ_COMMAND = (byte) 0x2E;
     private static final byte TEMPERATURE_READ_ADDRESS = (byte) 0xF6;
 
-    private final I2CDevice bmp180;
-    private final Bmp180Configuration configuration;
-
-    public Bmp180TemperatureRepository(Bmp180Configuration configuration) {
-        this.bmp180 = configuration.getDevice();
-        LOGGER.debug("bmp180: " + bmp180);
-        this.configuration = configuration;
-    }
+    @Inject
+    private I2CDevice bmp180;
 
     @Override
     public int readTemperature() {
@@ -57,6 +53,7 @@ public class Bmp180TemperatureRepository implements TemperatureRepository {
             DataInputStream bmp180InputStream = new DataInputStream(new ByteArrayInputStream(bytes));
 
             uncompensatedTemperatureData = bmp180InputStream.readUnsignedShort();
+            LOGGER.debug("Uncompensated temperature value: {}", uncompensatedTemperatureData);
         } catch (IOException e) {
             LOGGER.error(TEMPERATURE_READING_ERROR);
         } catch (TemperatureSensorException e) {
@@ -64,11 +61,6 @@ public class Bmp180TemperatureRepository implements TemperatureRepository {
         }
 
         return uncompensatedTemperatureData;
-    }
-
-    @Override
-    public Bmp180Configuration getConfiguration() {
-        return configuration;
     }
 
 }
