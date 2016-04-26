@@ -17,7 +17,7 @@ public class WeatherTransformer {
      * @param currentWeather OpenWeatherMap related object
      * @return Thor related domain object
      */
-    public Weather tranform(CurrentWeather currentWeather) {
+    public Weather transform(CurrentWeather currentWeather) {
         Weather.Builder builder = new Weather.Builder();
 
         if (!currentWeather.getWeather().isEmpty()) {

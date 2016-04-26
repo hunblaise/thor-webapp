@@ -33,13 +33,12 @@ public class GeocodedLocationTransformer {
                 .collect(Collectors.toList());
     }
 
-    private Location transformLocation(GeocodeResult geocodeResult) {
-        return new Location.Builder()
-                .withLattitude(geocodeResult.getGeometry().getLocation().getLat())
-                .withLongitude(geocodeResult.getGeometry().getLocation().getLng())
-                .build();
-    }
-
+    /**
+     * Transforms Thor related domain object to database related domain object.
+     *
+     * @param geocodedLocation Thor related domain object
+     * @return database related domain object
+     */
     public LocationEntity transform(GeocodedLocation geocodedLocation) {
         LocationEntity locationEntity = new LocationEntity();
 
@@ -49,4 +48,12 @@ public class GeocodedLocationTransformer {
 
         return locationEntity;
     }
+
+    private Location transformLocation(GeocodeResult geocodeResult) {
+        return new Location.Builder()
+                .withLattitude(geocodeResult.getGeometry().getLocation().getLat())
+                .withLongitude(geocodeResult.getGeometry().getLocation().getLng())
+                .build();
+    }
+
 }

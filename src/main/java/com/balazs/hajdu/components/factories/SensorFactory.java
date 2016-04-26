@@ -1,4 +1,4 @@
-package com.balazs.hajdu.components.transformers;
+package com.balazs.hajdu.components.factories;
 
 import com.balazs.hajdu.domain.MeasurementResult;
 import com.balazs.hajdu.domain.Sensor;
@@ -52,7 +52,8 @@ public class SensorFactory {
         sensorEntity.setId(new ObjectId());
         sensorEntity.setName(sensor.getName());
         sensorEntity.setLocation(sensor.getLocation());
-        sensorEntity.setId(sensor.getId());
+        sensorEntity.setMaxAlert(sensor.getMaxAlert());
+        sensorEntity.setMinAlert(sensor.getMinAlert());
 
         return sensorEntity;
     }

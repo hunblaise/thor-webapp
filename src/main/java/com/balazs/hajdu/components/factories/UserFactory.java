@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 /**
+ * Creates User objects.
+ *
  * @author Balazs Hajdu
  */
 @Component

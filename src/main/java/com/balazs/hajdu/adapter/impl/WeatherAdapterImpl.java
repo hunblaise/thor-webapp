@@ -29,7 +29,7 @@ public class WeatherAdapterImpl implements WeatherAdapter {
 
     @Override
     public Weather getCurrentWeather(String cityName) {
-        return weatherTransformer.tranform(weatherRepository.getCurrentWeather(cityName));
+        return weatherTransformer.transform(weatherRepository.getCurrentWeather(cityName));
     }
 
     @Override

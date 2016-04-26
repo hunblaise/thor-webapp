@@ -2,7 +2,7 @@ package com.balazs.hajdu.facade.impl;
 
 import com.balazs.hajdu.adapter.GeoAdapter;
 import com.balazs.hajdu.components.transformers.MeasurementResultTransformer;
-import com.balazs.hajdu.components.transformers.SensorFactory;
+import com.balazs.hajdu.components.factories.SensorFactory;
 import com.balazs.hajdu.domain.MeasurementResult;
 import com.balazs.hajdu.domain.Sensor;
 import com.balazs.hajdu.domain.StatisticsInterval;

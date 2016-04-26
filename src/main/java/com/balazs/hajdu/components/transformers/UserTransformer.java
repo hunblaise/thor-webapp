@@ -1,5 +1,6 @@
 package com.balazs.hajdu.components.transformers;
 
+import com.balazs.hajdu.components.factories.SensorFactory;
 import com.balazs.hajdu.domain.User;
 import com.balazs.hajdu.domain.UserRoles;
 import com.balazs.hajdu.domain.repository.UserEntity;

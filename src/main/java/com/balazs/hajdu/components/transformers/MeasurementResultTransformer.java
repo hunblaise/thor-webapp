@@ -72,6 +72,22 @@ public class MeasurementResultTransformer {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Transforms a database entity into Thor related domain object.
+     *
+     * @param entity database entity
+     * @return Thor related domain object
+     */
+    public MeasurementResult transformToThor(MeasurementResultEntity entity) {
+        return new MeasurementResult.Builder().withUsername(entity.getUsername())
+                .withSensorName(entity.getSensorName())
+                .withValue(entity.getValue())
+                .withDate(entity.getDate())
+                .withLocation(entity.getLocation().getX(), entity.getLocation().getY())
+                .withId(entity.getId())
+                .build();
+    }
+
     private MeasurementResponse transformToResponse(MeasurementResultEntity entity) {
         return new MeasurementResponse.Builder().withValue(entity.getValue())
                 .withDate(entity.getDate().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME))
@@ -81,16 +97,6 @@ public class MeasurementResultTransformer {
     private MeasurementResponse transformThorToResponse(MeasurementResult result) {
         return new MeasurementResponse.Builder().withValue(result.getValue())
                 .withDate(result.getDate().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME))
-                .build();
-    }
-
-    public MeasurementResult transformToThor(MeasurementResultEntity entity) {
-        return new MeasurementResult.Builder().withUsername(entity.getUsername())
-                .withSensorName(entity.getSensorName())
-                .withValue(entity.getValue())
-                .withDate(entity.getDate())
-                .withLocation(entity.getLocation().getX(), entity.getLocation().getY())
-                .withId(entity.getId())
                 .build();
     }
 
