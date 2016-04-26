@@ -2,190 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56e9a236-839e-4c6e-a54f-bebaae943735" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/resources/persistence-pgsql.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/resources/persistence.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/favicon-114.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/favicon-120.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/favicon-144.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/favicon-150.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/favicon-152.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/favicon-16.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/favicon-160.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/favicon-180.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/favicon-192.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/favicon-310.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/favicon-32.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/favicon-57.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/favicon-60.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/favicon-64.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/favicon-70.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/favicon-72.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/favicon-76.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/favicon-96.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/favicon.ico" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/Application.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/Application.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/adapter/GeoAdapter.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/adapter/GeoAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/adapter/WeatherAdapter.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/adapter/WeatherAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/adapter/impl/GeoAdapterImpl.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/adapter/impl/GeoAdapterImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/adapter/impl/WeatherAdapterImpl.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/adapter/impl/WeatherAdapterImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/components/factories/ForecastFactory.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/components/factories/ForecastFactory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/components/factories/SensorFactory.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/components/factories/SensorFactory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/components/factories/UserFactory.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/components/factories/UserFactory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/components/transformers/GeocodedLocationTransformer.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/components/transformers/GeocodedLocationTransformer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/components/transformers/MeasurementResultTransformer.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/components/transformers/MeasurementResultTransformer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/components/transformers/UserLocationTransformer.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/components/transformers/UserLocationTransformer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/components/transformers/UserTransformer.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/components/transformers/UserTransformer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/components/transformers/WeatherTransformer.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/components/transformers/WeatherTransformer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/config/ApplicationConfig.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/config/ApplicationConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/config/MongoConfig.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/config/MongoConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/config/SecurityConfig.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/config/SecurityConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/config/WebAppInitializer.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/config/WebAppInitializer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/config/WebMvcConfig.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/config/WebMvcConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/constants/Endpoints.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/constants/Endpoints.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/constants/ViewNames.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/constants/ViewNames.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/controller/HomeController.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/HomeController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/controller/MeasurementController.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/MeasurementController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/controller/RegisterController.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/RegisterController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/controller/SensorController.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/SensorController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/controller/SignInController.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/SignInController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/AbstractDocument.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/AbstractDocument.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/MeasurementResult.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/MeasurementResult.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/Sensor.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/Sensor.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/StatisticsInterval.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/StatisticsInterval.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/User.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/User.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/UserRoles.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/UserRoles.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/client/ClientMeasurementResult.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/client/ClientMeasurementResult.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/context/MeasurementResultQueryContext.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/context/MeasurementResultQueryContext.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/context/UpdateSensorAlertContext.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/context/UpdateSensorAlertContext.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/LocationEntity.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/LocationEntity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/MeasurementResultEntity.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/MeasurementResultEntity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/SensorEntity.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/SensorEntity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/UserEntity.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/UserEntity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/forecast/Forecast.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/Forecast.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/forecast/ForecastDetail.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/ForecastDetail.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/forecast/response/CityInformation.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/response/CityInformation.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/forecast/response/ForecastClouds.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/response/ForecastClouds.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/forecast/response/ForecastInformation.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/response/ForecastInformation.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/forecast/response/ForecastMain.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/response/ForecastMain.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/forecast/response/ForecastResponse.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/response/ForecastResponse.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/forecast/response/ForecastWeather.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/response/ForecastWeather.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/forecast/response/ForecastWind.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/response/ForecastWind.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/geo/UserLocation.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/geo/UserLocation.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/maps/GeocodedLocation.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/maps/GeocodedLocation.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/maps/Location.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/maps/Location.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/maps/response/AddressComponent.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/maps/response/AddressComponent.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/maps/response/GeocodeResult.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/maps/response/GeocodeResult.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/maps/response/Geometry.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/maps/response/Geometry.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/maps/response/GoogleMapsGeocoding.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/maps/response/GoogleMapsGeocoding.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/maps/response/Location.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/maps/response/Location.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/maps/response/Viewport.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/maps/response/Viewport.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/weather/Weather.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/weather/Weather.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/weather/response/AdditionalWeatherInformation.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/weather/response/AdditionalWeatherInformation.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/weather/response/Cloud.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/weather/response/Cloud.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/weather/response/Coordinate.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/weather/response/Coordinate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/weather/response/CurrentWeather.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/weather/response/CurrentWeather.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/weather/response/Rain.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/weather/response/Rain.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/weather/response/Snow.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/weather/response/Snow.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/weather/response/WeatherInformation.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/weather/response/WeatherInformation.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/weather/response/WeatherType.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/weather/response/WeatherType.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/repository/weather/response/Wind.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/weather/response/Wind.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/response/MeasurementResponse.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/response/MeasurementResponse.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/response/MeasurementResultStatistics.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/response/MeasurementResultStatistics.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/view/DateIntervalRequestForm.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/view/DateIntervalRequestForm.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/view/MeasurementResultRequestForm.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/view/MeasurementResultRequestForm.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/view/RegisterForm.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/view/RegisterForm.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/view/SensorAlertRequestForm.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/view/SensorAlertRequestForm.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/view/SensorLocation.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/view/SensorLocation.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/view/SensorRequestForm.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/view/SensorRequestForm.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/view/SensorValue.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/view/SensorValue.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/view/SensorValueRequestForm.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/view/SensorValueRequestForm.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/error/CustomErrorController.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/error/CustomErrorController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/error/ExceptionHandler.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/error/ExceptionHandler.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/error/exceptions/InvalidDatabaseOperationException.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/error/exceptions/InvalidDatabaseOperationException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/facade/MeasurementResultFacade.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/facade/MeasurementResultFacade.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/facade/SensorFacade.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/facade/SensorFacade.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/facade/impl/MeasurementResultFacadeImpl.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/facade/impl/MeasurementResultFacadeImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/facade/impl/SensorFacadeImpl.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/facade/impl/SensorFacadeImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/repository/ClientRepository.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/ClientRepository.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/repository/GeoCodingRepository.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/GeoCodingRepository.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/repository/GeoRepository.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/GeoRepository.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/repository/MeasurementResultRepository.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/MeasurementResultRepository.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/repository/MeasurementResultRepositoryCustom.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/MeasurementResultRepositoryCustom.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/repository/PackageConfiguration.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/PackageConfiguration.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/repository/UserRepository.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/UserRepository.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/repository/UserRepositoryCustom.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/UserRepositoryCustom.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/repository/WeatherRepository.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/WeatherRepository.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/repository/impl/GeoIp2Repository.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/impl/GeoIp2Repository.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/repository/impl/GoogleMapsGeocodingRepository.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/impl/GoogleMapsGeocodingRepository.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/repository/impl/MeasurementResultRepositoryImpl.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/impl/MeasurementResultRepositoryImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/repository/impl/OpenWeatherMapRepository.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/impl/OpenWeatherMapRepository.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/repository/impl/RaspberryClientRestRepository.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/impl/RaspberryClientRestRepository.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/repository/impl/UserRepositoryImpl.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/impl/UserRepositoryImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/scheduled/MeasurementPullerScheduledTask.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/scheduled/MeasurementPullerScheduledTask.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/service/MeasurementResultService.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/MeasurementResultService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/service/SensorService.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/SensorService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/service/StatisticsService.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/StatisticsService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/service/UserLocationService.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/UserLocationService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/service/UserManagementService.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/UserManagementService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/service/UserService.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/UserService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/service/WeatherService.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/WeatherService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/service/impl/UserLocationServiceImpl.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/impl/UserLocationServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/service/impl/UserManagementServiceImpl.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/impl/UserManagementServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/service/impl/WeatherServiceImpl.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/impl/WeatherServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/support/web/Message.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/support/web/Message.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/support/web/MessageHelper.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/support/web/MessageHelper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/thor-webapp/src/main/resources/application.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/db.properties" afterPath="$PROJECT_DIR$/thor-webapp/src/main/resources/db.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/location/GeoLite2-City.mmdb" afterPath="$PROJECT_DIR$/thor-webapp/src/main/resources/location/GeoLite2-City.mmdb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" afterPath="$PROJECT_DIR$/thor-webapp/src/main/resources/logback.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/i18n/messages.properties" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/i18n/messages.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/error/general.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/error/general.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/alert.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/alert.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/footer.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/footer.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/header.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/header.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/measurements-module.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/measurements-module.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/sensor-module.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/sensor-module.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/weather-module.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/weather-module.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home/homeNotSignedIn.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeNotSignedIn.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home/homeSignedIn.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeSignedIn.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/measurements/measurements.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/measurements/measurements.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sensors/sensors.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/sensors/sensors.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/signin/signin.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/signin/signin.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/signup/signup.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/signup/signup.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap-datetimepicker.min.css" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/css/bootstrap-datetimepicker.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/css/bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/core.css" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/css/core.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/forms.css" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/css/forms.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/header.css" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/css/header.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/map-module.css" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/css/map-module.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/measurement-module.css" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/css/measurement-module.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/sensor-module.css" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/css/sensor-module.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/weather-icons-wind.css" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/css/weather-icons-wind.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/weather-icons-wind.min.css" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/css/weather-icons-wind.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/weather-icons.css" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/css/weather-icons.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/weather-icons.min.css" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/css/weather-icons.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/weather-module.css" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/css/weather-module.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/font/weathericons-regular-webfont.eot" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/font/weathericons-regular-webfont.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/font/weathericons-regular-webfont.svg" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/font/weathericons-regular-webfont.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/font/weathericons-regular-webfont.ttf" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/font/weathericons-regular-webfont.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/font/weathericons-regular-webfont.woff" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/font/weathericons-regular-webfont.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/font/weathericons-regular-webfont.woff2" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/font/weathericons-regular-webfont.woff2" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/fonts/glyphicons-halflings-regular.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/fonts/glyphicons-halflings-regular.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/fonts/glyphicons-halflings-regular.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/favicon.ico" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/images/favicon.ico" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/Chart.min.js" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/Chart.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/bootstrap-datetimepicker.min.js" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/bootstrap-datetimepicker.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/bootstrap.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/chart/chart.js" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/chart/chart.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/map/map.js" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/map/map.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/map/sensor-map.js" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/map/sensor-map.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/moment-with-locales.min.js" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/moment-with-locales.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/balazs/hajdu/account/UserAuthenticationIntegrationTest.java" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/account/UserAuthenticationIntegrationTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/balazs/hajdu/adapter/impl/GeoAdapterImplTest.java" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/adapter/impl/GeoAdapterImplTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/balazs/hajdu/adapter/impl/WeatherAdapterImplTest.java" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/adapter/impl/WeatherAdapterImplTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/balazs/hajdu/components/factories/ForecastFactoryTest.java" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/components/factories/ForecastFactoryTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/balazs/hajdu/components/factories/SensorFactoryTest.java" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/components/factories/SensorFactoryTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/balazs/hajdu/components/factories/UserFactoryTest.java" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/components/factories/UserFactoryTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/balazs/hajdu/components/transformers/GeocodedLocationTransformerTest.java" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/components/transformers/GeocodedLocationTransformerTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/balazs/hajdu/components/transformers/MeasurementResultTransformerTest.java" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/components/transformers/MeasurementResultTransformerTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/balazs/hajdu/components/transformers/UserLocationTransformerTest.java" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/components/transformers/UserLocationTransformerTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/balazs/hajdu/components/transformers/WeatherTransformerTest.java" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/components/transformers/WeatherTransformerTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/balazs/hajdu/config/EmbeddedDataSourceConfig.java" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/config/EmbeddedDataSourceConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/balazs/hajdu/config/NoCsrfSecurityConfig.java" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/config/NoCsrfSecurityConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/balazs/hajdu/config/WebAppConfigurationAware.java" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/config/WebAppConfigurationAware.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/balazs/hajdu/config/WebSecurityConfigurationAware.java" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/config/WebSecurityConfigurationAware.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/balazs/hajdu/signup/RegisterControllerTest.java" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/signup/RegisterControllerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rpi-client/pom.xml" afterPath="$PROJECT_DIR$/rpi-client/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeNotSignedIn.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeNotSignedIn.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeSignedIn.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeSignedIn.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/measurements/measurements.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/measurements/measurements.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/sensors/sensors.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/sensors/sensors.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/signin/signin.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/signin/signin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/signup/signup.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/signup/signup.html" />
     </list>
     <ignored path="thor-web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -211,26 +54,6 @@
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
   </component>
-  <component name="DockManager">
-    <window id="2">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/rpi-client/pom.xml">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0">
-                    <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="thor-web" />
@@ -240,101 +63,78 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/thor-webapp/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.2692308">
-              <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+            <state vertical-scroll-proportion="-3.2">
+              <caret line="273" column="37" selection-start-line="273" selection-start-column="29" selection-end-line="273" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/HomeController.java">
+      <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/header.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="27" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="27" />
+            <state vertical-scroll-proportion="15.192307">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SensorController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/SensorController.java">
+      <file leaf-file-name="homeNotSignedIn.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeNotSignedIn.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="81" selection-start-line="37" selection-start-column="81" selection-end-line="37" selection-end-column="81" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApplicationConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/config/ApplicationConfig.java">
+      <file leaf-file-name="homeSignedIn.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeSignedIn.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+            <state vertical-scroll-proportion="-4.6538463">
+              <caret line="24" column="68" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserAuthenticationIntegrationTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/account/UserAuthenticationIntegrationTest.java">
+      <file leaf-file-name="measurements.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/measurements/measurements.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            <state vertical-scroll-proportion="-14.461538">
+              <caret line="24" column="68" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegisterControllerTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sensors.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/sensors/sensors.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4548872">
+              <caret line="24" column="68" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/css/header.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="15" column="36" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegisterControllerTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/signup/RegisterControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26681614">
+            <state vertical-scroll-proportion="0.0">
               <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebAppConfigurationAware.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/config/WebAppConfigurationAware.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
-              <folding>
-                <element signature="e#912#913#0" expanded="true" />
-                <element signature="e#979#980#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NoCsrfSecurityConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/config/NoCsrfSecurityConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EmbeddedDataSourceConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/config/EmbeddedDataSourceConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1923075">
-              <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -366,13 +166,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/sensor-module.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/config/SecurityConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/domain/Sensor.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/measurements-module.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/service/StatisticsService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/config/WebAppInitializer.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/config/MetricsConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/balazs/hajdu/repository/PackageConfiguration.java" />
         <option value="$PROJECT_DIR$/rpi-client/src/main/java/com/balazs/hajdu/client/util/ThreadUtilities.java" />
@@ -417,6 +210,13 @@
         <option value="$PROJECT_DIR$/thor-webapp/pom.xml" />
         <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/SensorController.java" />
         <option value="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/signup/RegisterControllerTest.java" />
+        <option value="$PROJECT_DIR$/rpi-client/pom.xml" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeNotSignedIn.html" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeSignedIn.html" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/measurements/measurements.html" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/sensors/sensors.html" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/signin/signin.html" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/signup/signup.html" />
       </list>
     </option>
   </component>
@@ -474,10 +274,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1288" />
-    <option name="y" value="-149" />
-    <option name="width" value="1296" />
-    <option name="height" value="1000" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -648,8 +448,30 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -671,15 +493,49 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="hajdu" />
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -705,19 +561,61 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="hajdu" />
+              <option name="myItemId" value="WEB-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="signin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sensors" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -739,15 +637,23 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="hajdu" />
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="measurements" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -766,6 +672,134 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fragments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rpi-client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1725,7 +1759,7 @@
       <workItem from="1461580790279" duration="1784000" />
       <workItem from="1461603128102" duration="7501000" />
       <workItem from="1461666761374" duration="1414000" />
-      <workItem from="1461686939823" duration="12904000" />
+      <workItem from="1461686939823" duration="16790000" />
     </task>
     <task id="LOCAL-00001" summary="@noissue Added readme">
       <created>1458058027495</created>
@@ -1925,7 +1959,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461698410320</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="@build moved files from trunk to webapp module.">
+      <created>1461700449980</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1461700449980</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1961,10 +2001,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="435085000" />
+    <option name="totallyTimeSpent" value="438971000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1288" y="-149" width="1296" height="1000" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1975,21 +2015,21 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41637832" sideWeight="0.50323623" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45328718" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4762684" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3797054" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22087379" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2065053" sideWeight="0.49076518" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2065053" sideWeight="0.50923485" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33551556" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5144175" sideWeight="0.49676377" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5139116" sideWeight="0.49676377" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2038,7 +2078,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="@noissue Fixed unit tests" />
     <MESSAGE value="@noissue Skip integration tests." />
     <MESSAGE value="@noissue Added javadoc." />
     <MESSAGE value="@ci_build: run acceptance tests on ci build." />
@@ -2063,7 +2102,8 @@
     <MESSAGE value="@build fix integration tests." />
     <MESSAGE value="@build added unit tests, refactored bean structure." />
     <MESSAGE value="@build implemented unit tests." />
-    <option name="LAST_COMMIT_MESSAGE" value="@build implemented unit tests." />
+    <MESSAGE value="@build moved files from trunk to webapp module." />
+    <option name="LAST_COMMIT_MESSAGE" value="@build moved files from trunk to webapp module." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2234,26 +2274,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rpi-client/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.1923075">
           <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2692308">
-          <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -2319,8 +2343,88 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/signup/RegisterControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26681614">
+        <state vertical-scroll-proportion="0.0">
           <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2">
+          <caret line="273" column="37" selection-start-line="273" selection-start-column="29" selection-end-line="273" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpi-client/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39267015">
+          <caret line="129" column="21" selection-start-line="129" selection-start-column="21" selection-end-line="129" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/css/header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="15.192307">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeNotSignedIn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeSignedIn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.6538463">
+          <caret line="24" column="68" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/measurements/measurements.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.461538">
+          <caret line="24" column="68" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/signup/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.156923">
+          <caret line="24" column="68" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/signin/signin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.63384616">
+          <caret line="24" column="68" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/sensors/sensors.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4548872">
+          <caret line="24" column="68" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
           <folding />
         </state>
       </provider>
