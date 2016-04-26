@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/rpi-client/rpi-client.iml" filepath="$PROJECT_DIR$/rpi-client/rpi-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/thor-web.iml" filepath="$PROJECT_DIR$/thor-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thor-webapp/thor-web (1).iml" filepath="$PROJECT_DIR$/thor-webapp/thor-web (1).iml" />
     </modules>
   </component>
 </project>

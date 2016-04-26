@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.balazs.hajdu</groupId>
-    <artifactId>thor-web</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>thor-webapp</artifactId>
+    <packaging>war</packaging>
     <version>1.0.0</version>
-    <modules>
-        <module>rpi-client</module>
-        <module>thor-webapp</module>
-      </modules>
-    <name>Thor</name>
+    <name>Thor - Webapp</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

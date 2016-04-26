@@ -23,10 +23,18 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
       </profile>
+      <profile default="false" name="Annotation profile for thor-web (1)" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="thor-web (1)" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="rpi-client" target="1.8" />
       <module name="thor-web" target="1.8" />
+      <module name="thor-web (1)" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

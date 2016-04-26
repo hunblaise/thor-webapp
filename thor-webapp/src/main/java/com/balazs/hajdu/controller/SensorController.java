@@ -35,7 +35,7 @@ import java.util.Optional;
 @RestController
 public class SensorController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(HomeController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(SensorController.class);
 
     private static final String REDIRECT_PREFIX = "redirect:";
     private static final String SAVE_ERROR_MESSAGE = "Could not save new sensor into the database.";
