@@ -1,11 +1,11 @@
 package com.balazs.hajdu.components.transformers;
 
-import com.balazs.hajdu.components.factories.SensorFactory;
 import com.balazs.hajdu.domain.User;
 import com.balazs.hajdu.domain.UserRoles;
 import com.balazs.hajdu.domain.repository.UserEntity;
+import com.balazs.hajdu.domain.repository.maps.Coordinates;
 import com.balazs.hajdu.domain.repository.maps.GeocodedLocation;
-import com.balazs.hajdu.domain.repository.maps.Location;
+import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
@@ -27,9 +27,6 @@ public class UserTransformer {
     private PasswordEncoder passwordEncoder;
 
     @Inject
-    private SensorFactory sensorFactory;
-
-    @Inject
     private GeocodedLocationTransformer geocodedLocationTransformer;
 
     /**
@@ -45,7 +42,8 @@ public class UserTransformer {
 
         userEntity.setUsername(user.getUsername());
         userEntity.setPassword(passwordEncoder.encode(user.getPassword()));
-        userEntity.setLocation(geocodedLocationTransformer.transform(user.getLocation()));
+        userEntity.setLocation(new GeoJsonPoint(user.getLocation().getCoordinates().getLat(), user.getLocation().getCoordinates().getLon()));
+        userEntity.setAddress(userEntity.getAddress());
 
         userEntity.setCreated(instant);
         userEntity.setRole(role);
@@ -68,9 +66,14 @@ public class UserTransformer {
     private User transform(UserEntity userEntity) {
         return new User.Builder().withUsername(userEntity.getUsername())
                 .withPassword(userEntity.getPassword())
-                .withLocation(new GeocodedLocation.Builder().withLocation(
-                        new Location.Builder().withLattitude(userEntity.getLocation().getLat())
-                                .withLongitude(userEntity.getLocation().getLon()).build()).build())
+                .withLocation(new GeocodedLocation.Builder()
+                        .withCoordinates(
+                                new Coordinates.Builder()
+                                        .withLattitude(userEntity.getLocation().getY())
+                                        .withLongitude(userEntity.getLocation().getY())
+                                        .build())
+                        .withFormattedLocation(userEntity.getAddress())
+                        .build())
                 .withUserRole(UserRoles.getUserRoleByAlias(userEntity.getRole()).get())
                 .build();
     }

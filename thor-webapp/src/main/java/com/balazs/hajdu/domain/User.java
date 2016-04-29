@@ -8,7 +8,7 @@ import com.google.common.base.Objects;
  * An immutable POJO to store user related information.
  * @author Balazs Hajdu
  */
-public final class User {
+public final class User implements Comparable<User> {
 
     private final String username;
     private final String password;
@@ -63,6 +63,11 @@ public final class User {
                 .add("userRole", userRole)
                 .add("location", location)
                 .toString();
+    }
+
+    @Override
+    public int compareTo(User u) {
+        return this.getUsername().compareTo(u.getUsername());
     }
 
     public static class Builder {

@@ -6,12 +6,12 @@ import com.google.common.base.Objects;
 /**
  * @author Balazs Hajdu
  */
-public final class Location {
+public final class Coordinates {
 
     private final double lat;
     private final double lon;
 
-    private Location(Builder builder) {
+    private Coordinates(Builder builder) {
         this.lat = builder.lat;
         this.lon = builder.lon;
     }
@@ -29,9 +29,9 @@ public final class Location {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Location location = (Location) o;
-        return Double.compare(location.lat, lat) == 0 &&
-                Double.compare(location.lon, lon) == 0;
+        Coordinates coordinates = (Coordinates) o;
+        return Double.compare(coordinates.lat, lat) == 0 &&
+                Double.compare(coordinates.lon, lon) == 0;
     }
 
     @Override
@@ -62,8 +62,8 @@ public final class Location {
             return this;
         }
 
-        public Location build() {
-            return new Location(this);
+        public Coordinates build() {
+            return new Coordinates(this);
         }
 
     }

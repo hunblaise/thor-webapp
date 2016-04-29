@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="'Intelligent Home - ' + ${#authentication.name}">welcome</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../../../resources/css/header.css" rel="stylesheet" media="screen" th:href="@{/resources/css/header.css}" />
+    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
+    <link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div th:fragment="keyword-based-search-module">
+    <div class="container-fluid">
+        <div class="row">
+            <form class="form-horizontal" action="#" method="get" th:action="@{/admin/search/keyword}">
+                <th:block th:if="${param.error != null}">
+                    <div th:replace="fragments/alert :: alert (type='danger', message='Search error. Please try again.')">Alert</div>
+                </th:block>
+
+                <fieldset>
+                    <div class="form-group">
+                        <label for="keyword" class="col-lg-2 control-label">keyword</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="keyword" name="keyword" placeholder="keyword" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <button type="submit" class="btn btn-default">Search</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

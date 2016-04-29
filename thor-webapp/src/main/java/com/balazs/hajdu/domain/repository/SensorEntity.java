@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  *
  * @author Balazs Hajdu
  */
-@Document(collection = "home-control")
+@Document(collection = "users")
 public class SensorEntity extends AbstractDocument {
 
     @Indexed(direction = IndexDirection.ASCENDING)

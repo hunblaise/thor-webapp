@@ -8,6 +8,7 @@ import com.balazs.hajdu.domain.response.MeasurementResultStatistics;
 import org.bson.types.ObjectId;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -34,7 +35,7 @@ public class SensorFactory {
                         .withLocation(sensorEntity.getLocation().getX(), sensorEntity.getLocation().getY())
                         .withMaxAlert(sensorEntity.getMaxAlert())
                         .withMinAlert(sensorEntity.getMinAlert())
-                        .withMeasurementResults(measurementResults.get(sensorEntity.getName()))
+                        .withMeasurementResults(addMeasurementResults(measurementResults.get(sensorEntity.getName())))
                         .withMeasurementResultStatistics(statistics.get(sensorEntity.getName()))
                         .build())
                 .collect(Collectors.toList());
@@ -56,6 +57,10 @@ public class SensorFactory {
         sensorEntity.setMinAlert(sensor.getMinAlert());
 
         return sensorEntity;
+    }
+
+    private List<MeasurementResult> addMeasurementResults(List<MeasurementResult> measurementResults) {
+        return measurementResults != null ? measurementResults : Collections.emptyList();
     }
 
 }

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="'Intelligent Home - ' + ${#authentication.name}">welcome</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../../../resources/css/header.css" rel="stylesheet" media="screen" th:href="@{/resources/css/header.css}" />
+    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
+    <link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div th:fragment="search-results-module">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div th:each="user,status : ${users}" class="panel panel-default">
+            <div th:id="'heading' + ${status.index}"
+                 class="panel-heading" role="tab">
+                <h6 class="panel-title">
+                    <a class="page-header" role="button" data-toggle="collapse" data-parent="#accordion" th:href="'#collapse' + ${status.index}"
+                       aria-expanded="true" th:attr="aria-controls='collapse' + ${status.index}"
+                       th:text="${user.key.username} + '- Sensors'">
+                        username
+                        <small><span class="badge" th:text="${user.value.size()}">sensors size</span></small>
+                    </a>
+                </h6>
+            </div>
+            <div th:id="'collapse' + ${status.index}" class="panel-collapse collapse" role="tabpanel"
+                 th:attr="aria-labelledby='heading' + ${status.index}">
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"
+                            th:each="sensor : ${user.value}">
+                            <div class="list-group-item-heading">
+                                <h4 class="list-group-element-heading" th:text="${sensor.name}">sensor name</h4>
+                                <span class="badge" th:text="${sensor.measurementResults.size()}">results size</span>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Alerts</div>
+                                <div class="panel-body">
+                                    <table class="table table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>Value</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>Minimum Alert</td>
+                                            <td th:text="${sensor.minAlert}">min alert</td>
+                                        </tr >
+                                        <tr>
+                                            <td>Maximum Alert</td>
+                                            <td th:text="${sensor.maxAlert}">max alert</td>
+                                        </tr >
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <span th:text="${sensor.name} + '- statistics'">statistics</span>
+                                    <span class="badge" th:text="${sensor.measurementResults.size()}">results size</span>
+                                </div>
+                                <div class="panel-body">
+                                    <table class="table table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>Average</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="stat : ${sensor.measurementResultStatistics}">
+                                            <td th:text="${stat.key.description}">interval</td>
+                                            <td th:text="${stat.value.average}">average</td>
+                                        </tr >
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

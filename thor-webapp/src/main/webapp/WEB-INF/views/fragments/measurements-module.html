@@ -18,7 +18,7 @@
 <body>
 <div th:fragment="measurements-module">
     <ul class="nav nav-tabs nav-justified">
-        <li role="presentation" class="active"><a data-toggle="tab" href="#measurement-results">Measurement results</a></li>
+        <li role="presentation" class="active"><a data-toggle="tab" href="#measurement-results">Measurement Results</a></li>
         <li role="presentation" th:each="sensor : ${sensors}">
             <a data-toggle="tab" th:attr="href='#' + ${sensor.name}" th:text="${sensor.name}">sensor name</a>
         </li>

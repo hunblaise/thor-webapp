@@ -1,10 +1,11 @@
 package com.balazs.hajdu.components.transformers;
 
 import com.balazs.hajdu.domain.repository.LocationEntity;
+import com.balazs.hajdu.domain.repository.maps.Coordinates;
 import com.balazs.hajdu.domain.repository.maps.GeocodedLocation;
-import com.balazs.hajdu.domain.repository.maps.Location;
 import com.balazs.hajdu.domain.repository.maps.response.GeocodeResult;
 import com.balazs.hajdu.domain.repository.maps.response.GoogleMapsGeocoding;
+import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -28,7 +29,7 @@ public class GeocodedLocationTransformer {
         return googleMapsGeocoding.getResults().stream()
                 .map(geocodeResult -> new GeocodedLocation.Builder()
                         .withFormattedLocation(geocodeResult.getFormattedAddress())
-                        .withLocation(transformLocation(geocodeResult))
+                        .withCoordinates(transformLocation(geocodeResult))
                         .build())
                 .collect(Collectors.toList());
     }
@@ -43,14 +44,13 @@ public class GeocodedLocationTransformer {
         LocationEntity locationEntity = new LocationEntity();
 
         locationEntity.setAddress(geocodedLocation.getFormattedLocation());
-        locationEntity.setLat(geocodedLocation.getLocation().getLat());
-        locationEntity.setLon(geocodedLocation.getLocation().getLon());
+        locationEntity.setLocation(new GeoJsonPoint(geocodedLocation.getCoordinates().getLat(), geocodedLocation.getCoordinates().getLon()));
 
         return locationEntity;
     }
 
-    private Location transformLocation(GeocodeResult geocodeResult) {
-        return new Location.Builder()
+    private Coordinates transformLocation(GeocodeResult geocodeResult) {
+        return new Coordinates.Builder()
                 .withLattitude(geocodeResult.getGeometry().getLocation().getLat())
                 .withLongitude(geocodeResult.getGeometry().getLocation().getLng())
                 .build();

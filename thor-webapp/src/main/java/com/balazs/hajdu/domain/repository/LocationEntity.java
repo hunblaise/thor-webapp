@@ -2,6 +2,7 @@ package com.balazs.hajdu.domain.repository;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
+import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -9,12 +10,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
  *
  * @author Balazs Hajdu
  */
-@Document(collection = "home-control")
+@Document(collection = "users")
 public class LocationEntity {
 
     private String address;
-    private double lat;
-    private double lon;
+    private GeoJsonPoint location;
 
     public String getAddress() {
         return address;
@@ -24,20 +24,12 @@ public class LocationEntity {
         this.address = address;
     }
 
-    public double getLat() {
-        return lat;
+    public GeoJsonPoint getLocation() {
+        return location;
     }
 
-    public void setLat(double lat) {
-        this.lat = lat;
-    }
-
-    public double getLon() {
-        return lon;
-    }
-
-    public void setLon(double lon) {
-        this.lon = lon;
+    public void setLocation(GeoJsonPoint location) {
+        this.location = location;
     }
 
     // generated code begins here
@@ -46,22 +38,20 @@ public class LocationEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         LocationEntity that = (LocationEntity) o;
-        return Double.compare(that.lat, lat) == 0 &&
-                Double.compare(that.lon, lon) == 0 &&
-                Objects.equal(address, that.address);
+        return Objects.equal(address, that.address) &&
+                Objects.equal(location, that.location);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(address, lat, lon);
+        return Objects.hashCode(address, location);
     }
 
     @Override
     public String toString() {
         return MoreObjects.toStringHelper(this)
                 .add("address", address)
-                .add("lat", lat)
-                .add("lon", lon)
+                .add("location", location)
                 .toString();
     }
     // generated code ends here

@@ -28,6 +28,11 @@
                 <li th:class="${page eq 'measurements' ? 'active' : ''}" th:if="${#authorization.expression('isAuthenticated()')}">
                     <a href="/measurments" th:href="@{/measurments}">Measurments</a>
                 </li>
+
+                <li th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}"
+                    th:class="${page eq 'admin' ? 'active' : ''}">
+                    <a href="/admin" th:href="@{/admin}">Admin</a>
+                </li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">

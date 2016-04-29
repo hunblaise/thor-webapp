@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 import javax.inject.Inject;
 
 /**
+ * Sensor delegator.
+ *
  * @author Balazs Hajdu
  */
 @Component

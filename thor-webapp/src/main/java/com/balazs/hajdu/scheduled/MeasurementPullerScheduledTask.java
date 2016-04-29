@@ -1,7 +1,6 @@
 package com.balazs.hajdu.scheduled;
 
 import com.balazs.hajdu.domain.MeasurementResult;
-import com.balazs.hajdu.domain.User;
 import com.balazs.hajdu.domain.repository.SensorEntity;
 import com.balazs.hajdu.domain.repository.UserEntity;
 import com.balazs.hajdu.repository.ClientRepository;
@@ -9,6 +8,7 @@ import com.balazs.hajdu.repository.MeasurementResultRepository;
 import com.balazs.hajdu.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -36,16 +36,21 @@ public class MeasurementPullerScheduledTask {
     @Inject
     private MeasurementResultRepository measurementResultRepository;
 
+    @Value("${RASPBERRY_CLIENT_ENABLED}")
+    private boolean raspberryClientEnabled;
+
     @Scheduled(fixedRate = 30000)
     public void pullMeasurementResults() {
 
-        UserEntity userEntity = userRepository.findOneByUsername("thor");
-        for (SensorEntity sensor : userEntity.getSensors()) {
-            MeasurementResult measurementResult = clientRepository.getMeasurementResultFromClient(userEntity.getUsername(),
-                    userEntity.getPassword(), sensor);
-            LOGGER.debug(RETRIEVED_MEASUREMENT_RESULT, userEntity.getUsername(), sensor.getName(), measurementResult);
+        if (raspberryClientEnabled) {
+            UserEntity userEntity = userRepository.findOneByUsername("thor");
+            for (SensorEntity sensor : userEntity.getSensors()) {
+                MeasurementResult measurementResult = clientRepository.getMeasurementResultFromClient(userEntity.getUsername(),
+                        userEntity.getPassword(), sensor);
+                LOGGER.debug(RETRIEVED_MEASUREMENT_RESULT, userEntity.getUsername(), sensor.getName(), measurementResult);
 
-            measurementResultRepository.saveMeasurementResultToSensor(measurementResult);
+                measurementResultRepository.saveMeasurementResultToSensor(measurementResult);
+            }
         }
     }
 

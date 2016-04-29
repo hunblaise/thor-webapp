@@ -12,7 +12,8 @@ public enum  ViewNames {
     REGISTER("signup/signup"),
     SIGN_IN("signin/signin"),
     SENSORS("sensors/sensors"),
-    MEASUREMENTS("measurements/measurements");
+    MEASUREMENTS("measurements/measurements"),
+    ADMIN("admin/admin");
 
     private final String value;
 

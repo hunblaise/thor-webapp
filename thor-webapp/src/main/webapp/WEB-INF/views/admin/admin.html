@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="'Intelligent Home - ' + ${#authentication.name}">welcome</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../../../resources/css/header.css" rel="stylesheet" media="screen" th:href="@{/resources/css/header.css}" />
+    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
+    <link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div th:replace="fragments/header :: header (page='admin')">&nbsp;</div>
+<div class="jumbotron center-block text-center">
+    <h2>Raspberry Pi Based Intelligent Home</h2>
+</div>
+<div class="container thor-wrapper">
+
+    <ul class="nav nav-tabs nav-justified">
+        <li role="presentation" class="active">
+            <a data-toggle="tab" href="#search-results">Search Results</a>
+        </li>
+        <li role="presentation">
+            <a data-toggle="tab" href="#location-based">Location Based Search</a>
+        </li>
+        <li role="presentation">
+            <a data-toggle="tab" href="#username-based">Username Based Search</a>
+        </li>
+        <li role="presentation">
+            <a data-toggle="tab" href="#keyword-based">Keyword Based Search</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="search-results" class="tab-pane fade in active">
+            <div class="page-header">
+                <h3>Search Results</h3>
+            </div>
+
+            <div th:replace="fragments/search-results-module :: search-results-module">search results</div>
+        </div>
+
+        <div id="location-based" class="tab-pane fade">
+            <div class="page-header">
+                <h3>Location Based Search</h3>
+            </div>
+
+            <div th:replace="fragments/location-based-search-module :: location-based-search-module">location based search module</div>
+        </div>
+
+        <div id="username-based" class="tab-pane fade">
+            <div class="page-header">
+                <h3>Location Based Search</h3>
+            </div>
+
+            <div th:replace="fragments/username-based-search-module :: username-based-search-module">username based search module</div>
+        </div>
+
+        <div id="keyword-based" class="tab-pane fade">
+            <div class="page-header">
+                <h3>Keyword Based Search</h3>
+            </div>
+
+            <div th:replace="fragments/keyword-based-search-module :: keyword-based-search-module">keyword based search module</div>
+        </div>
+    </div>
+
+    <div class="col-xs-12" th:replace="fragments/footer :: footer">&copy; 2013 The Static Templates</div>
+</div>
+</body>
+</html>

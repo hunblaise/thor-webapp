@@ -29,3 +29,7 @@ body {
     min-height: 100%;
     position: relative;
 }
+
+.list-group-element-heading {
+    display: inline-block;
+}

@@ -3,7 +3,7 @@ package com.balazs.hajdu.components.factories;
 import com.balazs.hajdu.domain.User;
 import com.balazs.hajdu.domain.UserRoles;
 import com.balazs.hajdu.domain.repository.maps.GeocodedLocation;
-import com.balazs.hajdu.domain.repository.maps.Location;
+import com.balazs.hajdu.domain.repository.maps.Coordinates;
 import com.balazs.hajdu.domain.view.RegisterForm;
 import com.google.common.collect.ImmutableList;
 import org.testng.annotations.BeforeMethod;
@@ -76,7 +76,7 @@ public class UserFactoryTest {
 
     private List<GeocodedLocation> geocodedLocations() {
         return ImmutableList.of(new GeocodedLocation.Builder()
-                .withLocation(new Location.Builder().withLattitude(TEST_LATITUDE)
+                .withCoordinates(new Coordinates.Builder().withLattitude(TEST_LATITUDE)
                         .withLongitude(TEST_LONGITUDE)
                         .build())
                 .withFormattedLocation(TEST_FORMATTED_LOCATION)

@@ -2,11 +2,12 @@ package com.balazs.hajdu.components.transformers;
 
 import com.balazs.hajdu.domain.repository.LocationEntity;
 import com.balazs.hajdu.domain.repository.maps.GeocodedLocation;
-import com.balazs.hajdu.domain.repository.maps.Location;
+import com.balazs.hajdu.domain.repository.maps.Coordinates;
 import com.balazs.hajdu.domain.repository.maps.response.GeocodeResult;
 import com.balazs.hajdu.domain.repository.maps.response.Geometry;
 import com.balazs.hajdu.domain.repository.maps.response.GoogleMapsGeocoding;
 import com.google.common.collect.ImmutableList;
+import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -58,8 +59,7 @@ public class GeocodedLocationTransformerTest {
         LocationEntity locationEntity = new LocationEntity();
 
         locationEntity.setAddress(TEST_FORMATTED_LOCATION);
-        locationEntity.setLat(TEST_LATITUDE);
-        locationEntity.setLon(TEST_LONGITUDE);
+        locationEntity.setLocation(new GeoJsonPoint(TEST_LATITUDE, TEST_LONGITUDE));
 
         return locationEntity;
     }
@@ -88,7 +88,7 @@ public class GeocodedLocationTransformerTest {
     private GeocodedLocation aGeocodedLocation() {
         return new GeocodedLocation.Builder()
                 .withFormattedLocation(TEST_FORMATTED_LOCATION)
-                .withLocation(new Location.Builder()
+                .withCoordinates(new Coordinates.Builder()
                         .withLattitude(TEST_LATITUDE)
                         .withLongitude(TEST_LONGITUDE)
                         .build())

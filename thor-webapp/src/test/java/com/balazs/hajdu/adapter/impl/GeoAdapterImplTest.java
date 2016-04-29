@@ -4,7 +4,7 @@ import com.balazs.hajdu.components.transformers.GeocodedLocationTransformer;
 import com.balazs.hajdu.components.transformers.UserLocationTransformer;
 import com.balazs.hajdu.domain.repository.geo.UserLocation;
 import com.balazs.hajdu.domain.repository.maps.GeocodedLocation;
-import com.balazs.hajdu.domain.repository.maps.Location;
+import com.balazs.hajdu.domain.repository.maps.Coordinates;
 import com.balazs.hajdu.domain.repository.maps.response.GeocodeResult;
 import com.balazs.hajdu.domain.repository.maps.response.GoogleMapsGeocoding;
 import com.balazs.hajdu.repository.GeoRepository;
@@ -98,7 +98,7 @@ public class GeoAdapterImplTest {
 
     private List<GeocodedLocation> geocodedLocations() {
         return ImmutableList.of(new GeocodedLocation.Builder().withFormattedLocation(TEST_FORMATTED_ADDRESS)
-                .withLocation(new Location.Builder().withLongitude(10.0)
+                .withCoordinates(new Coordinates.Builder().withLongitude(10.0)
                         .withLattitude(20.0)
                         .build())
                 .build());

@@ -113,7 +113,7 @@ public class SensorFacadeImpl implements SensorFacade {
     private Sensor buildSensor(List<GeocodedLocation> locations, SensorRequestForm sensorRequestForm) {
         return new Sensor.Builder().withSensorName(sensorRequestForm.getSensorName())
                 .withId(new ObjectId())
-                .withLocation(locations.get(0).getLocation().getLat(), locations.get(0).getLocation().getLon())
+                .withLocation(locations.get(0).getCoordinates().getLat(), locations.get(0).getCoordinates().getLon())
                 .withMeasurementResults(Collections.emptyList())
                 .build();
     }

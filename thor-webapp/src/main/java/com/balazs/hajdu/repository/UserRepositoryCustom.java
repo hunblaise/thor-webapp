@@ -3,7 +3,7 @@ package com.balazs.hajdu.repository;
 import com.balazs.hajdu.domain.Sensor;
 import com.balazs.hajdu.domain.User;
 import com.balazs.hajdu.domain.context.UpdateSensorAlertContext;
-import com.balazs.hajdu.domain.repository.maps.Location;
+import com.balazs.hajdu.domain.repository.maps.Coordinates;
 
 import java.util.List;
 
@@ -30,11 +30,20 @@ public interface UserRepositoryCustom {
     void updateSensorAlertValues(UpdateSensorAlertContext context);
 
     /**
-     * Find users near a given location.
+     * Find users near a given coordinates.
      *
-     * @param location location
+     * @param coordinates coordinates
+     * @param radius
      * @return users
      */
-    List<User> findUsersNearLocation(Location location);
+    List<User> findUsersNearLocation(Coordinates coordinates, int radius);
+
+    /**
+     * Find users by full text search.
+     *
+     * @param keyword keyword
+     * @return users
+     */
+    List<User> findUsersByFullTextSearch(String keyword);
 
 }

@@ -11,19 +11,19 @@ import com.google.common.base.Objects;
 public final class GeocodedLocation {
 
     private final String formattedLocation;
-    private final Location location;
+    private final Coordinates coordinates;
 
     private GeocodedLocation(Builder builder) {
         this.formattedLocation = builder.formattedLocation;
-        this.location = builder.location;
+        this.coordinates = builder.coordinates;
     }
 
     public String getFormattedLocation() {
         return formattedLocation;
     }
 
-    public Location getLocation() {
-        return location;
+    public Coordinates getCoordinates() {
+        return coordinates;
     }
 
     // generated code begins here
@@ -33,34 +33,34 @@ public final class GeocodedLocation {
         if (o == null || getClass() != o.getClass()) return false;
         GeocodedLocation that = (GeocodedLocation) o;
         return Objects.equal(formattedLocation, that.formattedLocation) &&
-                Objects.equal(location, that.location);
+                Objects.equal(coordinates, that.coordinates);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(formattedLocation, location);
+        return Objects.hashCode(formattedLocation, coordinates);
     }
 
     @Override
     public String toString() {
         return MoreObjects.toStringHelper(this)
                 .add("formattedLocation", formattedLocation)
-                .add("location", location)
+                .add("location", coordinates)
                 .toString();
     }
 
     public static class Builder {
 
         private String formattedLocation;
-        private Location location;
+        private Coordinates coordinates;
 
         public Builder withFormattedLocation(String formattedLocation) {
             this.formattedLocation = formattedLocation;
             return this;
         }
 
-        public Builder withLocation(Location location) {
-            this.location = location;
+        public Builder withCoordinates(Coordinates coordinates) {
+            this.coordinates = coordinates;
             return this;
         }
 
