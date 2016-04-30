@@ -16,6 +16,7 @@
         <spring.version>4.2.5.RELEASE</spring.version>
         <assertj-core-version>3.3.0</assertj-core-version>
         <jackson-version>2.7.3</jackson-version>
+        <jacoco-version>0.7.6.201602180812</jacoco-version>
     </properties>
 
     <parent>
@@ -175,6 +176,29 @@
 
     <build>
         <plugins>
+            <!-- Coveralls -->
+            <plugin>
+                <groupId>org.eluder.coveralls</groupId>
+                <artifactId>coveralls-maven-plugin</artifactId>
+                <version>4.1.0</version>
+                <configuration>
+                    <repoToken>${env.coveralls_repo_token}</repoToken>
+                </configuration>
+            </plugin>
+            <!-- JaCoCo -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco-version}</version>
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
