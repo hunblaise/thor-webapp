@@ -31,6 +31,7 @@ import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -118,7 +119,8 @@ public class SensorFacadeImpl implements SensorFacade {
                 .build();
     }
 
-    private Map<String, Map<StatisticsInterval, MeasurementResultStatistics>> buildStatisticsMap(String username, List<SensorEntity> sensorEntities) {
+    private Map<String, Map<StatisticsInterval, MeasurementResultStatistics>> buildStatisticsMap(String username,
+                                                                                                 List<SensorEntity> sensorEntities) {
         Map<String, Map<StatisticsInterval, MeasurementResultStatistics>> statistics = new HashMap<>();
 
         for (SensorEntity sensorEntity : sensorEntities) {
@@ -132,7 +134,11 @@ public class SensorFacadeImpl implements SensorFacade {
         Map<StatisticsInterval, MeasurementResultStatistics> statisticsMap = new EnumMap<>(StatisticsInterval.class);
 
         for (StatisticsInterval interval : StatisticsInterval.values()) {
-            statisticsMap.put(interval, statisticsService.getStatistics(username, sensorName, interval));
+            Optional<MeasurementResultStatistics> statistics = statisticsService.getStatistics(username, sensorName, interval);
+
+            if (statistics.isPresent()) {
+                statisticsMap.put(interval, statistics.get());
+            }
         }
 
         return statisticsMap;

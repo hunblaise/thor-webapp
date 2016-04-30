@@ -45,10 +45,13 @@
             </div>
             <div class="panel-body container-fluid">
                 <div class="row">
-                    <div class="col-sm-1"></div>
                     <div class="col-sm-2 col-xs-12 text-capitalize"
-                         th:each="detail : ${forecast.details}">
+                         th:each="detail : ${forecast.dailyForecasts}">
                         <div class="weather-details-value">
+                            <div class="row">
+                                <div class="col-xs-12 weather-details-value"
+                                     th:text="${detail.date}">date</div>
+                            </div>
                             <i th:attr="class='wi wi-owm-' + ${detail.id}"></i>
                             <div class="container-fluid">
                                 <div class="row">
@@ -67,7 +70,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-1"></div>
+                </div>
+            </div>
+            <div class="panel-heading">
+                <h4>Forecast Chart - <small th:text="${location[0].formattedLocation}">formatted location</small></h4>
+            </div>
+            <div class="panel-default container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div id="weather-forecast-chart" class="weather-forecast-chart"
+                             th:height="300px">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

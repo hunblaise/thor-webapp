@@ -1,32 +1,37 @@
 package com.balazs.hajdu.service.impl;
 
 import com.balazs.hajdu.adapter.WeatherAdapter;
+import com.balazs.hajdu.domain.repository.forecast.DailyForecast;
+import com.balazs.hajdu.domain.repository.forecast.FiveDayForecast;
 import com.balazs.hajdu.domain.repository.forecast.Forecast;
 import com.balazs.hajdu.domain.repository.forecast.ForecastDetail;
+import com.balazs.hajdu.domain.repository.forecast.HourlyForecast;
 import com.balazs.hajdu.domain.repository.geo.UserLocation;
 import com.balazs.hajdu.domain.repository.weather.Weather;
-import com.balazs.hajdu.service.UserLocationService;
 import com.balazs.hajdu.service.WeatherService;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
-import java.time.LocalDateTime;
-import java.util.HashSet;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 /**
+ * A service to handle weather related operations.
  * @author Balazs Hajdu
  */
 @Service
 public class WeatherServiceImpl implements WeatherService {
 
-    @Inject
-    private WeatherAdapter weatherAdapter;
+    private static final int DECIMAL_PLACES = 2;
 
     @Inject
-    private UserLocationService userLocationService;
+    private WeatherAdapter weatherAdapter;
 
     @Override
     public Weather getCurrentWeather(String cityName) {
@@ -34,30 +39,54 @@ public class WeatherServiceImpl implements WeatherService {
     }
 
     @Override
-    public Weather getCurrentWeather(UserLocation userLocation) {
-        return weatherAdapter.getCurrentWeather(userLocation.getCity());
-    }
-
-    @Override
-    public Forecast getWeatherForecastForCity(String cityName) {
-        Set<LocalDateTime> nextFiveDay = calculateNextFiveDays();
+    public FiveDayForecast getWeatherForecastForCity(String cityName) {
         Forecast forecast = weatherAdapter.getForecastForCity(cityName);
 
-        List<ForecastDetail> forecastDetails = forecast.getDetails().stream()
-                .filter(forecastInformation -> nextFiveDay.contains(forecastInformation.getDate()))
-                .collect(Collectors.toList());
-
-        return new Forecast.Builder().withDetails(forecastDetails).build();
+        return new FiveDayForecast.Builder()
+                .withDailyForecasts(populateDailyForecast(forecast.getDetailsMap()))
+                .withHourlyForecasts(populateHourlyForecast(forecast.getDetails()))
+                .build();
     }
 
-    private Set<LocalDateTime> calculateNextFiveDays() {
-        Set<LocalDateTime> nextFiveDay = new HashSet<>(5);
+    private List<HourlyForecast> populateHourlyForecast(List<ForecastDetail> details) {
+        return details.stream()
+                .map(this::buildHourlyForecast)
+                .collect(Collectors.toList());
+    }
 
-        for (int i = 1; i < 6; i++) {
-            nextFiveDay.add(LocalDateTime.now().plusDays(i).withHour(12).withMinute(0).withSecond(0).withNano(0));
-        }
+    private HourlyForecast buildHourlyForecast(ForecastDetail forecastDetail) {
+        return new HourlyForecast.Builder()
+                .withDate(forecastDetail.getDate().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME))
+                .withTemperature(forecastDetail.getTemperature())
+                .build();
+    }
 
-        return nextFiveDay;
+    private List<DailyForecast> populateDailyForecast(Map<LocalDate, List<ForecastDetail>> details) {
+        Map<LocalDate, List<ForecastDetail>> sortedMap = new TreeMap<>(details);
+
+        return sortedMap.values().stream()
+                .map(this::buildDailyForecast)
+                 .collect(Collectors.toList());
+    }
+
+    private DailyForecast buildDailyForecast(List<ForecastDetail> details) {
+        return new DailyForecast.Builder()
+                .withDate(details.iterator().next().getDate().toLocalDate())
+                .withId(details.iterator().next().getId())
+                .withTemperature(new BigDecimal(details.stream()
+                            .map(ForecastDetail::getTemperature)
+                            .mapToDouble(t ->  t)
+                            .average()
+                            .getAsDouble())
+                        .setScale(DECIMAL_PLACES, RoundingMode.HALF_UP)
+                        .doubleValue())
+                .withMaxTemperature(details.stream()
+                        .map(ForecastDetail::getMaxTemperature)
+                        .max(Double::compare).orElse(0.0))
+                .withMinTemperature(details.stream()
+                        .map(ForecastDetail::getMinTemperature)
+                        .min(Double::compare).orElse(0.0))
+                .build();
     }
 
 }

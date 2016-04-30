@@ -6,7 +6,9 @@ import com.balazs.hajdu.domain.repository.forecast.response.ForecastInformation;
 import com.balazs.hajdu.domain.repository.forecast.response.ForecastResponse;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -22,7 +24,10 @@ public class ForecastFactory {
                 .map(this::createForecastDetailFrom)
                 .collect(Collectors.toList());
 
-        return new Forecast.Builder().withDetails(forecastDetails).build();
+        return new Forecast.Builder()
+                .withDetails(forecastDetails)
+                .withDetailsMap(buildMap(forecastDetails))
+                .build();
     }
 
     private ForecastDetail createForecastDetailFrom(ForecastInformation forecastInformation) {
@@ -40,6 +45,11 @@ public class ForecastFactory {
         }
 
         return builder.build();
+    }
+
+    private Map<LocalDate, List<ForecastDetail>> buildMap(List<ForecastDetail> forecastDetails) {
+        return forecastDetails.stream()
+                .collect(Collectors.groupingBy(forecastDetail -> forecastDetail.getDate().toLocalDate()));
     }
 
 }

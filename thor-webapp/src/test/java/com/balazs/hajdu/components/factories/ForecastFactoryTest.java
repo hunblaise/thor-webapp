@@ -10,9 +10,12 @@ import com.google.common.collect.ImmutableList;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.nullValue;
@@ -45,7 +48,7 @@ public class ForecastFactoryTest {
     public void shouldCreateForecastWithInformationIfPresent() {
         // given
         ForecastResponse forecastResponse = aForecastResponse();
-        Forecast expected = aForecastWithWeatherInformationDetails();
+        Forecast expected = aForecastWithWeatherInformationDetailsAndForecastMap();
 
         // when
         Forecast actual = forecastFactory.createForecastFrom(forecastResponse);
@@ -84,8 +87,9 @@ public class ForecastFactoryTest {
         return ImmutableList.of(forecastInformation);
     }
 
-    private Forecast aForecastWithWeatherInformationDetails() {
-        return new Forecast.Builder().withDetails(ImmutableList.of(new ForecastDetail.Builder().withId(TEST_FORECAST_INFORMATION_ID)
+    private ForecastDetail aForecastDetail() {
+        return new ForecastDetail.Builder()
+                .withId(TEST_FORECAST_INFORMATION_ID)
                 .withIcon(TEST_ICON)
                 .withDescription(TEST_DESCRIPTION)
                 .withDate(NOW)
@@ -94,7 +98,22 @@ public class ForecastFactoryTest {
                 .withMinTemperature(TEST_TEMP_MIN)
                 .withTemperature(TEST_TEMP)
                 .withPressure(TEST_PRESSURE)
-                .build())).build();
+                .build();
+    }
+
+    private Forecast aForecastWithWeatherInformationDetailsAndForecastMap() {
+        return new Forecast.Builder()
+                .withDetails(ImmutableList.of(aForecastDetail()))
+                .withDetailsMap(aDetailsMap())
+                .build();
+    }
+
+    private Map<LocalDate, List<ForecastDetail>> aDetailsMap() {
+        Map<LocalDate, List<ForecastDetail>> map = new TreeMap<>();
+
+        map.put(NOW.toLocalDate(), ImmutableList.of(aForecastDetail()));
+
+        return map;
     }
 
     private ForecastResponse aForecastResponse() {

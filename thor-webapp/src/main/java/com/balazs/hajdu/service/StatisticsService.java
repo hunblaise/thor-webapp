@@ -10,9 +10,9 @@ import org.springframework.stereotype.Service;
 import javax.inject.Inject;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * A service to handle statistics related business logic.
@@ -22,7 +22,6 @@ import java.util.List;
 @Service
 public class StatisticsService {
 
-    private static final String NUMBER_FORMAT = "#.##";
     private static final int DECIMAL_PLACES = 2;
 
     @Inject
@@ -36,7 +35,7 @@ public class StatisticsService {
      * @param interval day interval from today
      * @return statistics
      */
-    public MeasurementResultStatistics getStatistics(String username, String sensorName, StatisticsInterval interval) {
+    public Optional<MeasurementResultStatistics> getStatistics(String username, String sensorName, StatisticsInterval interval) {
 
         List<MeasurementResult> results = measurementResultRepository.getMeasurementResultsBetweenDateRange(new MeasurementResultQueryContext.Builder()
                 .withUsername(username)
@@ -45,7 +44,7 @@ public class StatisticsService {
                 .withEndDate(LocalDateTime.now())
                 .build());
 
-        return !results.isEmpty() ? buildStatistics(results) : new MeasurementResultStatistics.Builder().build();
+        return !results.isEmpty() ? Optional.of(buildStatistics(results)) : Optional.empty();
     }
 
     private MeasurementResultStatistics buildStatistics(List<MeasurementResult> results) {

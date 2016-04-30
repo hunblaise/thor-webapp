@@ -1,27 +1,30 @@
 package com.balazs.hajdu.controller;
 
 import com.balazs.hajdu.constants.ViewNames;
+import com.balazs.hajdu.domain.repository.forecast.HourlyForecast;
 import com.balazs.hajdu.domain.repository.geo.UserLocation;
 import com.balazs.hajdu.service.UserLocationService;
 import com.balazs.hajdu.service.WeatherService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import java.net.UnknownHostException;
 import java.security.Principal;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A controller for the home page.
  *
  * @author Balazs Hajdu
  */
-@Controller
+@RestController
 public class HomeController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(HomeController.class);
@@ -47,7 +50,7 @@ public class HomeController {
             modelAndView.addObject("forecast",  weatherService.getWeatherForecastForCity(location.getCity()));
             modelAndView.addObject("location", userLocationService.geocodeLocation(location.getCity()));
         } catch (UnknownHostException e) {
-            LOGGER.warn("Can not retrieve user location for IP address {}", request.getRemoteUser());
+            LOGGER.error("Can not retrieve user location for IP address {}", request.getRemoteUser());
         }
 
         if (principal != null) {
@@ -57,6 +60,20 @@ public class HomeController {
         }
 
         return modelAndView;
+    }
+
+    @RequestMapping(value = "/weather/forecast/hourly")
+    public List<HourlyForecast> getHourlyForecast(HttpServletRequest request) {
+        List<HourlyForecast> hourlyForecast = new ArrayList<>();
+        try {
+            UserLocation location = userLocationService.getUserLocation(request.getRemoteAddr());
+
+            hourlyForecast = weatherService.getWeatherForecastForCity(location.getCity()).getHourlyForecasts();
+        } catch (UnknownHostException e) {
+            LOGGER.error("Can not retrieve user location for IP address {}", request.getRemoteUser());
+        }
+
+        return hourlyForecast;
     }
 
 }
