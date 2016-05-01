@@ -1,7 +1,8 @@
 package com.balazs.hajdu.client.delegator;
 
 import com.balazs.hajdu.client.domain.config.SensorTypes;
-import com.balazs.hajdu.client.service.TemperatureService;
+import com.balazs.hajdu.client.domain.response.TemperatureSensorResponse;
+import com.balazs.hajdu.client.service.DataConversionService;
 import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
@@ -15,19 +16,19 @@ import javax.inject.Inject;
 public class SensorDelegator {
 
     @Inject
-    private TemperatureService temperatureService;
+    private DataConversionService dataConversionService;
 
     public double delegate(String sensorName) {
         double sensorValue;
-
+        TemperatureSensorResponse temperatureSensorResponse = dataConversionService.convertData();
         SensorTypes sensorTypes = SensorTypes.getSensorTypeByAlias(sensorName);
         if (sensorTypes != null) {
             switch (sensorTypes) {
                 case TEMPERATURE:
-                    sensorValue = temperatureService.calculateTemperature();
+                    sensorValue = temperatureSensorResponse.getTemperature().getValue();
                     break;
-                case HUMIDITY:
-                    sensorValue = 0;
+                case PRESSURE:
+                    sensorValue = temperatureSensorResponse.getPressure().getValue();
                     break;
                 default:
                     sensorValue = 0;

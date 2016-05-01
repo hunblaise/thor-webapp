@@ -9,7 +9,7 @@ import java.util.Map;
 public enum SensorTypes {
 
     TEMPERATURE("temperature"),
-    HUMIDITY("humidity");
+    PRESSURE("pressure");
 
     private static final Map<String, SensorTypes> ALIAS_MAPPING = new HashMap<>();
 

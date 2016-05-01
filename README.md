@@ -4,12 +4,14 @@ Raspberry Pi Based Intelligent Home
 [![Coverage Status](https://coveralls.io/repos/github/hunblaise/thor-webapp/badge.svg?branch=master)](https://coveralls.io/github/hunblaise/thor-webapp?branch=master)
 
 # Main features:
-- Measures the room temperature and humidity
+- Measures the room temperature and pressure
 - Tracks the current weather outside with [OpenWeatherMap](http://openweathermap.org/)
 - A 5 day weather forecast with [OpenWeatherMap](http://openweathermap.org/)
 - Logs the measured data and displays it
+- Search measurement results
 - Handles actuators (open the window, switch on radiators)
 
 # Client:
 - Raspberry Pi with BMP180 pressure sensor
+- Read sensor value, convert it
 - Communicates with the server on a REST api

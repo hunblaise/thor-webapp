@@ -10,6 +10,9 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.anyByte;
+import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -48,6 +51,7 @@ public class Bmp180TemperatureRepositoryTest {
 
         // then
         verify(bmp180, times(1)).write(TEMPERATURE_CONTROL_REGISTER_DATA_CONTROL_REGISTER, TEMPERATURE_READ_COMMAND);
+        verify(bmp180, times(1)).read(anyByte(), any(byte[].class), anyInt(), anyInt());
     }
 
 }

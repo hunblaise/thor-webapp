@@ -1,6 +1,8 @@
 package com.balazs.hajdu.client.delegator;
 
-import com.balazs.hajdu.client.service.TemperatureService;
+import com.balazs.hajdu.client.domain.response.MeasurementResult;
+import com.balazs.hajdu.client.domain.response.TemperatureSensorResponse;
+import com.balazs.hajdu.client.service.DataConversionService;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -17,9 +19,10 @@ import static org.mockito.BDDMockito.given;
 public class SensorDelegatorTest {
 
     private static final String TEMPERATURE_SENSOR_NAME = "temperature";
+    private static final String PRESSURE_SENSOR_NAME = "pressure";
 
     @Mock
-    private TemperatureService temperatureService;
+    private DataConversionService dataConversionService;
 
     @InjectMocks
     private SensorDelegator sensorDelegator;
@@ -32,7 +35,7 @@ public class SensorDelegatorTest {
     @Test
     public void shouldReturnTemperatureValue() {
         // given
-        given(temperatureService.calculateTemperature()).willReturn(21.0);
+        given(dataConversionService.convertData()).willReturn(aTemperatureResponse());
 
         // when
         double actual = sensorDelegator.delegate(TEMPERATURE_SENSOR_NAME);
@@ -44,12 +47,36 @@ public class SensorDelegatorTest {
     @Test(expectedExceptions = IllegalArgumentException.class)
     public void shouldThrowExceptionOnInvalidSensorName() {
         // given
-        given(temperatureService.calculateTemperature()).willReturn(21.0);
+        given(dataConversionService.convertData()).willReturn(aTemperatureResponse());
 
         // when
         double actual = sensorDelegator.delegate("invalid-sensor-name");
 
         // then
+    }
+
+    @Test
+    public void shouldReturnPressureValue() {
+        // given
+        given(dataConversionService.convertData()).willReturn(aPressureResponse());
+
+        // when
+        double actual = sensorDelegator.delegate(PRESSURE_SENSOR_NAME);
+
+        // then
+        assertThat(actual, is(21.0));
+    }
+
+    private TemperatureSensorResponse aTemperatureResponse() {
+        return new TemperatureSensorResponse.Builder()
+                .withTemperature(new MeasurementResult.Builder().withValue(21).build())
+                .build();
+    }
+
+    private TemperatureSensorResponse aPressureResponse() {
+        return new TemperatureSensorResponse.Builder()
+                .withPressure(new MeasurementResult.Builder().withValue(21).build())
+                .build();
     }
 
 }

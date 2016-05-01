@@ -27,9 +27,11 @@ public class Bmp180TemperatureRepository implements TemperatureRepository {
     private static final int READ_OFFSET = 0;
     private static final int READ_SIZE = 2;
 
-    private static final int TEMPERATURE_CONTROL_REGISTER_DATA_CONTROL_REGISTER = 0xF4;
+    private static final int TEMPERATURE_CONTROL_REGISTER = 0xF4;
     private static final byte TEMPERATURE_READ_COMMAND = (byte) 0x2E;
     private static final byte TEMPERATURE_READ_ADDRESS = (byte) 0xF6;
+
+    private static final int WAIT_TIME_IN_MS = 5;
 
     @Inject
     private I2CDevice bmp180;
@@ -40,8 +42,8 @@ public class Bmp180TemperatureRepository implements TemperatureRepository {
 
         int uncompensatedTemperatureData = -1;
         try {
-            bmp180.write(TEMPERATURE_CONTROL_REGISTER_DATA_CONTROL_REGISTER, TEMPERATURE_READ_COMMAND);
-            ThreadUtilities.waitFor(500);
+            bmp180.write(TEMPERATURE_CONTROL_REGISTER, TEMPERATURE_READ_COMMAND);
+            ThreadUtilities.waitFor(WAIT_TIME_IN_MS);
 
             int rawData = bmp180.read(TEMPERATURE_READ_ADDRESS, bytes, READ_OFFSET, READ_SIZE);
             LOGGER.debug("Raw read data: " + rawData);
