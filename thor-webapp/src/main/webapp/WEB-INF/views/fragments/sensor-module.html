@@ -65,6 +65,31 @@
             <div class="page-header">
                 <h3>Modify Sensor Alerts</h3>
             </div>
+            <div class="page-header">
+                <h4>Current Values</h4>
+            </div>
+            <div class="panel panel-default text-left">
+                <div class="panel-heading">Current Values</div>
+                <table id="alert-table" class="table table-hover table-responsive">
+                    <thead>
+                    <tr>
+                        <th>Sensor Name</th>
+                        <th>Maximum Value</th>
+                        <th>Minimum Value</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="sensor : ${sensors}">
+                        <th scope="row" th:text="${sensor.name}">sensor name</th>
+                        <td th:text="${sensor.maxAlert}">max alert</td>
+                        <td th:text="${sensor.minAlert}">min alert</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="page-header">
+                <h4>Change Alert Values</h4>
+            </div>
             <form id="set-alert-form" class="form-inline text-center" action="#" method="post"
                   th:action="'/' + ${#authentication.name} + '/sensors/save/alert'">
                 <fieldset>

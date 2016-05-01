@@ -79,6 +79,14 @@ $(document).ready(function() {
             data: actualElement.serialize(),
             dataType: 'json',
             success: function(response) {
+                var source = $('#measurement-result-table').html();
+                var template = Handlebars.compile(source);
+
+                var data = new Object();
+                data.measurements = response;
+
+                $('#measurement-result-table-parent' + actualElement.data('sensor')).html(template(data));
+
                updateChart(response, $('#measurement-results-chart-' + actualElement.data('sensor')));
             }
         });

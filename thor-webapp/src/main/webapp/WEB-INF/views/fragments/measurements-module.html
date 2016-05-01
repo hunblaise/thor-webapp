@@ -121,7 +121,7 @@
                 </div>
                 <div class="panel panel-default text-left">
                     <div class="panel-heading" th:text="${sensor.name}">results</div>
-                    <table class="table table-hover">
+                    <table th:id="'measurement-result-table-parent' + ${sensor.name}" class="table table-hover">
                         <thead>
                         <tr>
                             <th>#</th>
