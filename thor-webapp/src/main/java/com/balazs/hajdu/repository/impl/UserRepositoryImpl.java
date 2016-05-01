@@ -8,7 +8,6 @@ import com.balazs.hajdu.domain.context.UpdateSensorAlertContext;
 import com.balazs.hajdu.domain.repository.SensorEntity;
 import com.balazs.hajdu.domain.repository.UserEntity;
 import com.balazs.hajdu.domain.repository.maps.Coordinates;
-import com.balazs.hajdu.repository.MeasurementResultRepository;
 import com.balazs.hajdu.repository.UserRepositoryCustom;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +22,6 @@ import org.springframework.data.mongodb.core.query.TextQuery;
 import org.springframework.data.mongodb.core.query.Update;
 
 import javax.inject.Inject;
-
 import java.util.List;
 
 import static org.springframework.data.mongodb.core.query.Criteria.where;
@@ -52,9 +50,6 @@ public class UserRepositoryImpl implements UserRepositoryCustom {
 
     @Inject
     private UserTransformer userTransformer;
-
-    @Inject
-    MeasurementResultRepository measurementResultRepository;
 
     @Override
     public void saveSensorToUser(String username, Sensor sensor) {

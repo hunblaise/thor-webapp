@@ -6,7 +6,6 @@ import com.balazs.hajdu.domain.repository.forecast.FiveDayForecast;
 import com.balazs.hajdu.domain.repository.forecast.Forecast;
 import com.balazs.hajdu.domain.repository.forecast.ForecastDetail;
 import com.balazs.hajdu.domain.repository.forecast.HourlyForecast;
-import com.balazs.hajdu.domain.repository.geo.UserLocation;
 import com.balazs.hajdu.domain.repository.weather.Weather;
 import com.balazs.hajdu.service.WeatherService;
 import org.springframework.stereotype.Service;

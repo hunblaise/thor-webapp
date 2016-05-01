@@ -9,3 +9,11 @@
 .weather-details-value {
     display: inline-block;
 }
+
+.weather-search-module {
+    margin-bottom: 25px;
+}
+
+.weather-statistics-module {
+    margin-bottom: 25px;
+}

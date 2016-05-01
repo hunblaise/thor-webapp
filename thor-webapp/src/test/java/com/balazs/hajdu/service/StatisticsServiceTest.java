@@ -3,6 +3,8 @@ package com.balazs.hajdu.service;
 import com.balazs.hajdu.domain.MeasurementResult;
 import com.balazs.hajdu.domain.StatisticsInterval;
 import com.balazs.hajdu.domain.context.MeasurementResultQueryContext;
+import com.balazs.hajdu.domain.repository.maps.Coordinates;
+import com.balazs.hajdu.domain.repository.maps.GeocodedLocation;
 import com.balazs.hajdu.domain.response.MeasurementResultStatistics;
 import com.balazs.hajdu.repository.MeasurementResultRepository;
 import com.google.common.collect.ImmutableList;
@@ -41,6 +43,9 @@ public class StatisticsServiceTest {
     private static final double TEST_VALUE_TWO = 2;
     private static final double TEST_VALUE_SIX = 6.0;
     private static final double TEST_ROUNDED_AVERAGE = 5.33;
+    private static final double TEST_LONGITUDE = 21.02;
+    private static final double TEST_LATITUDE = 45.21;
+    private static final String TEST_FORMATTED_LOCATION = "test-formatted-location";
 
     @Mock
     private MeasurementResultRepository measurementResultRepository;
@@ -93,6 +98,59 @@ public class StatisticsServiceTest {
         assertThat(actual.get().getAverage(), is(TEST_ROUNDED_AVERAGE));
         assertThat(actual.get().getMin(), is(TEST_VALUE_TWO));
         assertThat(actual.get().getMax(), is(TEST_VALUE_TEN));
+    }
+
+    @Test
+    public void shouldReturnStatisticsForLocation() {
+        // given
+        Coordinates coordinates = aCoordinates();
+        GeocodedLocation geocodedLocation = aGeocodedLocation();
+        List<MeasurementResult> measurementResults = ImmutableList.of(
+                aMeasurementResult(LocalDateTime.now().minusDays(1), TEST_VALUE_TEN),
+                aMeasurementResult(LocalDateTime.now(), TEST_VALUE_TWO),
+                aMeasurementResult(LocalDateTime.now().plusDays(1), TEST_VALUE_FOUR));
+        given(measurementResultRepository.getMeasurementResultsFromLocation(coordinates)).willReturn(measurementResults);
+
+        // when
+        Optional<MeasurementResultStatistics> actual = statisticsService.getStatisticsForLocation(geocodedLocation);
+
+        // then
+        assertTrue(actual.isPresent());
+        assertThat(actual.get().getAverage(), is(TEST_ROUNDED_AVERAGE));
+        assertThat(actual.get().getMin(), is(TEST_VALUE_TWO));
+        assertThat(actual.get().getMax(), is(TEST_VALUE_TEN));
+    }
+
+    @Test
+    public void shouldReturnEmptyWhenMeasurementResultIsUnavailable() {
+        // given
+        Coordinates coordinates = aCoordinates();
+        GeocodedLocation geocodedLocation = aGeocodedLocation();
+        List<MeasurementResult> measurementResults = ImmutableList.of(
+                aMeasurementResult(LocalDateTime.now().minusDays(1), TEST_VALUE_TEN),
+                aMeasurementResult(LocalDateTime.now(), TEST_VALUE_TWO),
+                aMeasurementResult(LocalDateTime.now().plusDays(1), TEST_VALUE_FOUR));
+        given(measurementResultRepository.getMeasurementResultsFromLocation(coordinates)).willReturn(Collections.emptyList());
+
+        // when
+        Optional<MeasurementResultStatistics> actual = statisticsService.getStatisticsForLocation(geocodedLocation);
+
+        // then
+        assertFalse(actual.isPresent());
+    }
+
+    private GeocodedLocation aGeocodedLocation() {
+        return new GeocodedLocation.Builder()
+                .withFormattedLocation(TEST_FORMATTED_LOCATION)
+                .withCoordinates(aCoordinates())
+                .build();
+    }
+
+    private Coordinates aCoordinates() {
+        return new Coordinates.Builder()
+                .withLongitude(TEST_LONGITUDE)
+                .withLattitude(TEST_LATITUDE)
+                .build();
     }
 
     private List<MeasurementResult> measurementResultsWithIrrationalAverage() {

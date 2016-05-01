@@ -56,4 +56,26 @@ $(document).ready(function() {
         });
     }
 
+    $('#search-weather').submit(function(event) {
+        event.preventDefault();
+
+        var actualElement = $(this);
+
+        $.ajax({
+            url: '/weather/search',
+            type: 'GET',
+            data: actualElement.serialize(),
+            dataType: 'json',
+            success: function(response) {
+                var source = $('#weather-modal').html();
+                var template = Handlebars.compile(source);
+
+                $('#modal-weather-template').html(template(response));
+                $('#modal-weather-parent').modal('show');
+
+                updateChart(response.hourlyForecasts, $('#modal-weather-search-chart'));
+            }
+        })
+    });
+
 });

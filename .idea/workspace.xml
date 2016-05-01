@@ -2,26 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56e9a236-839e-4c6e-a54f-bebaae943735" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/DailyForecast.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/FiveDayForecast.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/HourlyForecast.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/chart/weather-chart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/service/StatisticsServiceTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/service/impl/WeatherServiceImplTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/response/WeatherSearchResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/view/WeatherSearchQueryForm.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/error/exceptions/InvalidSearchResultException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/handlebars-v4.0.5.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/facade/impl/MeasurementResultFacadeImplTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/repository/impl/MeasurementResultRepositoryImplTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/repository/impl/UserRepositoryImplTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/components/factories/ForecastFactory.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/components/factories/ForecastFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/config/SecurityConfig.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/config/SecurityConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/HomeController.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/HomeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/Forecast.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/Forecast.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/facade/impl/SensorFacadeImpl.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/facade/impl/SensorFacadeImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/MeasurementResultEntity.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/MeasurementResultEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/facade/MeasurementResultFacade.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/facade/MeasurementResultFacade.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/facade/impl/MeasurementResultFacadeImpl.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/facade/impl/MeasurementResultFacadeImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/MeasurementResultRepositoryCustom.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/MeasurementResultRepositoryCustom.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/impl/MeasurementResultRepositoryImpl.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/impl/MeasurementResultRepositoryImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/impl/UserRepositoryImpl.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/impl/UserRepositoryImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/StatisticsService.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/StatisticsService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/WeatherService.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/WeatherService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/impl/WeatherServiceImpl.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/impl/WeatherServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/measurements-module.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/measurements-module.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/weather-module.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/weather-module.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeNotSignedIn.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeNotSignedIn.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeSignedIn.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeSignedIn.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/components/factories/ForecastFactoryTest.java" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/components/factories/ForecastFactoryTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/css/weather-module.css" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/css/weather-module.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/chart/weather-chart.js" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/chart/weather-chart.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/service/StatisticsServiceTest.java" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/service/StatisticsServiceTest.java" />
     </list>
     <ignored path="thor-web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,52 +57,30 @@
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
   </component>
-  <component name="DockManager">
-    <window id="2">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="WeatherService.java" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/WeatherService.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0">
-                    <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="WeatherServiceImpl.java" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/impl/WeatherServiceImpl.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.9681529">
-                    <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
-                    <folding>
-                      <element signature="imports" expanded="true" />
-                      <element signature="e#1226#1227#0" expanded="true" />
-                      <element signature="e#1291#1292#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="thor-web" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="WeatherServiceImplTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/service/impl/WeatherServiceImplTest.java">
+      <file leaf-file-name="homeSignedIn.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeSignedIn.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.1775544">
-              <caret line="164" column="128" selection-start-line="164" selection-start-column="128" selection-end-line="164" selection-end-column="128" />
+            <state vertical-scroll-proportion="0.3653846">
+              <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MeasurementResultFacadeImplTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/facade/impl/MeasurementResultFacadeImplTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="87" column="47" selection-start-line="87" selection-start-column="47" selection-end-line="87" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,69 +89,67 @@
         <entry file="file://$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/service/StatisticsServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="94" column="40" selection-start-line="94" selection-start-column="40" selection-end-line="94" selection-end-column="40" />
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HourlyForecast.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/HourlyForecast.java">
+      <file leaf-file-name="WeatherServiceImplTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/service/impl/WeatherServiceImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="55" column="38" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ForecastFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/components/factories/ForecastFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="51" column="103" selection-start-line="51" selection-start-column="103" selection-end-line="51" selection-end-column="103" />
+              <caret line="110" column="4" selection-start-line="110" selection-start-column="4" selection-end-line="115" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SensorFacadeImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/facade/impl/SensorFacadeImpl.java">
+      <file leaf-file-name="MeasurementResultRequestForm.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/view/MeasurementResultRequestForm.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="139" column="60" selection-start-line="139" selection-start-column="60" selection-end-line="139" selection-end-column="60" />
+              <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ForecastFactoryTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/components/factories/ForecastFactoryTest.java">
+      <file leaf-file-name="weather-module.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/css/weather-module.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="110" column="4" selection-start-line="110" selection-start-column="4" selection-end-line="116" selection-end-column="5" />
+            <state vertical-scroll-proportion="-12.92">
+              <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MeasurementResponse.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/response/MeasurementResponse.java">
+      <file leaf-file-name="MeasurementResultRepositoryImplTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/repository/impl/MeasurementResultRepositoryImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="60" column="27" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
+              <caret line="107" column="45" selection-start-line="107" selection-start-column="45" selection-end-line="107" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MeasurementResultTransformer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/components/transformers/MeasurementResultTransformer.java">
+      <file leaf-file-name="WeatherService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/WeatherService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+              <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRepositoryImplTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/repository/impl/UserRepositoryImplTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="165" column="4" selection-start-line="165" selection-start-column="4" selection-end-line="170" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -183,8 +164,8 @@
         <option value="Interface" />
         <option value="HTML File" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="JavaScript File" />
+        <option value="Class" />
         <option value="TestNG Test Class" />
       </list>
     </option>
@@ -200,57 +181,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/SensorEntity.java" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/UserRepository.java" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/components/transformers/UserTransformer.java" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/header.html" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/components/factories/SensorFactory.java" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/css/core.css" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/signin/signin.html" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/measurements-module.html" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/search-results-module.html" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/keyword-based-search-module.html" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/username-based-search-module.html" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/location-based-search-module.html" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/view/AdminSearchQueryForm.java" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/UserEntity.java" />
         <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/UserRepositoryCustom.java" />
         <option value="$PROJECT_DIR$/rpi-client/src/main/java/com/balazs/hajdu/client/delegator/SensorDelegator.java" />
         <option value="$PROJECT_DIR$/rpi-client/src/main/java/com/balazs/hajdu/client/delegator/UserSearchDelegator.java" />
         <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/UserSearchType.java" />
         <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/components/delegators/UserSearchDelegator.java" />
         <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/AdminController.java" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/impl/UserRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/UserService.java" />
         <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/User.java" />
         <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/sensors/sensors.html" />
         <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/signup/signup.html" />
         <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/admin/admin.html" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/autocomplete/geo-autocomplete.js" />
         <option value="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/account/UserAuthenticationIntegrationTest.java" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/thor-webapp/pom.xml" />
         <option value="$PROJECT_DIR$/rpi-client/pom.xml" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/DailyForecast.java" />
         <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/FiveDayForecast.java" />
         <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/Forecast.java" />
         <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/components/factories/ForecastFactory.java" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/HomeController.java" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/chart/weather-chart.js" />
         <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/config/SecurityConfig.java" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/weather-module.html" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeNotSignedIn.html" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeSignedIn.html" />
         <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/HourlyForecast.java" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/StatisticsService.java" />
         <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/facade/impl/SensorFacadeImpl.java" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/service/StatisticsServiceTest.java" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/WeatherService.java" />
         <option value="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/components/factories/ForecastFactoryTest.java" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/impl/WeatherServiceImpl.java" />
         <option value="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/service/impl/WeatherServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/impl/WeatherServiceImpl.java" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/WeatherService.java" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/autocomplete/geo-autocomplete.js" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/view/WeatherSearchQueryForm.java" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/DailyForecast.java" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeNotSignedIn.html" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/chart/weather-chart.js" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/MeasurementResultEntity.java" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/MeasurementResultRepositoryCustom.java" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/response/FiveDayAverage.java" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/response/WeatherSearchResponse.java" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/facade/MeasurementResultFacade.java" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/facade/impl/MeasurementResultFacadeImpl.java" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/error/exceptions/InvalidSearchResultException.java" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/HomeController.java" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/impl/MeasurementResultRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/weather-module.html" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/measurements-module.html" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/css/weather-module.css" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeSignedIn.html" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/facade/impl/MeasurementResultFacadeImplTest.java" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/impl/UserRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/StatisticsService.java" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/service/StatisticsServiceTest.java" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/repository/impl/UserRepositoryImplTest.java" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/repository/impl/MeasurementResultRepositoryImplTest.java" />
       </list>
     </option>
   </component>
@@ -686,6 +667,44 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -799,6 +818,78 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="autocomplete" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -882,7 +973,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
+              <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -913,10 +1004,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="hajdu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -954,15 +1041,155 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="repository" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="forecast" />
+              <option name="myItemId" value="impl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hajdu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="facade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hajdu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="facade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hajdu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="error" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thor-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hajdu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="error" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exceptions" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1078,11 +1305,21 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.balazs.hajdu.repository.impl" />
+      <recent name="com.balazs.hajdu.facade.impl" />
       <recent name="com.balazs.hajdu.service.impl" />
       <recent name="com.balazs.hajdu.service" />
       <recent name="com.balazs.hajdu.components.transformers" />
-      <recent name="com.balazs.hajdu.components.factories" />
-      <recent name="com.balazs.hajdu.adapter.impl" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.balazs.hajdu.domain.response" />
+      <recent name="com.balazs.hajdu.domain.view" />
+      <recent name="com.balazs.hajdu.domain.repository.forecast" />
+      <recent name="com.balazs.hajdu.domain.context" />
+      <recent name="com.balazs.hajdu.domain.repository.forecast.response" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\Egyetem\intelligent-home-control\thor-web\src\main\java\com\balazs\hajdu\components\factories" />
@@ -1091,48 +1328,12 @@
       <recent name="F:\Egyetem\intelligent-home-control\thor-web\src\main\java\com\balazs\hajdu\facade\impl" />
       <recent name="F:\Egyetem\intelligent-home-control\thor-web\src\main\webapp\resources\js\sensor" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.balazs.hajdu.domain.repository.forecast" />
-      <recent name="com.balazs.hajdu.domain.view" />
-      <recent name="com.balazs.hajdu.domain.context" />
-      <recent name="com.balazs.hajdu.domain.repository.forecast.response" />
-      <recent name="com.balazs.hajdu.domain.response" />
-    </key>
   </component>
-  <component name="RunManager" selected="TestNG.WeatherServiceImplTest">
-    <configuration default="false" name="RegisterControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.MeasurementResultRepositoryImplTest">
+    <configuration default="false" name="MeasurementResultFacadeImplTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.balazs.hajdu.signup.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="thor-web (1)" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.balazs.hajdu.signup" />
-      <option name="MAIN_CLASS_NAME" value="com.balazs.hajdu.signup.RegisterControllerTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="ForecastFactoryTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.balazs.hajdu.components.factories.*" />
+          <option name="PATTERN" value="com.balazs.hajdu.facade.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1140,11 +1341,110 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="com.balazs.hajdu.components.factories" />
-      <option name="MAIN_CLASS_NAME" value="com.balazs.hajdu.components.factories.ForecastFactoryTest" />
+      <option name="PACKAGE_NAME" value="com.balazs.hajdu.facade.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.balazs.hajdu.facade.impl.MeasurementResultFacadeImplTest" />
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="false" name="MeasurementResultRepositoryImplTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.balazs.hajdu.repository.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="thor-web (1)" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="com.balazs.hajdu.repository.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.balazs.hajdu.repository.impl.MeasurementResultRepositoryImplTest" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="false" name="UserRepositoryImplTest.shouldSaveSensorToUser" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.balazs.hajdu.repository.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="thor-web (1)" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="com.balazs.hajdu.repository.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.balazs.hajdu.repository.impl.UserRepositoryImplTest" />
+      <option name="METHOD_NAME" value="shouldSaveSensorToUser" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="false" name="StatisticsServiceTest.shouldReturnStatisticsForLocation" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.balazs.hajdu.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="thor-web (1)" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="com.balazs.hajdu.service" />
+      <option name="MAIN_CLASS_NAME" value="com.balazs.hajdu.service.StatisticsServiceTest" />
+      <option name="METHOD_NAME" value="shouldReturnStatisticsForLocation" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -1178,72 +1478,6 @@
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="false" name="WeatherServiceImplTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.balazs.hajdu.service.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="thor-web (1)" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="com.balazs.hajdu.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.balazs.hajdu.service.impl.WeatherServiceImplTest" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="false" name="WeatherServiceImplTest.shouldReturnFiveDayForecastWithDailyForecasts" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.balazs.hajdu.service.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="thor-web (1)" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="com.balazs.hajdu.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.balazs.hajdu.service.impl.WeatherServiceImplTest" />
-      <option name="METHOD_NAME" value="shouldReturnFiveDayForecastWithDailyForecasts" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -1920,19 +2154,18 @@
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.local-thor" />
       <item index="1" class="java.lang.String" itemvalue="Tomcat Server.local-rpi-client" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest" />
-      <item index="3" class="java.lang.String" itemvalue="TestNG.ForecastFactoryTest" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.StatisticsServiceTest" />
-      <item index="5" class="java.lang.String" itemvalue="TestNG.WeatherServiceImplTest" />
-      <item index="6" class="java.lang.String" itemvalue="TestNG.WeatherServiceImplTest.shouldReturnFiveDayForecastWithDailyForecasts" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.MeasurementResultFacadeImplTest" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.MeasurementResultRepositoryImplTest" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.UserRepositoryImplTest.shouldSaveSensorToUser" />
+      <item index="5" class="java.lang.String" itemvalue="TestNG.StatisticsServiceTest.shouldReturnStatisticsForLocation" />
+      <item index="6" class="java.lang.String" itemvalue="TestNG.StatisticsServiceTest" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="TestNG.WeatherServiceImplTest" />
-        <item index="1" class="java.lang.String" itemvalue="TestNG.WeatherServiceImplTest.shouldReturnFiveDayForecastWithDailyForecasts" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.StatisticsServiceTest" />
-        <item index="3" class="java.lang.String" itemvalue="TestNG.ForecastFactoryTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="TestNG.MeasurementResultRepositoryImplTest" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.StatisticsServiceTest" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.StatisticsServiceTest.shouldReturnStatisticsForLocation" />
+        <item index="3" class="java.lang.String" itemvalue="TestNG.UserRepositoryImplTest.shouldSaveSensorToUser" />
       </list>
     </recent_temporary>
   </component>
@@ -1998,7 +2231,8 @@
       <workItem from="1461928283262" duration="28092000" />
       <workItem from="1461972531441" duration="954000" />
       <workItem from="1461998130588" duration="10033000" />
-      <workItem from="1462009131645" duration="15418000" />
+      <workItem from="1462009131645" duration="28695000" />
+      <workItem from="1462082600476" duration="19589000" />
     </task>
     <task id="LOCAL-00001" summary="@noissue Added readme">
       <created>1458058027495</created>
@@ -2234,43 +2468,49 @@
       <option name="project" value="LOCAL" />
       <updated>1462003201142</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="@weather refactored weather module, added new graph for forecast.">
+      <created>1462032965199</created>
+      <option name="number" value="00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1462032965199</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="WeatherServiceImplTest - 2016.04.30 at 17h 26m 05s.xml">
-      <configuration name="WeatherServiceImplTest" configurationId="TestNG" />
+    <history-entry file="MeasurementResultRepositoryImplTest - 2016.05.01 at 13h 29m 02s.xml">
+      <configuration name="MeasurementResultRepositoryImplTest" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="WeatherServiceImplTest - 2016.04.30 at 17h 26m 35s.xml">
-      <configuration name="WeatherServiceImplTest" configurationId="TestNG" />
+    <history-entry file="MeasurementResultRepositoryImplTest - 2016.05.01 at 13h 29m 50s.xml">
+      <configuration name="MeasurementResultRepositoryImplTest" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="WeatherServiceImplTest - 2016.04.30 at 17h 45m 13s.xml">
-      <configuration name="WeatherServiceImplTest" configurationId="TestNG" />
+    <history-entry file="MeasurementResultRepositoryImplTest - 2016.05.01 at 13h 35m 13s.xml">
+      <configuration name="MeasurementResultRepositoryImplTest" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="WeatherServiceImplTest - 2016.04.30 at 17h 45m 37s.xml">
-      <configuration name="WeatherServiceImplTest" configurationId="TestNG" />
+    <history-entry file="MeasurementResultRepositoryImplTest - 2016.05.01 at 14h 03m 02s.xml">
+      <configuration name="MeasurementResultRepositoryImplTest" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="WeatherServiceImplTest - 2016.04.30 at 18h 11m 02s.xml">
-      <configuration name="WeatherServiceImplTest" configurationId="TestNG" />
+    <history-entry file="MeasurementResultRepositoryImplTest - 2016.05.01 at 14h 06m 20s.xml">
+      <configuration name="MeasurementResultRepositoryImplTest" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="WeatherServiceImplTest - 2016.04.30 at 18h 12m 47s.xml">
-      <configuration name="WeatherServiceImplTest" configurationId="TestNG" />
+    <history-entry file="MeasurementResultRepositoryImplTest - 2016.05.01 at 14h 11m 50s.xml">
+      <configuration name="MeasurementResultRepositoryImplTest" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="WeatherServiceImplTest - 2016.04.30 at 18h 13m 04s.xml">
-      <configuration name="WeatherServiceImplTest" configurationId="TestNG" />
+    <history-entry file="StatisticsServiceTest - 2016.05.01 at 13h 47m 27s.xml">
+      <configuration name="StatisticsServiceTest" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="WeatherServiceImplTest_shouldReturnFiveDayForecastWithDailyForecasts - 2016.04.30 at 17h 47m 39s.xml">
-      <configuration name="WeatherServiceImplTest.shouldReturnFiveDayForecastWithDailyForecasts" configurationId="TestNG" />
+    <history-entry file="StatisticsServiceTest_shouldReturnStatisticsForLocation - 2016.05.01 at 13h 45m 11s.xml">
+      <configuration name="StatisticsServiceTest.shouldReturnStatisticsForLocation" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="WeatherServiceImplTest_shouldReturnFiveDayForecastWithDailyForecasts - 2016.04.30 at 17h 48m 43s.xml">
-      <configuration name="WeatherServiceImplTest.shouldReturnFiveDayForecastWithDailyForecasts" configurationId="TestNG" />
+    <history-entry file="StatisticsServiceTest_shouldReturnStatisticsForLocation - 2016.05.01 at 13h 45m 55s.xml">
+      <configuration name="StatisticsServiceTest.shouldReturnStatisticsForLocation" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="WeatherServiceImplTest_shouldReturnFiveDayForecastWithDailyForecasts - 2016.04.30 at 17h 52m 03s.xml">
-      <configuration name="WeatherServiceImplTest.shouldReturnFiveDayForecastWithDailyForecasts" configurationId="TestNG" />
+    <history-entry file="UserRepositoryImplTest - 2016.05.01 at 13h 48m 45s.xml">
+      <configuration name="UserRepositoryImplTest" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="511650000" />
+    <option name="totallyTimeSpent" value="544516000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1288" y="-149" width="1296" height="1000" extended-state="6" />
@@ -2286,25 +2526,25 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27912343" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38638985" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2435275" sideWeight="0.49076518" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2435275" sideWeight="0.49076518" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2065053" sideWeight="0.50923485" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33333334" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29181084" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28373703" sideWeight="0.49676377" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34602076" sideWeight="0.49676377" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2348,7 +2588,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="@sensor rest api to save sensor value." />
     <MESSAGE value="@noissue updated readme" />
     <MESSAGE value="@sensor add new measurment value" />
     <MESSAGE value="@sensor add new measurment value." />
@@ -2373,7 +2612,8 @@
     <MESSAGE value="@admin geo autocomplete." />
     <MESSAGE value="@build added coveralls report for test coverage." />
     <MESSAGE value="@build fix build issue." />
-    <option name="LAST_COMMIT_MESSAGE" value="@build fix build issue." />
+    <MESSAGE value="@weather refactored weather module, added new graph for forecast." />
+    <option name="LAST_COMMIT_MESSAGE" value="@weather refactored weather module, added new graph for forecast." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2402,20 +2642,8 @@
           <properties />
           <option name="timeStamp" value="92" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/impl/UserRepositoryImpl.java</url>
-          <line>85</line>
-          <properties />
-          <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/impl/WeatherServiceImpl.java</url>
-          <line>72</line>
-          <properties />
-          <option name="timeStamp" value="106" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="107" />
+      <option name="time" value="113" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2424,227 +2652,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/sensor-module.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="117" column="79" selection-start-line="117" selection-start-column="72" selection-end-line="117" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/map/sensor-map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/sensors/sensors.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="16" selection-end-column="141" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/signup/signup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="141" selection-start-line="13" selection-start-column="141" selection-end-line="13" selection-end-column="141" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/admin/admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="141" selection-start-line="12" selection-start-column="141" selection-end-line="12" selection-end-column="141" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.230769">
-          <caret line="266" column="21" selection-start-line="244" selection-start-column="12" selection-end-line="266" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rpi-client/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.115385">
-          <caret line="200" column="21" selection-start-line="200" selection-start-column="21" selection-end-line="200" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="MultiMarkdownFxPreviewEditor">
-        <state />
-      </provider>
-      <provider editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.08082409">
-            <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48030302">
-          <caret line="278" column="41" selection-start-line="278" selection-start-column="41" selection-end-line="278" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/account/UserAuthenticationIntegrationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5539359">
-          <caret line="56" column="11" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/autocomplete/geo-autocomplete.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/WeatherRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/response/ForecastResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/response/ForecastWeather.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18235995">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/response/ForecastMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18235995">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/response/ForecastInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20262218">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/ForecastDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="37" selection-start-line="16" selection-start-column="4" selection-end-line="17" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/Forecast.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
-          <folding>
-            <element signature="e#619#620#0" expanded="false" />
-            <element signature="e#649#650#0" expanded="false" />
-            <element signature="e#1153#1154#0" expanded="false" />
-            <element signature="e#1213#1214#0" expanded="false" />
-            <element signature="e#1918#1919#0" expanded="false" />
-            <element signature="e#1967#1968#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_05/src.zip!/java/util/stream/Collectors.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12872468">
-          <caret line="886" column="34" selection-start-line="886" selection-start-column="22" selection-end-line="886" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/FiveDayForecast.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/DailyForecast.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1674#1675#0" expanded="false" />
-            <element signature="e#1768#1769#0" expanded="false" />
-            <element signature="e#3033#3034#0" expanded="false" />
-            <element signature="e#3087#3088#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/adapter/WeatherAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/adapter/impl/WeatherAdapterImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/map/map.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/chart/chart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="84" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="86" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2652,23 +2663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22646007">
           <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/measurements-module.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0740743">
-          <caret line="110" column="20" selection-start-line="110" selection-start-column="20" selection-end-line="113" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/chart/weather-chart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2680,35 +2674,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/weather-module.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.36">
-          <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/measurements/measurements.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.4">
           <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeNotSignedIn.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.68">
-          <caret line="18" column="121" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="121" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeSignedIn.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.68">
-          <caret line="18" column="121" selection-start-line="18" selection-start-column="121" selection-end-line="18" selection-end-column="121" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2723,35 +2692,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/response/MeasurementResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="27" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/components/transformers/MeasurementResultTransformer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="75" column="29" selection-start-line="75" selection-start-column="15" selection-end-line="75" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/impl/UserRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="90" column="5" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2763,19 +2707,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/StatisticsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="52" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/components/factories/ForecastFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="51" column="103" selection-start-line="51" selection-start-column="103" selection-end-line="51" selection-end-column="103" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2783,17 +2718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="55" column="38" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/WeatherService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2801,15 +2725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="110" column="4" selection-start-line="110" selection-start-column="4" selection-end-line="116" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/service/StatisticsServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="94" column="40" selection-start-line="94" selection-start-column="40" selection-end-line="94" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2817,7 +2732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.1309524">
           <caret line="96" column="17" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2825,26 +2739,326 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.2757937">
           <caret line="1227" column="50" selection-start-line="1227" selection-start-column="50" selection-end-line="1227" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/chart/chart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="27" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/response/MeasurementResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.829091">
+          <caret line="60" column="27" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/FiveDayForecast.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/autocomplete/geo-autocomplete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/admin/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36795774">
+          <caret line="11" column="121" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/forecast/DailyForecast.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="27" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeNotSignedIn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.92">
+          <caret line="29" column="74" selection-start-line="29" selection-start-column="74" selection-end-line="29" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.8">
+          <caret line="44" column="77" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/MeasurementResultEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/UserRepositoryCustom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/geo/UserLocation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29180887">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/repository/maps/GeocodedLocation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/SensorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="87" column="59" selection-start-line="87" selection-start-column="59" selection-end-line="87" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/error/exceptions/InvalidSearchResultException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+          <folding>
+            <element signature="e#245#246#0" expanded="false" />
+            <element signature="e#275#276#0" expanded="false" />
+            <element signature="e#351#352#0" expanded="false" />
+            <element signature="e#388#389#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/error/exceptions/InvalidDatabaseOperationException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21178344">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/response/WeatherSearchResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/response/MeasurementResultStatistics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/weather-module.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.6">
+          <caret line="149" column="31" selection-start-line="149" selection-start-column="31" selection-end-line="149" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/view/WeatherSearchQueryForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#327#328#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/facade/MeasurementResultFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="36" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/measurements-module.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.88">
+          <caret line="111" column="25" selection-start-line="111" selection-start-column="25" selection-end-line="111" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/chart/weather-chart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/css/weather-module.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.92">
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/view/MeasurementResultRequestForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/MeasurementResultService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="60" column="76" selection-start-line="60" selection-start-column="59" selection-end-line="60" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/service/impl/WeatherServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="110" column="4" selection-start-line="110" selection-start-column="4" selection-end-line="115" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/facade/impl/MeasurementResultFacadeImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="105" column="5" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/MeasurementResultRepositoryCustom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/facade/impl/MeasurementResultFacadeImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="87" column="47" selection-start-line="87" selection-start-column="47" selection-end-line="87" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/StatisticsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.31034482">
+          <caret line="38" column="56" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/service/StatisticsServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/impl/UserRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/repository/impl/UserRepositoryImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="165" column="4" selection-start-line="165" selection-start-column="4" selection-end-line="170" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/impl/MeasurementResultRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/repository/impl/MeasurementResultRepositoryImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="107" column="45" selection-start-line="107" selection-start-column="45" selection-end-line="107" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/WeatherService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/home/homeSignedIn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3653846">
+          <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/impl/WeatherServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9681529">
-          <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1226#1227#0" expanded="true" />
-            <element signature="e#1291#1292#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/service/impl/WeatherServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.1775544">
-          <caret line="164" column="128" selection-start-line="164" selection-start-column="128" selection-end-line="164" selection-end-column="128" />
+        <state vertical-scroll-proportion="0.66719747">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding />
         </state>
       </provider>

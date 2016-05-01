@@ -2,6 +2,7 @@ package com.balazs.hajdu.repository;
 
 import com.balazs.hajdu.domain.MeasurementResult;
 import com.balazs.hajdu.domain.context.MeasurementResultQueryContext;
+import com.balazs.hajdu.domain.repository.maps.Coordinates;
 
 import java.util.List;
 
@@ -25,5 +26,14 @@ public interface MeasurementResultRepositoryCustom {
      * @param measurementResult measurement result
      */
     void saveMeasurementResultToSensor(MeasurementResult measurementResult);
+
+
+    /**
+     * Retrieves measurement results from a given area.
+     *
+     * @param coordinates area
+     * @return measurement results
+     */
+    List<MeasurementResult> getMeasurementResultsFromLocation(Coordinates coordinates);
 
 }

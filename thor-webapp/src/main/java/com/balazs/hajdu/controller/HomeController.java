@@ -3,6 +3,10 @@ package com.balazs.hajdu.controller;
 import com.balazs.hajdu.constants.ViewNames;
 import com.balazs.hajdu.domain.repository.forecast.HourlyForecast;
 import com.balazs.hajdu.domain.repository.geo.UserLocation;
+import com.balazs.hajdu.domain.response.WeatherSearchResponse;
+import com.balazs.hajdu.domain.view.WeatherSearchQueryForm;
+import com.balazs.hajdu.error.exceptions.InvalidDatabaseOperationException;
+import com.balazs.hajdu.facade.MeasurementResultFacade;
 import com.balazs.hajdu.service.UserLocationService;
 import com.balazs.hajdu.service.WeatherService;
 import org.slf4j.Logger;
@@ -18,6 +22,7 @@ import java.net.UnknownHostException;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * A controller for the home page.
@@ -34,6 +39,9 @@ public class HomeController {
 
     @Inject
     private UserLocationService userLocationService;
+
+    @Inject
+    private MeasurementResultFacade measurementResultFacade;
 
     /**
      * Controller method for the home page.
@@ -62,7 +70,7 @@ public class HomeController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/weather/forecast/hourly")
+    @RequestMapping(value = "/weather/forecast/hourly", method = RequestMethod.GET)
     public List<HourlyForecast> getHourlyForecast(HttpServletRequest request) {
         List<HourlyForecast> hourlyForecast = new ArrayList<>();
         try {
@@ -74,6 +82,12 @@ public class HomeController {
         }
 
         return hourlyForecast;
+    }
+
+    @RequestMapping(value = "/weather/search", method = RequestMethod.GET)
+    public WeatherSearchResponse getWeatherOfCity(WeatherSearchQueryForm weatherSearchQueryForm) throws InvalidDatabaseOperationException {
+        return measurementResultFacade.searchWeatherInLocation(weatherSearchQueryForm)
+                .orElseThrow(() -> new InvalidDatabaseOperationException("Could not find weather information for location"));
     }
 
 }

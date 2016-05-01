@@ -3,6 +3,7 @@ package com.balazs.hajdu.service;
 import com.balazs.hajdu.domain.repository.forecast.FiveDayForecast;
 import com.balazs.hajdu.domain.repository.geo.UserLocation;
 import com.balazs.hajdu.domain.repository.weather.Weather;
+import com.balazs.hajdu.domain.response.WeatherSearchResponse;
 
 /**
  * A weather related interface.

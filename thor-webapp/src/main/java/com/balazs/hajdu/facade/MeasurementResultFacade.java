@@ -2,10 +2,13 @@ package com.balazs.hajdu.facade;
 
 import com.balazs.hajdu.domain.MeasurementResult;
 import com.balazs.hajdu.domain.response.MeasurementResponse;
+import com.balazs.hajdu.domain.response.WeatherSearchResponse;
 import com.balazs.hajdu.domain.view.DateIntervalRequestForm;
 import com.balazs.hajdu.domain.view.MeasurementResultRequestForm;
+import com.balazs.hajdu.domain.view.WeatherSearchQueryForm;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Measurement result facade.
@@ -42,5 +45,13 @@ public interface MeasurementResultFacade {
      * @return measurement results
      */
     List<MeasurementResponse> getMeasurementResultsFromDateInterval(String username, String sensorName, DateIntervalRequestForm requestForm);
+
+    /**
+     * A method to retrieve weather in a given location.
+     *
+     * @param weatherSearchQueryForm query form
+     * @return weather search response
+     */
+    Optional<WeatherSearchResponse> searchWeatherInLocation(WeatherSearchQueryForm weatherSearchQueryForm);
 
 }

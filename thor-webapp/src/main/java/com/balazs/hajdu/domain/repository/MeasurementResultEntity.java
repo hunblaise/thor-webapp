@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
  *
  * @author Balazs Hajdu
  */
-@Document(collection = "measurement-results")
+@Document(collection = "measurements")
 public class MeasurementResultEntity extends AbstractDocument {
 
     @Indexed(direction = IndexDirection.ASCENDING)

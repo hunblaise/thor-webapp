@@ -3,6 +3,7 @@ package com.balazs.hajdu.service;
 import com.balazs.hajdu.domain.MeasurementResult;
 import com.balazs.hajdu.domain.StatisticsInterval;
 import com.balazs.hajdu.domain.context.MeasurementResultQueryContext;
+import com.balazs.hajdu.domain.repository.maps.GeocodedLocation;
 import com.balazs.hajdu.domain.response.MeasurementResultStatistics;
 import com.balazs.hajdu.repository.MeasurementResultRepository;
 import org.springframework.stereotype.Service;
@@ -43,6 +44,18 @@ public class StatisticsService {
                 .withStartDate(LocalDateTime.now().minusDays(interval.getInterval()))
                 .withEndDate(LocalDateTime.now())
                 .build());
+
+        return !results.isEmpty() ? Optional.of(buildStatistics(results)) : Optional.empty();
+    }
+
+    /**
+     * A method to collect measurement result statistics from a given location.
+     *
+     * @param geocodedLocations geocoded locations
+     * @return statistics
+     */
+    public Optional<MeasurementResultStatistics> getStatisticsForLocation(GeocodedLocation geocodedLocations) {
+        List<MeasurementResult> results = measurementResultRepository.getMeasurementResultsFromLocation(geocodedLocations.getCoordinates());
 
         return !results.isEmpty() ? Optional.of(buildStatistics(results)) : Optional.empty();
     }
