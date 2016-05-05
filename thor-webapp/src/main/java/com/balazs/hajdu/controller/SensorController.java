@@ -3,14 +3,13 @@ package com.balazs.hajdu.controller;
 import com.balazs.hajdu.constants.Endpoints;
 import com.balazs.hajdu.constants.ViewNames;
 import com.balazs.hajdu.domain.MeasurementResult;
-import com.balazs.hajdu.domain.Sensor;
+import com.balazs.hajdu.domain.view.DateIntervalRequestForm;
 import com.balazs.hajdu.domain.view.MeasurementResultRequestForm;
 import com.balazs.hajdu.domain.view.SensorAlertRequestForm;
 import com.balazs.hajdu.domain.view.SensorRequestForm;
 import com.balazs.hajdu.error.exceptions.InvalidDatabaseOperationException;
 import com.balazs.hajdu.facade.MeasurementResultFacade;
 import com.balazs.hajdu.facade.SensorFacade;
-import com.balazs.hajdu.service.SensorService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -25,6 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.inject.Inject;
 import java.security.Principal;
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 /**
@@ -42,6 +42,9 @@ public class SensorController {
     private static final String UPDATE_ERROR_MESSAGE = "Could not update the %s's alert values.";
     private static final String SUCCESS = "Success";
 
+    private static final LocalDateTime LAST_TWO_HOURS = LocalDateTime.now().minusHours(2);
+    private static final String MOTION_SENSOR = "motion";
+
     @Inject
     private SensorFacade sensorFacade;
 
@@ -53,6 +56,12 @@ public class SensorController {
                                     ModelAndView modelAndView) {
         if (principal != null) {
             modelAndView.addObject("sensors", sensorFacade.getAllSensorByUsername(principal.getName()));
+
+            DateIntervalRequestForm requestForm = new DateIntervalRequestForm();
+            requestForm.setStartDate(LAST_TWO_HOURS);
+            requestForm.setEndDate(LocalDateTime.now());
+
+            modelAndView.addObject("motion", measurementResultFacade.getMeasurementResultsFromDateInterval(principal.getName(), MOTION_SENSOR, requestForm));
         }
 
         modelAndView.setViewName(ViewNames.SENSORS.getValue());
@@ -85,7 +94,7 @@ public class SensorController {
                                                                  @PathVariable String username,
                                                                  @RequestBody MeasurementResultRequestForm measurementResult) {
 
-        MeasurementResult result = measurementResultFacade.saveMeasurementResult(username, sensorName, measurementResult);
+        MeasurementResult result = measurementResultFacade.saveMeasurementResult(username, sensorName, Optional.of(measurementResult));
 
         return new ResponseEntity<>(result, HttpStatus.CREATED);
     }

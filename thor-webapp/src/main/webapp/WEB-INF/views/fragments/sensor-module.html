@@ -42,6 +42,7 @@
                             <th>#</th>
                             <th>Sensor name</th>
                             <th>Measurement results</th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -49,6 +50,14 @@
                             <th scope="row" th:text="${status.index} + 1">#</th>
                             <td th:text="${sensor.name}">sensor name</td>
                             <td th:text="${sensor.measurementResults} != null ? ${sensor.measurementResults.size()} : 0">measurement results</td>
+                            <td>
+                                <button th:if="${sensor.name != 'motion'}"
+                                        th:id="'sensor-update-button-' + ${sensor.name}"
+                                        th:attr="data-url='/' + ${#authentication.name} + '/sensors/' + ${sensor.name} + '/update'"
+                                        type="button" class="btn btn-default sensor-update-button">
+                                    <span class="glyphicon glyphicon-save" aria-hidden="true"></span> Update
+                                </button>
+                            </td>
                         </tr>
                         </tbody>
                     </table>

@@ -25,7 +25,7 @@ public interface MeasurementResultFacade {
      * @param requestForm request form
      * @return saved measurement result
      */
-    MeasurementResult saveMeasurementResult(String userName, String sensorName, MeasurementResultRequestForm requestForm);
+    MeasurementResult saveMeasurementResult(String userName, String sensorName, Optional<MeasurementResultRequestForm> requestForm);
 
     /**
      * A method to retrieve all measurement results from a sensor.
@@ -53,5 +53,14 @@ public interface MeasurementResultFacade {
      * @return weather search response
      */
     Optional<WeatherSearchResponse> searchWeatherInLocation(WeatherSearchQueryForm weatherSearchQueryForm);
+
+    /**
+     * Retrieve a new measurement result and save it.
+     *
+     * @param username username
+     * @param sensorName sensor name
+     * @return saved measurement result
+     */
+    MeasurementResponse updateSensorWithNewMeasurement(String username, String sensorName);
 
 }

@@ -77,4 +77,10 @@ public class MeasurementController {
         return responses;
     }
 
+    @RequestMapping(value = "{username}/sensors/{sensorName}/update")
+    public MeasurementResponse updateMeasurementResult(@PathVariable String username,
+                                                       @PathVariable String sensorName) {
+        return measurementResultFacade.updateSensorWithNewMeasurement(username, sensorName);
+    }
+
 }

@@ -52,6 +52,7 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
             .authorizeRequests()
                 .antMatchers("/", "/favicon.ico", "/resources/**", "/signup", "/register").permitAll()
                 .antMatchers("/weather/forecast/hourly").permitAll()
+                .antMatchers("/**/sensors/**/detected").permitAll()
                 .antMatchers(HttpMethod.POST, "/**/sensors/**/save").permitAll()
                 .antMatchers(HttpMethod.POST, "/**/sensors/save").hasRole(ROLE_ADMIN)
                 .antMatchers(HttpMethod.GET, "/admin").hasRole(ROLE_ADMIN)

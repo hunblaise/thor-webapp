@@ -4,8 +4,11 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.test.context.ContextConfiguration;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -14,6 +17,7 @@ import static org.mockito.BDDMockito.given;
 /**
  * @author Balazs Hajdu
  */
+@ContextConfiguration(classes = {PackageConfiguration.class})
 public class AccountServiceTest {
 
     private static final String TEST_USERNAME = "test-username";
@@ -33,7 +37,7 @@ public class AccountServiceTest {
         MockitoAnnotations.initMocks(this);
     }
 
-    //@Test
+    @Test(enabled = false)
     public void shouldReturnUserIfItIsPresentInTheDatabase() {
         // given
         given(accountRepository.getAccountByUsername(TEST_USERNAME)).willReturn(anAccount());
@@ -46,7 +50,7 @@ public class AccountServiceTest {
         assertThat(actual.getPassword(), is(TEST_PASSWORD));
     }
 
-    //@Test(expectedExceptions = UsernameNotFoundException.class)
+    @Test(expectedExceptions = UsernameNotFoundException.class, enabled = false)
     public void shouldThrowExceptionIfUserIsNotFound() {
         // given
         given(accountRepository.getAccountByUsername("invalid-username")).willReturn(null);

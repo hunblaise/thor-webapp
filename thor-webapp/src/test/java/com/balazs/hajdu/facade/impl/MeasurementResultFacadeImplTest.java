@@ -94,7 +94,7 @@ public class MeasurementResultFacadeImplTest {
         given(measurementResultService.saveMeasurementResultToSensor(any(MeasurementResult.class))).willReturn(expected);
 
         // when
-        MeasurementResult actual = measurementResultFacade.saveMeasurementResult(TEST_USERNAME, TEST_SENSOR_NAME, requestForm);
+        MeasurementResult actual = measurementResultFacade.saveMeasurementResult(TEST_USERNAME, TEST_SENSOR_NAME, Optional.of(requestForm));
 
         // then
         assertThat(actual, is(expected));
