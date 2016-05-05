@@ -2,27 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56e9a236-839e-4c6e-a54f-bebaae943735" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rpi-client/src/main/java/com/balazs/hajdu/client/domain/request/MotionRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rpi-client/src/main/java/com/balazs/hajdu/client/repository/MotionSensorListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/MotionController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/response/MotionRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/MotionService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/RequestValidator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/css/toastr.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/sensors/update-sensor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/toastr.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rpi-client/src/main/java/com/balazs/hajdu/client/repository/RepositoryPackageConfiguration.java" afterPath="$PROJECT_DIR$/rpi-client/src/main/java/com/balazs/hajdu/client/repository/RepositoryPackageConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rpi-client/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/rpi-client/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rpi-client/src/test/java/com/balazs/hajdu/client/account/AccountServiceTest.java" afterPath="$PROJECT_DIR$/rpi-client/src/test/java/com/balazs/hajdu/client/account/AccountServiceTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/config/SecurityConfig.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/config/SecurityConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/MeasurementController.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/MeasurementController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/SensorController.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/SensorController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/facade/MeasurementResultFacade.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/facade/MeasurementResultFacade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/facade/impl/MeasurementResultFacadeImpl.java" afterPath="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/facade/impl/MeasurementResultFacadeImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/sensor-module.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/sensor-module.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/sensors/sensors.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/sensors/sensors.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/facade/impl/MeasurementResultFacadeImplTest.java" afterPath="$PROJECT_DIR$/thor-webapp/src/test/java/com/balazs/hajdu/facade/impl/MeasurementResultFacadeImplTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/measurements-module.html" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/measurements-module.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/chart/chart.js" afterPath="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/chart/chart.js" />
     </list>
     <ignored path="thor-web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,60 +41,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RaspberryClientRestRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/impl/RaspberryClientRestRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MotionController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/MotionController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MotionRequest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rpi-client/src/main/java/com/balazs/hajdu/client/domain/request/MotionRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#288#289#0" expanded="true" />
-                <element signature="e#314#315#0" expanded="true" />
-                <element signature="e#352#353#0" expanded="true" />
-                <element signature="e#382#383#0" expanded="true" />
-                <element signature="e#680#681#0" expanded="true" />
-                <element signature="e#724#725#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MotionRequest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/response/MotionRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#407#408#0" expanded="true" />
-                <element signature="e#437#438#0" expanded="true" />
-                <element signature="e#735#736#0" expanded="true" />
-                <element signature="e#779#780#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MotionSensorListener.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rpi-client/src/main/java/com/balazs/hajdu/client/repository/MotionSensorListener.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -153,11 +81,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SensorController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sensor-module.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/sensor-module.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.351852">
+              <caret line="53" column="73" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="73" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SensorController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/SensorController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44556114">
+            <state vertical-scroll-proportion="0.0">
               <caret line="64" column="9" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="measurements-module.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/measurements-module.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.2">
+              <caret line="117" column="61" selection-start-line="117" selection-start-column="29" selection-end-line="117" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chart.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/chart/chart.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5293132">
+              <caret line="45" column="35" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MotionController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/MotionController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -225,8 +193,6 @@
         <option value="$PROJECT_DIR$/rpi-client/src/test/java/com/balazs/hajdu/client/delegator/SensorDelegatorTest.java" />
         <option value="$PROJECT_DIR$/thor-webapp/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/measurements/measurements.html" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/chart/chart.js" />
-        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/measurements-module.html" />
         <option value="$PROJECT_DIR$/rpi-client/src/test/java/com/balazs/hajdu/client/account/AccountServiceTest.java" />
         <option value="$PROJECT_DIR$/rpi-client/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/rpi-client/src/main/java/com/balazs/hajdu/client/repository/RepositoryPackageConfiguration.java" />
@@ -250,6 +216,8 @@
         <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/response/MotionRequest.java" />
         <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/service/MotionService.java" />
         <option value="$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/SensorController.java" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/measurements-module.html" />
+        <option value="$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/chart/chart.js" />
       </list>
     </option>
   </component>
@@ -2559,7 +2527,7 @@
       <workItem from="1462297334502" duration="3933000" />
       <workItem from="1462357647912" duration="2425000" />
       <workItem from="1462389619183" duration="6187000" />
-      <workItem from="1462427967390" duration="9446000" />
+      <workItem from="1462427967390" duration="16629000" />
     </task>
     <task id="LOCAL-00001" summary="@noissue Added readme">
       <created>1458058027495</created>
@@ -2819,7 +2787,13 @@
       <option name="project" value="LOCAL" />
       <updated>1462138551906</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="@sensor added motion senor&#10;@measurements update measurements manually">
+      <created>1462438339211</created>
+      <option name="number" value="00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1462438339211</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -2855,7 +2829,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="597645000" />
+    <option name="totallyTimeSpent" value="604828000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1288" y="-149" width="1296" height="1000" extended-state="6" />
@@ -2933,7 +2907,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="@sensor add new sensor to user." />
     <MESSAGE value="@sensor sensor listing." />
     <MESSAGE value="@sensor added weather icons." />
     <MESSAGE value="@sensor css." />
@@ -2958,7 +2931,8 @@
     <MESSAGE value="@weather weather search module." />
     <MESSAGE value="@rpi-client added pressure reading." />
     <MESSAGE value="@measurements update list after filtering." />
-    <option name="LAST_COMMIT_MESSAGE" value="@measurements update list after filtering." />
+    <MESSAGE value="@sensor added motion senor&#10;@measurements update measurements manually" />
+    <option name="LAST_COMMIT_MESSAGE" value="@sensor added motion senor&#10;@measurements update measurements manually" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2987,12 +2961,6 @@
           <properties />
           <option name="timeStamp" value="92" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/MotionController.java</url>
-          <line>36</line>
-          <properties />
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
       </breakpoints>
       <option name="time" value="116" />
     </breakpoint-manager>
@@ -3003,14 +2971,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/config/ApplicationConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/repository/PackageConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3285,14 +3245,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/chart/chart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="15" selection-start-line="49" selection-start-column="12" selection-end-line="56" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/domain/response/MeasurementResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3313,14 +3265,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.12">
           <caret line="22" column="92" selection-start-line="22" selection-start-column="92" selection-end-line="22" selection-end-column="92" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/sensor-module.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.68">
-          <caret line="56" column="52" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -3349,26 +3293,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/MotionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rpi-client/src/main/java/com/balazs/hajdu/client/domain/request/MotionRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#288#289#0" expanded="true" />
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#724#725#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#288#289#0" expanded="false" />
+            <element signature="e#314#315#0" expanded="false" />
+            <element signature="e#352#353#0" expanded="false" />
+            <element signature="e#382#383#0" expanded="false" />
+            <element signature="e#680#681#0" expanded="false" />
+            <element signature="e#724#725#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3378,11 +3314,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#407#408#0" expanded="true" />
-            <element signature="e#437#438#0" expanded="true" />
-            <element signature="e#735#736#0" expanded="true" />
-            <element signature="e#779#780#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#407#408#0" expanded="false" />
+            <element signature="e#437#438#0" expanded="false" />
+            <element signature="e#735#736#0" expanded="false" />
+            <element signature="e#779#780#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3429,8 +3365,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/SensorController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44556114">
+        <state vertical-scroll-proportion="0.0">
           <caret line="64" column="9" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/sensor-module.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.351852">
+          <caret line="53" column="73" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/java/com/balazs/hajdu/controller/MotionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/WEB-INF/views/fragments/measurements-module.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.2">
+          <caret line="117" column="61" selection-start-line="117" selection-start-column="29" selection-end-line="117" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thor-webapp/src/main/webapp/resources/js/chart/chart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5293132">
+          <caret line="45" column="35" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
           <folding />
         </state>
       </provider>

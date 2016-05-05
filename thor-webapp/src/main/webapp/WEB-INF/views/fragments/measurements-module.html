@@ -108,7 +108,14 @@
                 </form>
 
                 <div class="col-xs-12">
-                    <div th:id="'measurement-results-chart-' + ${sensor.name}" class="measurement-results-chart"
+                    <div th:if="${sensor.name != 'motion'}"
+                         th:id="'measurement-results-chart-' + ${sensor.name}" class="measurement-results-chart"
+                         th:height="750px"
+                         th:attr="data-url='/' + ${#authentication.name} + '/sensors/' + ${sensor.name} + '/get/results'">
+                    </div>
+
+                    <div th:if="${sensor.name == 'motion'}"
+                         id="measurement-results-chart-motion"
                          th:height="750px"
                          th:attr="data-url='/' + ${#authentication.name} + '/sensors/' + ${sensor.name} + '/get/results'">
                     </div>
